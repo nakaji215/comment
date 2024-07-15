@@ -13,20 +13,10 @@ function updateDisplayAndColors() {
     authorChip.style.display = displayValue;
   });
 
-  let messageElements = document.querySelectorAll('yt-live-chat-text-message-renderer');
+  let messageElements = document.querySelectorAll('#message.yt-live-chat-text-message-renderer');
   messageElements.forEach(messageElement => {
-  let message = messageElement.querySelector('#message');
-  if (borderValue === '0') {
-    message.style.border = 'none';
-  } else {
-    let authorType = messageElement.getAttribute('author-type');
-    if (authorType === '') {
-      message.style.border = `3px solid var(--listener-comment-border)`;
-    } else if (authorType === 'member') {
-      message.style.border = `3px solid var(--member-comment-border)`;
-    }
-  }
-});
+    messageElement.style.border = (borderValue === '0') ? 'none' : `3px solid var(--listener-name-bg)`;
+  });
 
   let messageElementBefores = document.querySelectorAll('.message-before');
   messageElementBefores.forEach(element => {
@@ -42,12 +32,11 @@ function updateDisplayAndColors() {
       --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
       --member-name: ${document.getElementById('member-name')?.value};
       --member-name-bg: ${document.getElementById('member-name-bg')?.value};
+      --owner-name: ${document.getElementById('owner-name')?.value};
+      --owner-name-bg: ${document.getElementById('owner-name-bg')?.value};
       --listener-comment: ${document.getElementById('listener-comment')?.value};
       --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
       --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
       --superchat-name: ${document.getElementById('superchat-name')?.value};
       --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
       --superchat-comment: ${document.getElementById('superchat-comment')?.value};
@@ -181,12 +170,11 @@ function updateDisplayAndColors() {
       --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
       --member-name: ${document.getElementById('member-name')?.value};
       --member-name-bg: ${document.getElementById('member-name-bg')?.value};
+      --owner-name: ${document.getElementById('owner-name')?.value};
+      --owner-name-bg: ${document.getElementById('owner-name-bg')?.value};
       --listener-comment: ${document.getElementById('listener-comment')?.value};
       --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
       --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
       --superchat-name: ${document.getElementById('superchat-name')?.value};
       --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
       --superchat-comment: ${document.getElementById('superchat-comment')?.value};
@@ -208,20 +196,19 @@ document.addEventListener('DOMContentLoaded', function() {
   // 初期値の設定
   document.getElementById('listener-name').value = '#FFFFFF';
   document.getElementById('listener-name-bg').value = '#8CCCE3';
-  document.getElementById('member-name').value = '#FFFFFF';
-  document.getElementById('member-name-bg').value = '#8CCCE3';
+  document.getElementById('member-name').value = '#000000';
+  document.getElementById('member-name-bg').value = '#FFFFFF';
+  document.getElementById('owner-name').value = '#FFFFFF';
+  document.getElementById('owner-name-bg').value = '#8CCCE3';
   document.getElementById('listener-comment').value = '#333333';
   document.getElementById('listener-comment-bg').value = '#FFFFFF';
-  document.getElementById('listener-comment-border').value = '#8CCCE3';
-  document.getElementById('member-comment').value = '#333333';
-  document.getElementById('member-comment-bg').value = '#FFFFFF';
-  document.getElementById('member-comment-border').value = '#8CCCE3';
+  document.getElementById('listener-comment-border').value = '#FFFFFF';
   document.getElementById('superchat-name').value = '#FFFFFF';
   document.getElementById('superchat-name-bg').value = '#9ED9EF';
   document.getElementById('superchat-comment').value = '#FFFFFF';
-  document.getElementById('superchat-comment-bg').value = '#8CCCE3';
+  document.getElementById('superchat-comment-bg').value = '#9ED9EF';
   document.getElementById('membership-name').value = '#FFFFFF';
-  document.getElementById('membership-name-bg').value = '#8CCCE3';
+  document.getElementById('membership-name-bg').value = '#9ED9EF';
   document.getElementById('membership-comment').value = '#FFFFFF';
-  document.getElementById('membership-comment-bg').value = '#8CCCE3';
+  document.getElementById('membership-comment-bg').value = '#9ED9EF';
 });

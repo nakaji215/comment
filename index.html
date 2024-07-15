@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+    <link href="./assets/css/comment.css" rel="stylesheet" />
+
+    <script src="./assets/js/main.js"></script>
+    <title>CSS Generator</title>
+  </head>
+  <body>
+    <header class="header-contents">
+      <div class="header-inner">
+        <div class="header-logo">
+          <h1><img src="" alt="">fukidashi</h1>
+          <p>Youtube用コメントCSS生成ジェネレーター</p>
+        </div>
+        <div>
+          <p>about</p>
+        </div>
+      </div>
+    </header>
+    <main class="l-main">
+      <div>
+        <div class="comment">
+          <yt-live-chat-text-message-renderer class="style-scope yt-live-chat-item-list-renderer" author-type="owner">
+            <yt-img-shadow id="author-photo" class="no-transition style-scope yt-live-chat-text-message-renderer" height="24" width="24" style="background-color: transparent">
+              <img id="img" class="style-scope yt-img-shadow" height="24" width="24" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj"/>
+            </yt-img-shadow>
+            <div id="content" class="style-scope yt-live-chat-text-message-renderer">
+              <span id="timestamp" class="style-scope yt-live-chat-text-message-renderer">11:29 PM</span>
+              <yt-live-chat-author-chip class="style-scope yt-live-chat-text-message-renderer" is-highlighted="">
+                <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
+                <span id="author-name" dir="auto" class="owner style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
+                  通行止め!!
+                  <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
+                </span>
+                <span id="chat-badges" class="style-scope yt-live-chat-author-chip"></span>
+              </yt-live-chat-author-chip>
+              <span id="message" class="style-scope yt-live-chat-text-message-renderer">
+                <span class="message-before"></span>ここにコメントが入ります。<span class="message-after"></span>
+              </span>
+              <span id="deleted-state" class="style-scope yt-live-chat-text-message-renderer"></span>
+              <a id="show-original" href="#" class="style-scope yt-live-chat-text-message-renderer"></a>
+            </div>
+          </yt-live-chat-text-message-renderer>
+          <yt-live-chat-text-message-renderer class="style-scope yt-live-chat-item-list-renderer" modern="" id="" author-type="member">
+            <yt-img-shadow id="author-photo" class="no-transition style-scope yt-live-chat-text-message-renderer" height="24" width="24" loaded="" style="background-color: transparent;">
+              <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24" src="https://yt4.ggpht.com/pl7azFGbJ63fRVr96UeQD2y2szjn0DJMRrNnV5udZbuoXWhVsXk9wsjiMAkWDqaNKc0X1D1h=s32-c-k-c0x00ffffff-no-rj">
+            </yt-img-shadow>
+            <div id="content" class="style-scope yt-live-chat-text-message-renderer">
+              <span id="timestamp" class="style-scope yt-live-chat-text-message-renderer">34:30</span>
+              <yt-live-chat-author-chip class="style-scope yt-live-chat-text-message-renderer">
+                <div class="author-name-block">
+                  <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
+                  <span id="author-name" dir="auto" class="member style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
+                    猫汰
+                    <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
+                  </span>
+                  <span id="chat-badges" class="style-scope yt-live-chat-author-chip"></span>
+                  <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（6 か月）" type="member" shared-tooltip-text="メンバー（6 か月）">
+                    <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
+                      <img src="https://yt3.ggpht.com/RaXun-s8XjdWD25ibZLt-H8ZVUUiE7IgIc_t4fXWs0b8BzTOLdJhLBfHa1LY-oIHUBZeYVNjJYE=s16-c-k" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（6 か月）">
+                    </div>
+                  </yt-live-chat-author-badge-renderer>
+                </div>
+              </yt-live-chat-author-chip>
+              <span id="message" dir="auto" class="style-scope yt-live-chat-text-message-renderer">
+                <span class="message-before"></span>ここにコメントが入ります。<span class="message-after"></span>
+              </span>
+            </div>
+          </yt-live-chat-text-message-renderer>
+        </div>
+      </div>
+      <div>
+        <textarea id="css-content" style="width:600px; height:400px;">
+          @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
+  
+  :root {
+    --listener-name:#FFFFFF;
+    --listener-name-bg:#8CCCE3;
+    --member-name:#FFFFFF;
+    --member-name-bg:#8CCCE3;
+    --owner-name:#FFFFFF;
+    --owner-name-bg:#8CCCE3;
+    --listener-comment:#333333;
+    --listener-comment-bg:#FFFFFF;
+    --listener-comment-border:#FFFFFF;
+    --superchat-name:#FFFFFF;
+    --superchat-name-bg:#9ED9EF;
+    --superchat-comment:#FFFFFF;
+    --superchat-comment-bg:#9ED9EF;
+    --membership-name:#FFFFFF;
+    --membership-name-bg:#9ED9EF;
+    --membership-comment:#FFFFFF;
+    --membership-comment-bg:#9ED9EF;
+  }
+  
+  ytd-sponsorships-live-chat-header-renderer *,
+  yt-live-chat-paid-sticker-renderer *,
+  yt-live-chat-membership-item-renderer *,
+  yt-live-chat-paid-message-renderer *,
+  yt-live-chat-text-message-renderer * {
+    font-family: "Noto Sans JP";
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.8px !important;
+  }
+  
+  /* ---------------------------------------------------- 
+    content
+  ----------------------------------------------------*/
+  #content.yt-live-chat-text-message-renderer {
+    position: relative;
+    z-index: 0;
+  }
+  
+  /* ---------------------------------------------------- 
+    channel
+  ----------------------------------------------------*/
+  
+  /* channel */
+  yt-live-chat-text-message-renderer #author-name {
+    display: block;
+  }
+  
+  /* ---------------------------------------------------- 
+    message 
+  ----------------------------------------------------*/
+  
+  /* message */
+  #message.yt-live-chat-text-message-renderer {
+    background-color: var(--listener-name) !important;
+    color: var(--listener-name-bg) !important;
+    border-radius: 30px;
+    border: 3px solid var(--listener-name-bg) !important;
+    display: block !important;
+    padding: 12px 20px;
+    width: fit-content !important;
+    position: relative;
+  }
+  
+  #message.yt-live-chat-text-message-renderer::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: -3px;
+    width: 21px;
+    height: 21px;
+    transform: rotate(-20deg) skew(20deg, 20deg);
+    background-color: var(--listener-name-bg);
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 6px;
+    z-index: -1;
+  }
+  
+  #message.yt-live-chat-text-message-renderer::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    transform: rotate(-20deg) skew(20deg, 20deg);
+    background-color: var(--listener-name);
+    border-top-left-radius: 4px;
+    border-bottom-right-radius: 20px;
+    z-index: 0;
+  }
+
+        </textarea>
+      </div>
+      <div>
+        <div class="label-block">
+          <p>名前</p>
+          <div>
+            <label for="author-name-block">あり</label>
+            <input type="radio" id="author-name-block" name="author-name-display" value="block" oninput="updateDisplayAndColors()" checked>
+          </div>
+          <div>
+            <label for="author-name-none">なし</label>
+            <input type="radio" id="author-name-none" name="author-name-display" value="none" oninput="updateDisplayAndColors()">
+          </div>
+        </div>
+        <div class="label-block">
+          <p>アイコン</p>
+          <div>
+            <label for="icon-block">あり</label>
+            <input type="radio" id="icon-block" name="icon-display" value="block" oninput="updateDisplayAndColors()" checked>
+          </div>
+          <div>
+            <label for="icon-none">なし</label>
+            <input type="radio" id="icon-none" name="icon-display" value="none" oninput="updateDisplayAndColors()">
+          </div>
+        </div>
+        <div class="label-block">
+          <p>枠線</p>
+          <div>
+            <label for="border-block">あり</label>
+            <input type="radio" id="border-block" name="border-block" value="3" oninput="updateDisplayAndColors()" checked>
+          </div>
+          <div>
+            <label for="border-none">なし</label>
+            <input type="radio" id="border-none" name="border-block" value="0" oninput="updateDisplayAndColors()">
+          </div>
+        </div>
+        <div class="color-picker-container">
+          <div class="color-picker">
+            <label for="listener-name">Listener Name</label>
+            <input type="color" id="listener-name" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-name', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="listener-name-bg">Listener Name Background</label>
+            <input type="color" id="listener-name-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--listener-name-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="member-name">Member Name</label>
+            <input type="color" id="member-name" value="#000000" onchange="updateDisplayAndColors('--member-name', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="member-name-bg">Member Name Background</label>
+            <input type="color" id="member-name-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--member-name-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="owner-name">Owner Name</label>
+            <input type="color" id="owner-name" value="#FFFFFF" onchange="updateDisplayAndColors('--owner-name', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="owner-name-bg">Owner Name Background</label>
+            <input type="color" id="owner-name-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--owner-name-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="listener-comment">Listener Comment</label>
+            <input type="color" id="listener-comment" value="#333333" onchange="updateDisplayAndColors('--listener-comment', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="listener-comment-bg">Listener Comment Background</label>
+            <input type="color" id="listener-comment-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-comment-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="listener-comment-border">Listener Comment Border</label>
+            <input type="color" id="listener-comment-border" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-comment-border', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="superchat-name">Superchat Name</label>
+            <input type="color" id="superchat-name" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-name', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="superchat-name-bg">Superchat Name Background</label>
+            <input type="color" id="superchat-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--superchat-name-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="superchat-comment">Superchat Comment</label>
+            <input type="color" id="superchat-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-comment', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="superchat-comment-bg">Superchat Comment Background</label>
+            <input type="color" id="superchat-comment-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--superchat-comment-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="membership-name">Membership Name</label>
+            <input type="color" id="membership-name" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-name', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="membership-name-bg">Membership Name Background</label>
+            <input type="color" id="membership-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--membership-name-bg', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="membership-comment">Membership Comment</label>
+            <input type="color" id="membership-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-comment', this.value)">
+          </div>
+          <div class="color-picker">
+            <label for="membership-comment-bg">Membership Comment Background</label>
+            <input type="color" id="membership-comment-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--membership-comment-bg', this.value)">
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy;2024 tsukodome</p>
+    </footer>
+  </body>
+  <style id="color-styles"></style>
+</html>

@@ -6,6 +6,12 @@ body {
   font-family: 'Noto Sans Jp';
 }
 
+.is-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 /* radio */
 .custom-label-radio {
   position: relative;
@@ -48,10 +54,9 @@ input:checked + label::after {
 /* color */
 input[type="color" i] {
   appearance: none;
-  /* border: 1px solid #B9B9B9; */
   width: 24px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 10px;
   cursor: pointer;
   outline: none;
   background-color: transparent;
@@ -116,13 +121,16 @@ input[type="color" i]::-moz-color-swatch {
 
 /* comment */
 .comment-contents {
-  background-color: #F5F5F5;
-  border-radius: 20px;
   position: relative;
   z-index: 0;
 }
 
 .comment-inner {
+  position: sticky;
+  top: 64px;
+  z-index: 0;
+  background-color: #F5F5F5;
+  border-radius: 20px;
   padding: 40px;
 }
 
@@ -217,9 +225,9 @@ input[type="color" i]::-moz-color-swatch {
 
 .custom-color-heading {
   font-family: Poppins;
-  color: #C3C3C3;
-  font-size: 12px;
-  font-weight: 500;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
   margin-bottom: 8px;
 }
 
@@ -229,7 +237,198 @@ input[type="color" i]::-moz-color-swatch {
   grid-gap: 12px 24px;
 }
 
-.color-picker {
+.custom-color-picker-column {
+  width: 200px;
+  display: flex;
+  grid-gap: 8px;
+  align-items: center;
+}
+
+.custom-color-code {
+  font-family: Poppins;
+  font-weight: 500;
+  color: #353B3C;
+}
+
+.custom-color-picker {
   display: block;
   width: fit-content;
 }
+
+.custom-color-picker-column {
+  padding: 8px;
+  background-color: #FAFAFA;
+  border-radius: 10px;
+}
+
+.custom-color-label {
+  color: #C3C3C3;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.custom-create-btn {
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 12px;
+  background-color: #585858;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.custom-create-btn:hover {
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+/* modal */
+.modal-contents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0,0,0,50%);
+  padding: 40px 20px;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+  box-sizing: border-box;
+}
+
+.modal-contents:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.modal-contents.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 800px;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 30px;
+}
+
+.modal-inner {
+  padding: 46px 74px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -64px;
+  right: 0;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+.modal-heading {
+  font-family: Poppins;
+  font-weight: bold;
+  font-size: 20px;
+  color: #353B3C;
+}
+
+.modal-css-content {
+  position: relative;
+  margin: 24px 0 0;
+}
+
+.modal-css {
+  position: relative;
+  max-width: 650px;
+  width: 100%;
+  height: 196px;
+  margin: auto ;
+  background-color: #F5F5F5;
+  border-radius: 20px;
+  padding: 12px;
+  text-align: left;
+  resize: none;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #D8D8D8;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.copy-btn img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.copy-btn:hover {
+  transition: all 0.3s;
+  opacity: 0.7;
+}
+
+.copy-tooltip {
+  opacity: 0;
+  position: absolute;
+  top: -32px;
+  right: -39px;
+  background-color: #707070;
+  padding: 8px 16px;
+  border-radius: 12px;
+  width: fit-content;
+  transition: opacity 0.5s ease;
+}
+
+.copy-tooltip::before {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  border-top: 8px solid #707070;
+  border-bottom: 0;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+}
+
+.copy-tooltip-text {
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+/* footer */
+.footer-inner {
+  padding: 40px;
+}
+
+.footer-copyright {
+  font-family: Poppins;
+  font-weight: 500;
+  color: #707070;
+  text-align: center;
+} 

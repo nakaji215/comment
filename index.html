@@ -9,6 +9,9 @@
 
     <script src="./assets/js/main.js"></script>
     <title>CSS Generator</title>
+    <style id="color-red">
+    
+    </style>
   </head>
   <body>
     <header>
@@ -461,112 +464,191 @@
               <div class="custom-category">
                 <h2 class="custom-heading">Color</h2>
                 <div class="custom-color-contents">
+                  <button onclick="updateSpecificColors()">btん</button>
                   <div class="custom-color-block">
                     <p class="custom-color-heading">Listener</p>
                     <div class="custom-color-column">
-                      <div class="color-picker">
-                        <label for="listener-name">名前</label>
-                        <input type="color" id="listener-name" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-name', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="listener-name" class="custom-color-label">名前</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="listener-name" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-name', this.value)">
+                          <p id="listener-name-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="listener-name-bg">名前の背景</label>
-                        <input type="color" id="listener-name-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--listener-name-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="listener-name-bg" class="custom-color-label">名前の背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="listener-name-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--listener-name-bg', this.value)">
+                          <p id="listener-name-bg-code" class="custom-color-code">#8CCCE3</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="listener-comment">コメント</label>
-                        <input type="color" id="listener-comment" value="#333333" onchange="updateDisplayAndColors('--listener-comment', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="listener-comment" class="custom-color-label">コメント</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="listener-comment" value="#333333" onchange="updateDisplayAndColors('--listener-comment', this.value)">
+                          <p id="listener-comment-code" class="custom-color-code">#333333</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="listener-comment-bg">コメントの背景</label>
-                        <input type="color" id="listener-comment-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-comment-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="listener-comment-bg" class="custom-color-label">コメントの背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="listener-comment-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-comment-bg', this.value)">
+                          <p id="listener-comment-bg-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="listener-comment-border">コメントの枠線</label>
-                        <input type="color" id="listener-comment-border" value="#8CCCE3" onchange="updateDisplayAndColors('--listener-comment-border', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="listener-comment-border" class="custom-color-label">コメントの枠線</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="listener-comment-border" value="#8CCCE3" onchange="updateDisplayAndColors('--listener-comment-border', this.value)">
+                          <p id="listener-comment-border-code" class="custom-color-code">#8CCCE3</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="custom-color-block">
                     <p class="custom-color-heading">Member</p>
                     <div class="custom-color-column">
-                      <div class="color-picker">
-                        <label for="member-name">メンバーの名前</label>
-                        <input type="color" id="member-name" value="#FFFFFF" onchange="updateDisplayAndColors('--member-name', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="member-name" class="custom-color-label">メンバーの名前</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="member-name" value="#FFFFFF" onchange="updateDisplayAndColors('--member-name', this.value)">
+                          <p id="member-name-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="member-name-bg">Member Name Background</label>
-                        <input type="color" id="member-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--member-name-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="member-name-bg" class="custom-color-label">名前の背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="member-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--member-name-bg', this.value)">
+                          <p id="member-name-bg-code" class="custom-color-code">#9ED9EF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="member-comment">member Comment</label>
-                        <input type="color" id="member-comment" value="#333333" onchange="updateDisplayAndColors('--member-comment', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="member-comment" class="custom-color-label">コメント</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="member-comment" value="#333333" onchange="updateDisplayAndColors('--member-comment', this.value)">
+                          <p id="member-comment-code" class="custom-color-code">#333333</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="member-comment-bg">member Comment Background</label>
-                        <input type="color" id="member-comment-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--member-comment-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="member-comment-bg" class="custom-color-label">コメントの背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="member-comment-bg" value="#FFFFFF" onchange="updateDisplayAndColors('--member-comment-bg', this.value)">
+                          <p id="member-comment-bg-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="member-comment-border">member Comment Border</label>
-                        <input type="color" id="member-comment-border" value="#8CCCE3" onchange="updateDisplayAndColors('--member-comment-border', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="member-comment-border" class="custom-color-label">コメントの枠線</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="member-comment-border" value="#8CCCE3" onchange="updateDisplayAndColors('--member-comment-border', this.value)">
+                          <p id="member-comment-border-code" class="custom-color-code">#8CCCE3</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="custom-color-block">
                     <p class="custom-color-heading">SuperChat</p>
                     <div class="custom-color-column">
-                      <div class="color-picker">
-                        <label for="superchat-name">Superchat Name</label>
-                        <input type="color" id="superchat-name" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-name', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="superchat-name" class="custom-color-label">名前</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="superchat-name" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-name', this.value)">
+                          <p id="superchat-name-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="superchat-name-bg">Superchat Name Background</label>
-                        <input type="color" id="superchat-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--superchat-name-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="superchat-name-bg" class="custom-color-label">名前の背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="superchat-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--superchat-name-bg', this.value)">
+                          <p id="superchat-name-bg-code" class="custom-color-code">#9ED9EF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="superchat-comment">Superchat Comment</label>
-                        <input type="color" id="superchat-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-comment', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="superchat-comment" class="custom-color-label">コメント</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="superchat-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--superchat-comment', this.value)">
+                          <p id="superchat-comment-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="superchat-comment-bg">Superchat Comment Background</label>
-                        <input type="color" id="superchat-comment-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--superchat-comment-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="superchat-comment-bg" class="custom-color-label">コメントの背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="superchat-comment-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--superchat-comment-bg', this.value)">
+                          <p id="superchat-comment-bg-code" class="custom-color-code">#8CCCE3</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div class="custom-color-block">
                     <p class="custom-color-heading">MemberShip</p>
                     <div class="custom-color-column">
-                      <div class="color-picker">
-                        <label for="membership-name">Membership Name</label>
-                        <input type="color" id="membership-name" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-name', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="membership-name" class="custom-color-label">名前</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="membership-name" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-name', this.value)">
+                          <p id="membership-name-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="membership-name-bg">Membership Name Background</label>
-                        <input type="color" id="membership-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--membership-name-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="membership-name-bg" class="custom-color-label">名前の背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="membership-name-bg" value="#9ED9EF" onchange="updateDisplayAndColors('--membership-name-bg', this.value)">
+                          <p id="membership-name-bg-code" class="custom-color-code">#9ED9EF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="membership-comment">Membership Comment</label>
-                        <input type="color" id="membership-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-comment', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="membership-comment" class="custom-color-label">コメント</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="membership-comment" value="#FFFFFF" onchange="updateDisplayAndColors('--membership-comment', this.value)">
+                          <p id="membership-comment-code" class="custom-color-code">#FFFFFF</p>
+                        </div>
                       </div>
-                      <div class="color-picker">
-                        <label for="membership-comment-bg">Membership Comment Background</label>
-                        <input type="color" id="membership-comment-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--membership-comment-bg', this.value)">
+                      <div class="custom-color-picker">
+                        <label for="membership-comment-bg" class="custom-color-label">コメントの背景</label>
+                        <div class="custom-color-picker-column">
+                          <input type="color" id="membership-comment-bg" value="#8CCCE3" onchange="updateDisplayAndColors('--membership-comment-bg', this.value)">
+                          <p id="membership-comment-bg-code" class="custom-color-code">#8CCCE3</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  
                 </div>
               </div>
+              <div class="custom-category">
+                <button class="custom-create-btn modal-open">CREATE</button>
+              </div>
             </div>
-            <div class="custom">
-              <textarea id="css-content"></textarea>
+          </div>
+        </div>
+        <div class="modal-contents modal">
+          <div class="modal-wrap">
+            <div class="modal-inner">
+              <div class="modal-close-btn modal-close">
+                <img src="./assets/image/close.svg" alt="×">
+              </div>
+              <div class="modal-content">
+                <p class="modal-heading">CSS</p>
+                <div class="modal-css-content">
+                  <textarea id="custom-css" class="modal-css"></textarea>
+                  <button class="copy-btn" onclick="copy()">
+                    <img src="./assets/image/copy.svg" alt="copy">
+                  </button>
+                  <div class="copy-tooltip">
+                    <p class="copy-tooltip-text">コピーしました！</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
     <footer>
-      <p>&copy;2024 tsukodome</p>
+      <div class="footer-inner">
+        <p class="footer-copyright">&copy;2024 tsukodome</p>
+      </div>
     </footer>
   </body>
-  <style id="color-styles"></style>
+  <style id="color-styles">
+
+  </style>
 </html>

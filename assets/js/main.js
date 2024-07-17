@@ -198,8 +198,17 @@ function updateDisplayAndColors() {
     }
   `;
 
-  document.getElementById('css-content').innerHTML = styleContent;
+  document.getElementById('custom-css').innerHTML = styleContent;
   document.getElementById('color-styles').innerHTML = colorStyle;
+}
+
+function updateAllColors(id, value) {
+  document.querySelectorAll('input[type="color"]').forEach(input => {
+    if (input.id !== id) {
+      input.value = value;
+      updateDisplayAndColors('--' + input.id, value);
+    }
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -225,3 +234,99 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('membership-comment').value = '#FFFFFF';
   document.getElementById('membership-comment-bg').value = '#8CCCE3';
 });
+
+// color code
+document.addEventListener("DOMContentLoaded", function() {
+  const colorInputs = document.querySelectorAll('input[type="color"]');
+  
+  colorInputs.forEach(input => {
+      input.addEventListener("input", function() {
+          updateDisplayAndColors(`--${input.id}`, input.value);
+          document.getElementById(`${input.id}-code`).innerText = input.value;
+      });
+  });
+
+  // modal
+  const modal = document.querySelector('.modal');
+  const open = document.querySelector('.modal-open');
+  const close = document.querySelector('.modal-close');
+  let scrollTop;
+
+  function fixedOn() {
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollTop}px`;
+  }
+
+  function fixedOff() {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      window.scrollTo(0, scrollTop);
+  }
+
+  function modalOpen() {
+    modal.classList.add('is-active');
+    fixedOn();
+  }
+  open.addEventListener('click', modalOpen);
+
+  function modalClose() {
+    modal.classList.remove('is-active');
+    fixedOff()
+  }
+  close.addEventListener('click', modalClose);
+  
+  function modalOut(e) {
+    if (e.target == modal) {
+      modal.classList.remove('is-active');
+      fixedOff()
+    }
+  }
+  addEventListener('click', modalOut);
+
+});
+
+const copy = () => {
+  const txt = document.getElementById("custom-css").value;
+  navigator.clipboard.writeText(txt).then(() => {
+      const tooltip = document.querySelector('.copy-tooltip');
+      tooltip.classList.add('show');
+
+      setTimeout(() => {
+          tooltip.classList.remove('show');
+      }, 2500);
+  });
+};
+
+function updateSpecificColors() {
+  updateDisplayAndColors();
+  
+  let redcolorStyle = `
+    :root {
+      --listener-name: #FB83AB;
+      --listener-name-bg: #FB83AB;
+      --listener-comment: #333333;
+      --listener-comment-bg: #FB83AB;
+      --listener-comment-border: #FB83AB;
+      --member-name: #FB83AB;
+      --member-name-bg: #9ED9EF;
+      --member-comment: #333333;
+      --member-comment-bg: #FB83AB;
+      --member-comment-border: #FB83AB;
+      --superchat-name: #FFFFFF;
+      --superchat-name-bg: #9ED9EF;
+      --superchat-comment: #FFFFFF;
+      --superchat-comment-bg: #FB83AB;
+      --membership-name: #FFFFFF;
+      --membership-name-bg: #9ED9EF;
+      --membership-comment: #FFFFFF;
+      --membership-comment-bg: #FB83AB;
+    }
+  `;
+
+  let colorStylesElement = document.getElementById('color-styles');
+  if (colorStylesElement) {
+    colorStylesElement.innerHTML = redcolorStyle;
+  }
+}
+

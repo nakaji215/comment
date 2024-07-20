@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,9 +9,6 @@
 
     <script src="./assets/js/main.js"></script>
     <title>CSS Generator</title>
-    <style id="color-red">
-    
-    </style>
   </head>
   <body>
     <header>
@@ -19,7 +16,7 @@
         <div class="header-inner">
           <div class="header-nav">
             <h1 class="header-title">fukidashi</h1>
-            <p class="header-heading">Youtube用コメントCSS生成ジェネレーター</p>
+            <p class="header-heading is-pc">Youtube用コメントCSS生成ジェネレーター</p>
           </div>
         </div>
       </div>
@@ -39,7 +36,7 @@
                     <span id="timestamp" class="style-scope yt-live-chat-text-message-renderer">11:29 PM</span>
                     <yt-live-chat-author-chip class="style-scope yt-live-chat-text-message-renderer" is-highlighted="">
                       <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
-                      <span id="author-name" dir="auto" class="owner style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
+                      <span id="author-name" dir="auto" class="style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                         リスナー
                         <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                       </span>
@@ -464,7 +461,35 @@
               <div class="custom-category">
                 <h2 class="custom-heading">Color</h2>
                 <div class="custom-color-contents">
-                  <button onclick="updateSpecificColors()">btん</button>
+                  <div class="custom-color-block">
+                    <p class="custom-color-heading">Template</p>
+                    <div class="custom-color-column">
+                      <button class="custom-color-picker" id="colorSetPink">
+                        <div class="custom-color-picker-column">
+                          <span class="custom-color-template pink"></span>
+                          <p class="custom-color-code">Pink</p>
+                        </div>
+                      </button>
+                      <button class="custom-color-picker" id="colorSetBlue">
+                        <div class="custom-color-picker-column">
+                          <span class="custom-color-template blue"></span>
+                          <p class="custom-color-code">Blue</p>
+                        </div>
+                      </button>
+                      <button class="custom-color-picker" id="colorSetPurple">
+                        <div class="custom-color-picker-column">
+                          <span class="custom-color-template purple"></span>
+                          <p class="custom-color-code">Purple</p>
+                        </div>
+                      </button>
+                      <button class="custom-color-picker" id="colorSetOrange">
+                        <div class="custom-color-picker-column">
+                          <span class="custom-color-template orange"></span>
+                          <p class="custom-color-code">Orange</p>
+                        </div>
+                      </button>
+                    </div>
+                  </div>
                   <div class="custom-color-block">
                     <p class="custom-color-heading">Listener</p>
                     <div class="custom-color-column">
@@ -472,7 +497,7 @@
                         <label for="listener-name" class="custom-color-label">名前</label>
                         <div class="custom-color-picker-column">
                           <input type="color" id="listener-name" value="#FFFFFF" onchange="updateDisplayAndColors('--listener-name', this.value)">
-                          <p id="listener-name-code" class="custom-color-code">#FFFFFF</p>
+                          <input type="text" id="listener-name-code" class="custom-color-code" value="#FFFFFF"></input>
                         </div>
                       </div>
                       <div class="custom-color-picker">
@@ -648,7 +673,6 @@
       </div>
     </footer>
   </body>
-  <style id="color-styles">
-
-  </style>
+  <style id="color-styles"></style>
+  <style id="custom-css"></style>
 </html>

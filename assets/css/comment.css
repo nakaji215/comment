@@ -25,7 +25,7 @@ yt-live-chat-text-message-renderer #message {
 
 yt-live-chat-text-message-renderer {
   display: flex;
-  grid-gap: 12px;
+  grid-gap: 8px;
 }
 
 /* ---------------------------------------------------- 
@@ -271,7 +271,7 @@ yt-live-chat-membership-item-renderer[has-primary-header-text] div#header-conten
 yt-live-chat-membership-item-renderer[has-primary-header-text]:not([dashboard-money-feed]) #header-subtext.yt-live-chat-membership-item-renderer {
   background-color: var(--membership-name-bg);
   color: var(--membership-name);
-  padding: 6px 20px;
+  padding: 6px 20px 12px;
 }
 
 /* channel */
@@ -282,10 +282,6 @@ yt-live-chat-membership-item-renderer[has-primary-header-text]:not([dashboard-mo
   border-radius: 10px 10px 0px 0px;
   padding: 12px 20px;
   width: 100%;
-}
-
-#chat-badges.yt-live-chat-author-chip {
-  display: none;
 }
 
 /* gift message */

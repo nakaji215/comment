@@ -160,7 +160,7 @@ input[type="text"] {
 
 .comment-inner {
   position: sticky;
-  top: 32px;
+  top: 64px;
   z-index: 0;
   background-color: #F5F5F5;
   border-radius: 20px;
@@ -255,7 +255,8 @@ input[type="text"] {
 
 .custom-label-block {
   display: flex;
-  grid-gap: 24px;
+  flex-wrap: wrap;
+  grid-gap: 12px 24px;
 }
 
 .custom-color-contents {
@@ -348,12 +349,13 @@ input[type="text"] {
   border-radius: 8px;
 }
 
-/* accordion */
+
 .custom-create-btn:hover {
   transition: all 0.3s;
   opacity: 0.7;
 }
 
+/* accordion */
 .custom-color-detail {
   margin: 10px 0;
   border-radius: 8px;
@@ -453,7 +455,7 @@ input[type="text"] {
   position: relative;
   display: inline-block;
   max-width: 800px;
-  width: 100%;
+  width: 90%;
   background-color: #FFFFFF;
   border-radius: 30px;
 }
@@ -499,6 +501,10 @@ input[type="text"] {
   resize: none;
 }
 
+.modal-css::-webkit-scrollbar {
+  display: none;
+}
+
 .copy-btn {
   position: absolute;
   top: 12px;
@@ -524,7 +530,7 @@ input[type="text"] {
   opacity: 0;
   position: absolute;
   top: -32px;
-  right: -39px;
+  right: -27px;
   background-color: #707070;
   padding: 8px 16px;
   border-radius: 12px;
@@ -596,5 +602,37 @@ input[type="text"] {
 
   .is-sp {
     display: block;
+  }
+
+  .main-inner {
+    padding: 32px 12px;
+  }
+
+  .comment-inner {
+    padding: 20px;
+  }
+
+  .modal-inner {
+    padding: 23px 37px;
+  }
+
+  .custom-type-btn {
+    padding: 20px;
+  }
+
+  .custom-type-name {
+    font-size: 12px;
+  }
+
+  .custom-label-radio {
+    font-size: 12px;
+  }
+
+  .custom-color-btn:hover {
+    background-color: #FFFFFF;
+  }
+
+  .custom-create-btn:hover {
+    opacity: 1;
   }
 }

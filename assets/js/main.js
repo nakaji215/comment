@@ -63,9 +63,8 @@ function updateDisplayAndColors() {
     }
   `;
 
-  let styleContent = `
-    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
-
+  let styleContent = `@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
+  
     :root {
       --listener-name: ${document.getElementById('listener-name')?.value};
       --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
@@ -811,20 +810,21 @@ document.addEventListener('DOMContentLoaded', function() {
   addEventListener('click', modalOut);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.getElementById('copyBtn');
+  const tooltip = document.querySelector('.copy-tooltip');
 
-
-//テキストコピー
-const copy = () => {
-  const txt = document.getElementById("custom-css").value;
-  navigator.clipboard.writeText(txt).then(() => {
-      const tooltip = document.querySelector('.copy-tooltip');
+  copyButton.addEventListener('click', () => {
+    const txt = document.getElementById('custom-css').value;
+    navigator.clipboard.writeText(txt).then(() => {
       tooltip.classList.add('show');
 
       setTimeout(() => {
-          tooltip.classList.remove('show');
+        tooltip.classList.remove('show');
       }, 2500);
+    });
   });
-};
+});
 
 //アコーディオン
 document.addEventListener('DOMContentLoaded', function() {

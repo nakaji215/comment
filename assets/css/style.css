@@ -83,13 +83,15 @@ input:checked + label::after {
 /* color */
 input[type="color" i] {
   appearance: none;
-  min-width: 24px;
   width: 24px;
+  height: 24px;
   cursor: pointer;
   outline: none;
   background-color: transparent;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  border: none;
+  border-radius: 50%;
+  padding: 0px 2px;
+  box-sizing: border-box;
 }
 
 input[type="color" i]::-webkit-color-swatch {

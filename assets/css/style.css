@@ -83,9 +83,8 @@ input:checked + label::after {
 /* color */
 input[type="color" i] {
   appearance: none;
+  min-width: 24px;
   width: 24px;
-  height: 28px;
-  border-radius: 10px;
   cursor: pointer;
   outline: none;
   background-color: transparent;
@@ -101,6 +100,10 @@ input[type="color" i]::-webkit-color-swatch {
 input[type="color" i]::-moz-color-swatch {
   border: none;
   border-radius: 50%;
+}
+
+input[type="text"] {
+  padding: 4px;
 }
 
 /* header */
@@ -263,6 +266,14 @@ input[type="color" i]::-moz-color-swatch {
 .custom-color-heading {
   font-family: Poppins;
   color: #333333;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.custom-color-detail-heading {
+  font-family: Poppins;
+  color: #333333;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -275,16 +286,18 @@ input[type="color" i]::-moz-color-swatch {
 }
 
 .custom-color-picker-column {
-  width: 200px;
   display: flex;
-  grid-gap: 8px;
+  padding: 4px 8px;
   align-items: center;
+  background-color: #FAFAFA;
+  border-radius: 10px;
 }
 
 .custom-color-template {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  margin-right: 8px;
 }
 
 .pink {
@@ -303,21 +316,17 @@ input[type="color" i]::-moz-color-swatch {
   background-color: #FDA25F;
 }
 
-.custom-color-code {
+.custom-color-sharp {
   font-family: Poppins;
   font-weight: 500;
-  color: #353B3C;
+  color: #888888;
+  margin: 0 2px 0 4px;
 }
 
-.custom-color-picker {
-  display: block;
-  width: fit-content;
-}
-
-.custom-color-picker-column {
-  padding: 8px;
-  background-color: #FAFAFA;
-  border-radius: 10px;
+.custom-color-code {
+  font-family: Poppins;
+  font-weight: 400;
+  color: #888888;
 }
 
 .custom-color-label {
@@ -339,9 +348,76 @@ input[type="color" i]::-moz-color-swatch {
   border-radius: 8px;
 }
 
+/* accordion */
 .custom-create-btn:hover {
   transition: all 0.3s;
   opacity: 0.7;
+}
+
+.custom-color-detail {
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.custom-color-btn {
+  background-color: #FFFFFF;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0px;
+  border-radius: 8px;
+}
+
+.custom-color-btn:hover {
+  transition: all 0.3s;
+  background-color: #FAFAFA;
+}
+
+.custom-color-btn .custom-color-heading {
+  font-family: 'Noto Sans JP';
+  letter-spacing: 0.05em;
+  margin: auto 0;
+}
+
+.custom-detail-arrow {
+  display: block;
+  margin: auto 0;
+  transition: transform 0.3s ease;
+}
+
+.custom-detail-arrow img {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.custom-detail-arrow.open img {
+  transform: rotate(180deg);
+}
+
+.custom-color-accordion {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.custom-color-accordion.open {
+  padding: 0px 16px;
+  margin: 8px 0px;
+}
+
+.custom-detail-arrow.open img {
+  transform: rotate(180deg);
+}
+
+.custom-color-block + .custom-color-block {
+  margin-top: 24px;
+}
+
+.custom-create-block {
+  margin-top: 64px;
 }
 
 /* modal */
@@ -426,7 +502,7 @@ input[type="color" i]::-moz-color-swatch {
 .copy-btn {
   position: absolute;
   top: 12px;
-  right: 12px;
+  right: 24px;
   background-color: #D8D8D8;
   padding: 8px;
   border-radius: 50%;

@@ -597,12 +597,27 @@ function updateDisplayAndColors() {
   document.getElementById('custom-css').innerHTML = styleContent;
 }
 
+function updateColorFromPicker(colorInput) {
+  let textInput = document.getElementById(colorInput.id + '-code');
+  textInput.value = colorInput.value.substring(1);
+  updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
+}
+
+function updateColorFromText(textInput) {
+  let colorValue = textInput.value;
+  let colorInput = document.getElementById(textInput.id.replace('-code', ''));
+  if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
+    colorInput.value = '#' + colorValue;
+    updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
+  }
+}
+
 function updateAllColors(id, value) {
   document.querySelectorAll('input[type="color"]').forEach(input => {
     if (input.id !== id) {
       input.value = value;
-      document.getElementById(`${input.id}-code`).innerText = value;
-      updateDisplayAndColors();
+      document.getElementById(`${input.id}-code`).value = value.substring(1);
+      updateDisplayAndColors(`--${input.id}`, value);
     }
   });
 }
@@ -632,162 +647,127 @@ document.addEventListener('DOMContentLoaded', function() {
     'membership-comment-bg': '#8CCCE3'
   };
 
+  // 初期値設定
   for (const [id, color] of Object.entries(initialColors)) {
     const input = document.getElementById(id);
-    input.value = color;
-    document.getElementById(`${id}-code`).innerText = color;
+    if (input) {
+      input.value = color;
+      const codeElement = document.getElementById(`${id}-code`);
+      if (codeElement) {
+        codeElement.value = color.substring(1); // '#' を取り除く
+      }
+    }
   }
 
-  //Template
-  document.getElementById('colorSetPink').addEventListener('click', function() {
-    const white = '#FFFFFF';
-    const mainColor = '#FB83AB';
-    const subColor = '#FFAAC6';
-  
-    const colorMappings = {
-      'listener-name': white,
-      'listener-name-bg': mainColor,
-      'member-name': white,
-      'member-name-bg': mainColor,
-      'listener-comment': mainColor,
-      'listener-comment-bg': white,
-      'listener-comment-border': mainColor,
-      'member-comment': mainColor,
-      'member-comment-bg': white,
-      'member-comment-border': mainColor,
-      'superchat-name': white,
-      'superchat-name-bg': mainColor,
-      'superchat-comment': white,
-      'superchat-comment-bg': subColor,
-      'membership-name': white,
-      'membership-name-bg': mainColor,
-      'membership-comment': white,
-      'membership-comment-bg': subColor
-    };
-  
-    for (const [id, color] of Object.entries(colorMappings)) {
-      const input = document.getElementById(id);
-      if (input) {
-        input.value = color;
-        document.getElementById(`${id}-code`).innerText = color;
-      }
+  // 色設定ボタンのイベントリスナー
+  const colorSets = {
+    'colorSetPink': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#FB83AB',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#FB83AB',
+      'listener-comment': '#FB83AB',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#FB83AB',
+      'member-comment': '#FB83AB',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#FB83AB',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#FB83AB',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#FFAAC6',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#FB83AB',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#FFAAC6'
+    },
+    'colorSetBlue': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#8CCCE3',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#8CCCE3',
+      'listener-comment': '#8CCCE3',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#8CCCE3',
+      'member-comment': '#8CCCE3',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#8CCCE3',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#8CCCE3',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#9ED9EF',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#8CCCE3',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#9ED9EF'
+    },
+    'colorSetPurple': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#A378FF',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#A378FF',
+      'listener-comment': '#A378FF',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#A378FF',
+      'member-comment': '#A378FF',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#A378FF',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#A378FF',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#BFA1FF',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#A378FF',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#BFA1FF'
+    },
+    'colorSetOrange': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#FDA25F',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#FDA25F',
+      'listener-comment': '#FDA25F',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#FDA25F',
+      'member-comment': '#FDA25F',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#FDA25F',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#FDA25F',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#FFBB88',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#FDA25F',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#FFBB88'
     }
-  
-    updateDisplayAndColors();
-  });
-  document.getElementById('colorSetBlue').addEventListener('click', function() {
-    const white = '#FFFFFF';
-    const mainColor = '#8CCCE3';
-    const subColor = '#9ED9EF';
-  
-    const colorMappings = {
-      'listener-name': white,
-      'listener-name-bg': mainColor,
-      'member-name': white,
-      'member-name-bg': mainColor,
-      'listener-comment': mainColor,
-      'listener-comment-bg': white,
-      'listener-comment-border': mainColor,
-      'member-comment': mainColor,
-      'member-comment-bg': white,
-      'member-comment-border': mainColor,
-      'superchat-name': white,
-      'superchat-name-bg': mainColor,
-      'superchat-comment': white,
-      'superchat-comment-bg': subColor,
-      'membership-name': white,
-      'membership-name-bg': mainColor,
-      'membership-comment': white,
-      'membership-comment-bg': subColor
-    };
-  
-    for (const [id, color] of Object.entries(colorMappings)) {
-      const input = document.getElementById(id);
-      if (input) {
-        input.value = color;
-        document.getElementById(`${id}-code`).innerText = color;
-      }
-    }
-  
-    updateDisplayAndColors();
-  });
-  document.getElementById('colorSetPurple').addEventListener('click', function() {
-    const white = '#FFFFFF';
-    const mainColor = '#A378FF';
-    const subColor = '#BFA1FF';
-  
-    const colorMappings = {
-      'listener-name': white,
-      'listener-name-bg': mainColor,
-      'member-name': white,
-      'member-name-bg': mainColor,
-      'listener-comment': mainColor,
-      'listener-comment-bg': white,
-      'listener-comment-border': mainColor,
-      'member-comment': mainColor,
-      'member-comment-bg': white,
-      'member-comment-border': mainColor,
-      'superchat-name': white,
-      'superchat-name-bg': mainColor,
-      'superchat-comment': white,
-      'superchat-comment-bg': subColor,
-      'membership-name': white,
-      'membership-name-bg': mainColor,
-      'membership-comment': white,
-      'membership-comment-bg': subColor
-    };
-  
-    for (const [id, color] of Object.entries(colorMappings)) {
-      const input = document.getElementById(id);
-      if (input) {
-        input.value = color;
-        document.getElementById(`${id}-code`).innerText = color;
-      }
-    }
-  
-    updateDisplayAndColors();
-  });
-  document.getElementById('colorSetOrange').addEventListener('click', function() {
-    const white = '#FFFFFF';
-    const mainColor = '#FDA25F';
-    const subColor = '#FFBB88';
-  
-    const colorMappings = {
-      'listener-name': white,
-      'listener-name-bg': mainColor,
-      'member-name': white,
-      'member-name-bg': mainColor,
-      'listener-comment': mainColor,
-      'listener-comment-bg': white,
-      'listener-comment-border': mainColor,
-      'member-comment': mainColor,
-      'member-comment-bg': white,
-      'member-comment-border': mainColor,
-      'superchat-name': white,
-      'superchat-name-bg': mainColor,
-      'superchat-comment': white,
-      'superchat-comment-bg': subColor,
-      'membership-name': white,
-      'membership-name-bg': mainColor,
-      'membership-comment': white,
-      'membership-comment-bg': subColor
-    };
-  
-    for (const [id, color] of Object.entries(colorMappings)) {
-      const input = document.getElementById(id);
-      if (input) {
-        input.value = color;
-        document.getElementById(`${id}-code`).innerText = color;
-      }
-    }
-  
-    updateDisplayAndColors();
-  });
+  };
 
+  // 色設定ボタンにイベントリスナーを追加
+  for (const [colorSetId, colors] of Object.entries(colorSets)) {
+    document.getElementById(colorSetId).addEventListener('click', function() {
+      for (const [id, color] of Object.entries(colors)) {
+        const input = document.getElementById(id);
+        if (input) {
+          input.value = color;
+          const codeElement = document.getElementById(`${id}-code`);
+          if (codeElement) {
+            codeElement.value = color.substring(1); // '#' を取り除く
+          }
+        }
+      }
+      updateDisplayAndColors();
+    });
+  }
+
+  // 色選択のイベントリスナー
   const colorInputs = document.querySelectorAll('input[type="color"]');
   colorInputs.forEach(input => {
     input.addEventListener('input', function() {
-      document.getElementById(`${input.id}-code`).innerText = input.value;
+      const codeElement = document.getElementById(`${input.id}-code`);
+      if (codeElement) {
+        codeElement.value = input.value.substring(1); // '#' を取り除く
+      }
       updateDisplayAndColors();
     });
   });
@@ -829,9 +809,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   addEventListener('click', modalOut);
-
 });
 
+
+
+//テキストコピー
 const copy = () => {
   const txt = document.getElementById("custom-css").value;
   navigator.clipboard.writeText(txt).then(() => {
@@ -843,3 +825,48 @@ const copy = () => {
       }, 2500);
   });
 };
+
+//アコーディオン
+document.addEventListener('DOMContentLoaded', function() {
+  var buttons = document.querySelectorAll('.custom-color-btn');
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var accordionContent = this.nextElementSibling;
+
+      if (accordionContent.style.maxHeight) {
+        accordionContent.style.maxHeight = null;
+        accordionContent.classList.remove('open');
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+        accordionContent.classList.add('open');
+      }
+    });
+  });
+});
+
+//バリデーション
+document.addEventListener('DOMContentLoaded', function() {
+  var textInputs = document.querySelectorAll('.custom-color-code');
+
+  textInputs.forEach(function(input) {
+    var originalValue = input.value;
+
+    input.addEventListener('input', function() {
+      var newValue = this.value.replace(/[^a-zA-Z0-9]/g, '');
+
+      if (newValue.length <= 6) {
+        this.value = newValue;
+      } else {
+        this.value = originalValue;
+      }
+    });
+
+    input.addEventListener('blur', function() {
+      if (this.value.length !== 6) {
+        this.value = originalValue;
+      }
+    });
+  });
+});
+

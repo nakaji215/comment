@@ -14,11 +14,18 @@ function updateDisplayAndColors() {
       });
 
   let messageElements = document.querySelectorAll('yt-live-chat-text-message-renderer');
+  let messageBeforeContent = "";
+  let listenerBorderColor = "3px solid var(--listener-comment-border)";
+  let memberBorderColor = "3px solid var(--member-comment-border)";
       messageElements.forEach(messageElement => {
         let message = messageElement.querySelector('#message');
         if (borderValue === '0') {
           message.style.border = 'none';
+          messageBeforeContent = 'none';
+          listenerBorderColor = "none";
+          memberBorderColor = "none";
         } else {
+          messageBeforeContent = '""';
           let authorType = messageElement.getAttribute('author-type');
           if (authorType === '') {
             message.style.border = `3px solid var(--listener-comment-border)`;
@@ -179,7 +186,7 @@ function updateDisplayAndColors() {
       background-color: var(--listener-comment-bg) !important;
       color: var(--listener-comment) !important;
       border-radius: 30px;
-      border: ${borderValue};
+      border: ${listenerBorderColor};
       display: block !important;
       padding: 12px 20px;
       width: fit-content !important;
@@ -188,7 +195,7 @@ function updateDisplayAndColors() {
     }
 
     #message.yt-live-chat-text-message-renderer::before {
-      content: "";
+      content: ${messageBeforeContent};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -218,15 +225,35 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer {
       background-color: var(--member-comment-bg) !important;
       color: var(--member-comment) !important;
-      border: 3px solid var(--member-comment-border);
+      border: ${memberBorderColor};
     }
 
-    yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer .message-before {
+    yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::before {
+      content: ${messageBeforeContent};
+      position: absolute;
+      top: 4px;
+      left: -3px;
+      width: 21px;
+      height: 21px;
+      transform: rotate(-20deg) skew(20deg, 20deg);
       background-color: var(--member-comment-border) !important;
+      border-top-left-radius: 7px;
+      border-bottom-right-radius: 6px;
+      z-index: -1;
     }
 
-    yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer .message-after {
+    yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::after {
+      content: "";
+      position: absolute;
+      top: 7px;
+      left: 1px;
+      width: 18px;
+      height: 18px;
+      transform: rotate(-20deg) skew(20deg, 20deg);
       background-color: var(--member-comment-bg) !important;
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 20px;
+      z-index: 0;
     }
 
     /* ---------------------------------------------------- 
@@ -570,6 +597,20 @@ function updateDisplayAndColors() {
   document.getElementById('custom-css').innerHTML = styleContent;
 }
 
+function updateColorFromPicker(colorInput) {
+    let textInput = document.getElementById(colorInput.id + '-code');
+    textInput.value = colorInput.value.substring(1); // Remove the '#' from the color code
+  }
+
+  function updateColorFromText(textInput) {
+    let colorValue = textInput.value;
+    let colorInput = document.getElementById(textInput.id.replace('-code', ''));
+    if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
+      colorInput.value = '#' + colorValue;
+      updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
+    }
+  }
+
 function updateAllColors(id, value) {
   document.querySelectorAll('input[type="color"]').forEach(input => {
     if (input.id !== id) {
@@ -805,6 +846,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+//テキストコピー
 const copy = () => {
   const txt = document.getElementById("custom-css").value;
   navigator.clipboard.writeText(txt).then(() => {
@@ -816,3 +858,48 @@ const copy = () => {
       }, 2500);
   });
 };
+
+//アコーディオン
+document.addEventListener('DOMContentLoaded', function() {
+  var buttons = document.querySelectorAll('.custom-color-btn');
+
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      var accordionContent = this.nextElementSibling;
+
+      if (accordionContent.style.maxHeight) {
+        accordionContent.style.maxHeight = null;
+        accordionContent.classList.remove('open');
+      } else {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+        accordionContent.classList.add('open');
+      }
+    });
+  });
+});
+
+//バリデーション
+document.addEventListener('DOMContentLoaded', function() {
+  var textInputs = document.querySelectorAll('.custom-color-code');
+
+  textInputs.forEach(function(input) {
+    var originalValue = input.value;
+
+    input.addEventListener('input', function() {
+      var newValue = this.value.replace(/[^a-zA-Z0-9]/g, '');
+
+      if (newValue.length <= 6) {
+        this.value = newValue;
+      } else {
+        this.value = originalValue;
+      }
+    });
+
+    input.addEventListener('blur', function() {
+      if (this.value.length !== 6) {
+        this.value = originalValue;
+      }
+    });
+  });
+});
+

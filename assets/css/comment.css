@@ -243,6 +243,11 @@ yt-live-chat-membership-item-renderer[show-only-header] #header.yt-live-chat-mem
   border-radius: 10px 10px 0px 0px;
 }
 
+yt-live-chat-author-chip.style-scope.yt-live-chat-membership-item-renderer {
+  display: flex;
+  align-items: center;
+}
+
 /* welcome */
 yt-live-chat-membership-item-renderer[show-only-header] #header-subtext.yt-live-chat-membership-item-renderer {
   background-color: var(--membership-name-bg);

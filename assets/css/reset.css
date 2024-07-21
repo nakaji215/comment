@@ -264,13 +264,13 @@ button:disabled,
  * Improve outlines for Firefox and unify style with input elements & buttons.
  */
 
-:-moz-focusring {
+/* :-moz-focusring {
   outline: auto;
 }
 
 select:disabled {
   opacity: inherit;
-}
+} */
 
 /**
  * Remove padding

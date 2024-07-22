@@ -1,89 +1,45 @@
-function updateDisplayAndColors() {
-  let displayValue = document.querySelector('input[name="author-name-display"]:checked')?.value;
-  let borderValue = document.querySelector('input[name="border-block"]:checked')?.value;
-  let iconValue = document.querySelector('input[name="icon-display"]:checked')?.value;
-
-  let authorChips = document.querySelectorAll('yt-live-chat-author-chip.yt-live-chat-text-message-renderer');
-      authorChips.forEach(authorChip => {
-        authorChip.style.display = displayValue;
-      });
-
-  let iconShadows = document.querySelectorAll('yt-img-shadow#author-photo.yt-live-chat-text-message-renderer');
-      iconShadows.forEach(iconShadow => {
-        iconShadow.style.display = iconValue;
-      });
-
-  let messageElements = document.querySelectorAll('yt-live-chat-text-message-renderer');
-  let messageBeforeContent = "";
-  let listenerBorderColor = "3px solid var(--listener-comment-border)";
-  let memberBorderColor = "3px solid var(--member-comment-border)";
-      messageElements.forEach(messageElement => {
-        let message = messageElement.querySelector('#message');
-        if (borderValue === '0') {
-          message.style.border = 'none';
-          messageBeforeContent = 'none';
-          listenerBorderColor = "none";
-          memberBorderColor = "none";
-        } else {
-          messageBeforeContent = '""';
-          let authorType = messageElement.getAttribute('author-type');
-          if (authorType === '') {
-            message.style.border = `3px solid var(--listener-comment-border)`;
-          } else if (authorType === 'member') {
-            message.style.border = `3px solid var(--member-comment-border)`;
-          }
-        }
-      });
-
-  let messageElementBefores = document.querySelectorAll('.message-before');
-      messageElementBefores.forEach(element => {
-        element.style.display = (borderValue === '0') ? 'none' : 'block';
-      });
-
-  let colorStyle = `
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const m of n)if(m.type==="childList")for(const a of m.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function t(n){const m={};return n.integrity&&(m.integrity=n.integrity),n.referrerPolicy&&(m.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?m.credentials="include":n.crossOrigin==="anonymous"?m.credentials="omit":m.credentials="same-origin",m}function i(n){if(n.ep)return;n.ep=!0;const m=t(n);fetch(n.href,m)}})();window.updateDisplayAndColors=p;window.updateColorFromPicker=te;window.updateColorFromText=re;window.updateAllColors=ne;function p(){var o,s,d,c,u,g,f,E,B,w,C,k,I,$,A,S,L,O,q,D,T,P,z,N,M,j,H,V,Y,J,K,R,Z,G,Q,U,W,X,_;let r=(o=document.querySelector('input[name="author-name-display"]:checked'))==null?void 0:o.value,e=(s=document.querySelector('input[name="border-block"]:checked'))==null?void 0:s.value,t=(d=document.querySelector('input[name="icon-display"]:checked'))==null?void 0:d.value;document.querySelectorAll("yt-live-chat-author-chip.yt-live-chat-text-message-renderer").forEach(l=>{l.style.display=r}),document.querySelectorAll("yt-img-shadow#author-photo.yt-live-chat-text-message-renderer").forEach(l=>{l.style.display=t});let m=document.querySelectorAll("yt-live-chat-text-message-renderer"),a="",b="3px solid var(--listener-comment-border)",h="3px solid var(--member-comment-border)";m.forEach(l=>{let v=l.querySelector("#message");if(e==="0")v.style.border="none",a="none",b="none",h="none";else{a='""';let ee=l.getAttribute("author-type");ee===""?v.style.border="3px solid var(--listener-comment-border)":ee==="member"&&(v.style.border="3px solid var(--member-comment-border)")}}),document.querySelectorAll(".message-before").forEach(l=>{l.style.display=e==="0"?"none":"block"});let y=`
     :root {
-      --listener-name: ${document.getElementById('listener-name')?.value};
-      --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
-      --member-name: ${document.getElementById('member-name')?.value};
-      --member-name-bg: ${document.getElementById('member-name-bg')?.value};
-      --listener-comment: ${document.getElementById('listener-comment')?.value};
-      --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
-      --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
-      --superchat-name: ${document.getElementById('superchat-name')?.value};
-      --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
-      --superchat-comment: ${document.getElementById('superchat-comment')?.value};
-      --superchat-comment-bg: ${document.getElementById('superchat-comment-bg')?.value};
-      --membership-name: ${document.getElementById('membership-name')?.value};
-      --membership-name-bg: ${document.getElementById('membership-name-bg')?.value};
-      --membership-comment: ${document.getElementById('membership-comment')?.value};
-      --membership-comment-bg: ${document.getElementById('membership-comment-bg')?.value};
+      --listener-name: ${(c=document.getElementById("listener-name"))==null?void 0:c.value};
+      --listener-name-bg: ${(u=document.getElementById("listener-name-bg"))==null?void 0:u.value};
+      --member-name: ${(g=document.getElementById("member-name"))==null?void 0:g.value};
+      --member-name-bg: ${(f=document.getElementById("member-name-bg"))==null?void 0:f.value};
+      --listener-comment: ${(E=document.getElementById("listener-comment"))==null?void 0:E.value};
+      --listener-comment-bg: ${(B=document.getElementById("listener-comment-bg"))==null?void 0:B.value};
+      --listener-comment-border: ${(w=document.getElementById("listener-comment-border"))==null?void 0:w.value};
+      --member-comment: ${(C=document.getElementById("member-comment"))==null?void 0:C.value};
+      --member-comment-bg: ${(k=document.getElementById("member-comment-bg"))==null?void 0:k.value};
+      --member-comment-border: ${(I=document.getElementById("member-comment-border"))==null?void 0:I.value};
+      --superchat-name: ${($=document.getElementById("superchat-name"))==null?void 0:$.value};
+      --superchat-name-bg: ${(A=document.getElementById("superchat-name-bg"))==null?void 0:A.value};
+      --superchat-comment: ${(S=document.getElementById("superchat-comment"))==null?void 0:S.value};
+      --superchat-comment-bg: ${(L=document.getElementById("superchat-comment-bg"))==null?void 0:L.value};
+      --membership-name: ${(O=document.getElementById("membership-name"))==null?void 0:O.value};
+      --membership-name-bg: ${(q=document.getElementById("membership-name-bg"))==null?void 0:q.value};
+      --membership-comment: ${(D=document.getElementById("membership-comment"))==null?void 0:D.value};
+      --membership-comment-bg: ${(T=document.getElementById("membership-comment-bg"))==null?void 0:T.value};
     }
-  `;
-
-  let styleContent = `@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
+  `,F=`@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
   
     :root {
-      --listener-name: ${document.getElementById('listener-name')?.value};
-      --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
-      --member-name: ${document.getElementById('member-name')?.value};
-      --member-name-bg: ${document.getElementById('member-name-bg')?.value};
-      --listener-comment: ${document.getElementById('listener-comment')?.value};
-      --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
-      --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
-      --superchat-name: ${document.getElementById('superchat-name')?.value};
-      --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
-      --superchat-comment: ${document.getElementById('superchat-comment')?.value};
-      --superchat-comment-bg: ${document.getElementById('superchat-comment-bg')?.value};
-      --membership-name: ${document.getElementById('membership-name')?.value};
-      --membership-name-bg: ${document.getElementById('membership-name-bg')?.value};
-      --membership-comment: ${document.getElementById('membership-comment')?.value};
-      --membership-comment-bg: ${document.getElementById('membership-comment-bg')?.value};
+      --listener-name: ${(P=document.getElementById("listener-name"))==null?void 0:P.value};
+      --listener-name-bg: ${(z=document.getElementById("listener-name-bg"))==null?void 0:z.value};
+      --member-name: ${(N=document.getElementById("member-name"))==null?void 0:N.value};
+      --member-name-bg: ${(M=document.getElementById("member-name-bg"))==null?void 0:M.value};
+      --listener-comment: ${(j=document.getElementById("listener-comment"))==null?void 0:j.value};
+      --listener-comment-bg: ${(H=document.getElementById("listener-comment-bg"))==null?void 0:H.value};
+      --listener-comment-border: ${(V=document.getElementById("listener-comment-border"))==null?void 0:V.value};
+      --member-comment: ${(Y=document.getElementById("member-comment"))==null?void 0:Y.value};
+      --member-comment-bg: ${(J=document.getElementById("member-comment-bg"))==null?void 0:J.value};
+      --member-comment-border: ${(K=document.getElementById("member-comment-border"))==null?void 0:K.value};
+      --superchat-name: ${(R=document.getElementById("superchat-name"))==null?void 0:R.value};
+      --superchat-name-bg: ${(Z=document.getElementById("superchat-name-bg"))==null?void 0:Z.value};
+      --superchat-comment: ${(G=document.getElementById("superchat-comment"))==null?void 0:G.value};
+      --superchat-comment-bg: ${(Q=document.getElementById("superchat-comment-bg"))==null?void 0:Q.value};
+      --membership-name: ${(U=document.getElementById("membership-name"))==null?void 0:U.value};
+      --membership-name-bg: ${(W=document.getElementById("membership-name-bg"))==null?void 0:W.value};
+      --membership-comment: ${(X=document.getElementById("membership-comment"))==null?void 0:X.value};
+      --membership-comment-bg: ${(_=document.getElementById("membership-comment-bg"))==null?void 0:_.value};
     }
 
     ytd-sponsorships-live-chat-header-renderer *,
@@ -143,7 +99,7 @@ function updateDisplayAndColors() {
     #content.yt-live-chat-text-message-renderer {
       position: relative;
       overflow: visible !important;
-      display: ${displayValue};
+      display: ${r};
     }
 
     /* ---------------------------------------------------- 
@@ -174,7 +130,7 @@ function updateDisplayAndColors() {
     /* icon */
     yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
       margin-right: 8px;
-      display: ${iconValue};
+      display: ${t};
     }
 
     /* ---------------------------------------------------- 
@@ -185,7 +141,7 @@ function updateDisplayAndColors() {
       background-color: var(--listener-comment-bg) !important;
       color: var(--listener-comment) !important;
       border-radius: 30px;
-      border: ${listenerBorderColor};
+      border: ${b};
       display: block !important;
       padding: 12px 20px;
       width: fit-content !important;
@@ -194,7 +150,7 @@ function updateDisplayAndColors() {
     }
 
     #message.yt-live-chat-text-message-renderer::before {
-      content: ${messageBeforeContent};
+      content: ${a};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -224,11 +180,11 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer {
       background-color: var(--member-comment-bg) !important;
       color: var(--member-comment) !important;
-      border: ${memberBorderColor};
+      border: ${h};
     }
 
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::before {
-      content: ${messageBeforeContent};
+      content: ${a};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -590,283 +546,4 @@ function updateDisplayAndColors() {
       background-color: rgba(0, 0, 0, 0);
     }
 
-  `
-
-  document.getElementById('color-styles').innerHTML = colorStyle;
-  document.getElementById('custom-css').innerHTML = styleContent;
-}
-
-function updateColorFromPicker(colorInput) {
-  let textInput = document.getElementById(colorInput.id + '-code');
-  textInput.value = colorInput.value.substring(1);
-  updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
-}
-
-function updateColorFromText(textInput) {
-  let colorValue = textInput.value;
-  let colorInput = document.getElementById(textInput.id.replace('-code', ''));
-  if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
-    colorInput.value = '#' + colorValue;
-    updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
-  }
-}
-
-function updateAllColors(id, value) {
-  document.querySelectorAll('input[type="color"]').forEach(input => {
-    if (input.id !== id) {
-      input.value = value;
-      document.getElementById(`${input.id}-code`).value = value.substring(1);
-      updateDisplayAndColors(`--${input.id}`, value);
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  updateDisplayAndColors();
-
-  // 初期値の設定
-  const initialColors = {
-    'listener-name': '#FFFFFF',
-    'listener-name-bg': '#8CCCE3',
-    'member-name': '#FFFFFF',
-    'member-name-bg': '#8CCCE3',
-    'listener-comment': '#333333',
-    'listener-comment-bg': '#FFFFFF',
-    'listener-comment-border': '#8CCCE3',
-    'member-comment': '#333333',
-    'member-comment-bg': '#FFFFFF',
-    'member-comment-border': '#8CCCE3',
-    'superchat-name': '#FFFFFF',
-    'superchat-name-bg': '#9ED9EF',
-    'superchat-comment': '#FFFFFF',
-    'superchat-comment-bg': '#8CCCE3',
-    'membership-name': '#FFFFFF',
-    'membership-name-bg': '#8CCCE3',
-    'membership-comment': '#FFFFFF',
-    'membership-comment-bg': '#8CCCE3'
-  };
-
-  // 初期値設定
-  for (const [id, color] of Object.entries(initialColors)) {
-    const input = document.getElementById(id);
-    if (input) {
-      input.value = color;
-      const codeElement = document.getElementById(`${id}-code`);
-      if (codeElement) {
-        codeElement.value = color.substring(1); // '#' を取り除く
-      }
-    }
-  }
-
-  // 色設定ボタンのイベントリスナー
-  const colorSets = {
-    'colorSetPink': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#FB83AB',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#FB83AB',
-      'listener-comment': '#FB83AB',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#FB83AB',
-      'member-comment': '#FB83AB',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#FB83AB',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FB83AB',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFAAC6',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FB83AB',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFAAC6'
-    },
-    'colorSetBlue': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#8CCCE3',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#8CCCE3',
-      'listener-comment': '#8CCCE3',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#8CCCE3',
-      'member-comment': '#8CCCE3',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#8CCCE3',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#8CCCE3',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#9ED9EF',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#8CCCE3',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#9ED9EF'
-    },
-    'colorSetPurple': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#A378FF',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#A378FF',
-      'listener-comment': '#A378FF',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#A378FF',
-      'member-comment': '#A378FF',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#A378FF',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#A378FF',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#BFA1FF',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#A378FF',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#BFA1FF'
-    },
-    'colorSetOrange': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#FDA25F',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#FDA25F',
-      'listener-comment': '#FDA25F',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#FDA25F',
-      'member-comment': '#FDA25F',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#FDA25F',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FDA25F',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFBB88',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FDA25F',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFBB88'
-    }
-  };
-
-  // 色設定ボタンにイベントリスナーを追加
-  for (const [colorSetId, colors] of Object.entries(colorSets)) {
-    document.getElementById(colorSetId).addEventListener('click', function() {
-      for (const [id, color] of Object.entries(colors)) {
-        const input = document.getElementById(id);
-        if (input) {
-          input.value = color;
-          const codeElement = document.getElementById(`${id}-code`);
-          if (codeElement) {
-            codeElement.value = color.substring(1); // '#' を取り除く
-          }
-        }
-      }
-      updateDisplayAndColors();
-    });
-  }
-
-  // 色選択のイベントリスナー
-  const colorInputs = document.querySelectorAll('input[type="color"]');
-  colorInputs.forEach(input => {
-    input.addEventListener('input', function() {
-      const codeElement = document.getElementById(`${input.id}-code`);
-      if (codeElement) {
-        codeElement.value = input.value.substring(1); // '#' を取り除く
-      }
-      updateDisplayAndColors();
-    });
-  });
-
-  // modal
-  const modal = document.querySelector('.modal');
-  const open = document.querySelector('.modal-open');
-  const close = document.querySelector('.modal-close');
-  let scrollTop;
-
-  function fixedOn() {
-    scrollTop = window.scrollY || document.documentElement.scrollTop;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollTop}px`;
-  }
-
-  function fixedOff() {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollTop);
-  }
-
-  function modalOpen() {
-    modal.classList.add('is-active');
-    fixedOn();
-  }
-  open.addEventListener('click', modalOpen);
-
-  function modalClose() {
-    modal.classList.remove('is-active');
-    fixedOff();
-  }
-  close.addEventListener('click', modalClose);
-
-  function modalOut(e) {
-    if (e.target == modal) {
-      modal.classList.remove('is-active');
-      fixedOff();
-    }
-  }
-  addEventListener('click', modalOut);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const copyButton = document.getElementById('copyBtn');
-  const tooltip = document.querySelector('.copy-tooltip');
-
-  copyButton.addEventListener('click', () => {
-    const txt = document.getElementById('custom-css').value;
-    navigator.clipboard.writeText(txt).then(() => {
-      tooltip.classList.add('show');
-
-      setTimeout(() => {
-        tooltip.classList.remove('show');
-      }, 2500);
-    });
-  });
-});
-
-//アコーディオン
-document.addEventListener('DOMContentLoaded', function() {
-  var buttons = document.querySelectorAll('.custom-color-btn');
-
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      var accordionContent = this.nextElementSibling;
-
-      if (accordionContent.style.maxHeight) {
-        accordionContent.style.maxHeight = null;
-        accordionContent.classList.remove('open');
-      } else {
-        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-        accordionContent.classList.add('open');
-      }
-    });
-  });
-});
-
-//バリデーション
-document.addEventListener('DOMContentLoaded', function() {
-  var textInputs = document.querySelectorAll('.custom-color-code');
-
-  textInputs.forEach(function(input) {
-    var originalValue = input.value;
-
-    input.addEventListener('input', function() {
-      var newValue = this.value.replace(/[^a-zA-Z0-9]/g, '');
-
-      if (newValue.length <= 6) {
-        this.value = newValue;
-      } else {
-        this.value = originalValue;
-      }
-    });
-
-    input.addEventListener('blur', function() {
-      if (this.value.length !== 6) {
-        this.value = originalValue;
-      }
-    });
-  });
-});
-
+  `;document.getElementById("color-styles").innerHTML=y,document.getElementById("custom-css").innerHTML=F}function te(r){let e=document.getElementById(r.id+"-code");e.value=r.value.substring(1),p(`--${r.id}`,r.value)}function re(r){let e=r.value,t=document.getElementById(r.id.replace("-code",""));/^[0-9A-Fa-f]{6}$/.test(e)&&(t.value="#"+e,p(`--${t.id}`))}function ne(r,e){document.querySelectorAll('input[type="color"]').forEach(t=>{t.id!==r&&(t.value=e,document.getElementById(`${t.id}-code`).value=e.substring(1),p(`--${t.id}`))})}document.addEventListener("DOMContentLoaded",function(){p();const r={"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#8CCCE3","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"};for(const[o,s]of Object.entries(r)){const d=document.getElementById(o);if(d){d.value=s;const c=document.getElementById(`${o}-code`);c&&(c.value=s.substring(1))}}const e={colorSetPink:{"listener-name":"#FFFFFF","listener-name-bg":"#FB83AB","member-name":"#FFFFFF","member-name-bg":"#FB83AB","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FB83AB","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FB83AB","superchat-name":"#FFFFFF","superchat-name-bg":"#FFAAC6","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FB83AB","membership-name":"#FFFFFF","membership-name-bg":"#FFAAC6","membership-comment":"#FFFFFF","membership-comment-bg":"#FB83AB"},colorSetBlue:{"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#9ED9EF","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"},colorSetPurple:{"listener-name":"#FFFFFF","listener-name-bg":"#A378FF","member-name":"#FFFFFF","member-name-bg":"#A378FF","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#A378FF","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#A378FF","superchat-name":"#FFFFFF","superchat-name-bg":"#BFA1FF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#A378FF","membership-name":"#FFFFFF","membership-name-bg":"#BFA1FF","membership-comment":"#FFFFFF","membership-comment-bg":"#A378FF"},colorSetOrange:{"listener-name":"#FFFFFF","listener-name-bg":"#FDA25F","member-name":"#FFFFFF","member-name-bg":"#FDA25F","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FDA25F","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FDA25F","superchat-name":"#FFFFFF","superchat-name-bg":"#FFBB88","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FDA25F","membership-name":"#FFFFFF","membership-name-bg":"#FFBB88","membership-comment":"#FFFFFF","membership-comment-bg":"#FDA25F"}};for(const[o,s]of Object.entries(e))document.getElementById(o).addEventListener("click",function(){for(const[d,c]of Object.entries(s)){const u=document.getElementById(d);if(u){u.value=c;const g=document.getElementById(`${d}-code`);g&&(g.value=c.substring(1))}}p()});document.querySelectorAll('input[type="color"]').forEach(o=>{o.addEventListener("input",function(){const s=document.getElementById(`${o.id}-code`);s&&(s.value=o.value.substring(1)),p()})});const i=document.querySelector(".modal"),n=document.querySelector(".modal-open"),m=document.querySelector(".modal-close");let a;function b(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function h(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function x(){i.classList.add("is-active"),b()}n.addEventListener("click",x);function y(){i.classList.remove("is-active"),h()}m.addEventListener("click",y);function F(o){o.target==i&&(i.classList.remove("is-active"),h())}addEventListener("click",F)});document.addEventListener("DOMContentLoaded",function(){const r=document.getElementById("copyBtn"),e=document.querySelector(".copy-tooltip");r.addEventListener("click",()=>{const t=document.getElementById("custom-css").value;navigator.clipboard.writeText(t).then(()=>{e.classList.add("show"),setTimeout(()=>{e.classList.remove("show")},2500)})})});document.addEventListener("DOMContentLoaded",function(){var r=document.querySelectorAll(".custom-color-btn");r.forEach(function(e){e.addEventListener("click",function(){var t=this.nextElementSibling;t.style.maxHeight?(t.style.maxHeight=null,t.classList.remove("open")):(t.style.maxHeight=t.scrollHeight+"px",t.classList.add("open"))})})});document.addEventListener("DOMContentLoaded",function(){var r=document.querySelectorAll(".custom-color-code");r.forEach(function(e){var t=e.value;e.addEventListener("input",function(){var i=this.value.replace(/[^a-zA-Z0-9]/g,"");i.length<=6?this.value=i:this.value=t}),e.addEventListener("blur",function(){this.value.length!==6&&(this.value=t)})})});

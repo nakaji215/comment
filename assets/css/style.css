@@ -45,7 +45,7 @@ yt-live-chat-text-message-renderer {
 .custom-label-radio {
   position: relative;
   cursor: pointer;
-  padding: 0 0 1px 24px;
+  padding: 0 0 1px 20px;
 }
 
 .custom-label-radio::before,
@@ -64,7 +64,7 @@ yt-live-chat-text-message-renderer {
   border-radius: 50%;
   width: 16px;
   height: 16px;
-  left: 5px;
+  left: 0;
 }
 
 .custom-label-radio::after {
@@ -73,7 +73,7 @@ yt-live-chat-text-message-renderer {
   opacity: 0;
   width: 10px;
   height: 10px;
-  left: 8px
+  left: 3px
 }
 
 input:checked + label::after {
@@ -84,13 +84,14 @@ input:checked + label::after {
 input[type="color" i] {
   appearance: none;
   width: 24px;
-  height: 24px;
+  min-width: 24px;
+  height: 28px;
   cursor: pointer;
   outline: none;
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  padding: 0px 2px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -329,7 +330,7 @@ input[type="text"] {
 .custom-color-code {
   font-family: Poppins;
   font-weight: 400;
-  color: #888888;
+  color: #333333;
 }
 
 .custom-color-label {
@@ -350,7 +351,6 @@ input[type="text"] {
   width: 100%;
   border-radius: 8px;
 }
-
 
 .custom-create-btn:hover {
   transition: all 0.3s;
@@ -572,7 +572,8 @@ input[type="text"] {
 .footer-copyright {
   font-family: Poppins;
   font-weight: 500;
-  color: #707070;
+  font-size: 12px;
+  color: #C3C3C3;
   text-align: center;
 } 
 
@@ -598,6 +599,10 @@ input[type="text"] {
 }
 
 @media screen and (max-width: 768px) {
+  input[type="color" i] {
+    height: 24px;
+  }
+
   .is-pc {
     display: none;
   }

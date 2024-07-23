@@ -25,7 +25,7 @@ yt-live-chat-text-message-renderer #message {
 
 yt-live-chat-text-message-renderer {
   display: flex;
-  grid-gap: 8px;
+  grid-gap: 12px;
 }
 
 /* ---------------------------------------------------- 
@@ -280,13 +280,13 @@ yt-live-chat-membership-item-renderer[has-primary-header-text]:not([dashboard-mo
 }
 
 /* channel */
-#content.ytd-sponsorships-live-chat-header-renderer #author-name.member.yt-live-chat-author-chip {
-  display: block;
+yt-live-chat-author-chip.style-scope.ytd-sponsorships-live-chat-header-renderer {
+  display: flex;
+  align-items: center;
   background-color: var(--membership-name-bg);
   color: var(--membership-name) !important;
   border-radius: 10px 10px 0px 0px;
   padding: 12px 20px;
-  width: 100%;
 }
 
 /* gift message */
@@ -334,7 +334,6 @@ yt-live-chat-membership-item-renderer a {
   text-decoration: none !important;
 }
 
-/* 削除/管理されたメッセージは非表示 */
 yt-live-chat-text-message-renderer[is-deleted],
 yt-live-chat-membership-item-renderer[is-deleted],
 yt-live-chat-moderation-message-renderer,
@@ -351,17 +350,6 @@ yt-live-chat-ticker-renderer {
   display: none !important;
 }
 
-yt-live-chat-ticker-paid-message-item-renderer,
-yt-live-chat-ticker-paid-message-item-renderer *,
-yt-live-chat-ticker-sponsor-item-renderer,
-yt-live-chat-ticker-sponsor-item-renderer * {
-  /* ; /* 2行目の色 */
-  font-family: "Noto Sans JP";
-  font-size: 16px !important;
-  line-height: 1.5em !important;
-  font-weight: 500 !important;
-}
-
 yt-live-chat-mode-change-message-renderer,
 yt-live-chat-viewer-engagement-message-renderer,
 yt-live-chat-server-error-message,
@@ -370,21 +358,18 @@ yt-live-chat-restricted-participation-renderer {
   display: none !important;
 }
 
-/* チャット欄をすごく小さくした時に表示を崩れないようにする */
 yt-live-chat-app {
   min-height: 0px;
   min-width: 0px;
   word-break: break-all;
 }
 
-/* 余白調整とかいろいろ */
 div#author-info {
   align-items: center !important;
   padding: 8px 16px !important;
   max-height: unset !important;
 }
 
-/* ギフトを送りました。 */
 ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
 ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
   margin: 4px 0 !important;
@@ -395,7 +380,6 @@ ytd-sponsorships-live-chat-header-renderer #author-photo.ytd-sponsorships-live-c
   display: none;
 }
 
-/* ギフトが贈られました。 */
 ytd-sponsorships-live-chat-gift-redemption-announcement-renderer .yt-live-chat-item-list-renderer {
   display: none;
 }
@@ -404,7 +388,6 @@ ytd-sponsorships-live-chat-gift-redemption-announcement-renderer {
   display: none;
 }
 
-/* セパレータ(薄い影)を消す */
 div#separator.yt-live-chat-renderer {
   display: none;
 }
@@ -415,7 +398,6 @@ yt-live-chat-paid-message-renderer {
   padding-inline: 0px !important;
 }
 
-/* Transparent background - 背景透過 */
 yt-live-chat-renderer {
   visibility: hidden !important;
 }
@@ -444,7 +426,6 @@ yt-img-shadow#author-photo.yt-live-chat-text-message-renderer img {
   display: block;
 }
 
-/* Member Badge - モデレーター・メンバーのバッジ(アイコン)サイズ */
 yt-live-chat-author-badge-renderer.style-scope.yt-live-chat-author-chip #image {
   width: 18px !important;
   height: 18px !important;
@@ -457,7 +438,6 @@ yt-live-chat-author-badge-renderer.style-scope.yt-live-chat-author-chip #image i
   object-fit: contain;
 }
 
-/* メンバーシップ・スーパーチャット */
 #author-photo.yt-live-chat-membership-item-renderer img#img,
 #author-photo.yt-live-chat-paid-message-renderer img#img,
 yt-img-shadow#author-photo.yt-live-chat-membership-item-renderer,
@@ -469,14 +449,12 @@ yt-img-shadow#author-photo.yt-live-chat-paid-message-renderer img {
   display: none !important;
 }
 
-/* Emoji - 絵文字・メンバー用スタンプ */
 #message>img,
 img.yt-live-chat-text-message-renderer {
   width: 20px !important;
   height: 20px !important;
 }
 
-/* 不要な要素の非表示. */
 #author-badges,
 #timestamp,
 #deleted-state,

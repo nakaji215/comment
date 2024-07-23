@@ -1,89 +1,45 @@
-function updateDisplayAndColors() {
-  let displayValue = document.querySelector('input[name="author-name-display"]:checked')?.value;
-  let borderValue = document.querySelector('input[name="border-block"]:checked')?.value;
-  let iconValue = document.querySelector('input[name="icon-display"]:checked')?.value;
-
-  let authorChips = document.querySelectorAll('yt-live-chat-author-chip.yt-live-chat-text-message-renderer');
-      authorChips.forEach(authorChip => {
-        authorChip.style.display = displayValue;
-      });
-
-  let iconShadows = document.querySelectorAll('yt-img-shadow#author-photo.yt-live-chat-text-message-renderer');
-      iconShadows.forEach(iconShadow => {
-        iconShadow.style.display = iconValue;
-      });
-
-  let messageElements = document.querySelectorAll('yt-live-chat-text-message-renderer');
-  let messageBeforeContent = "";
-  let listenerBorderColor = "3px solid var(--listener-comment-border)";
-  let memberBorderColor = "3px solid var(--member-comment-border)";
-      messageElements.forEach(messageElement => {
-        let message = messageElement.querySelector('#message');
-        if (borderValue === '0') {
-          message.style.border = 'none';
-          messageBeforeContent = 'none';
-          listenerBorderColor = "none";
-          memberBorderColor = "none";
-        } else {
-          messageBeforeContent = '""';
-          let authorType = messageElement.getAttribute('author-type');
-          if (authorType === '') {
-            message.style.border = `3px solid var(--listener-comment-border)`;
-          } else if (authorType === 'member') {
-            message.style.border = `3px solid var(--member-comment-border)`;
-          }
-        }
-      });
-
-  let messageElementBefores = document.querySelectorAll('.message-before');
-      messageElementBefores.forEach(element => {
-        element.style.display = (borderValue === '0') ? 'none' : 'block';
-      });
-
-  let colorStyle = `
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const m of o.addedNodes)m.tagName==="LINK"&&m.rel==="modulepreload"&&a(m)}).observe(document,{childList:!0,subtree:!0});function r(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(t){if(t.ep)return;t.ep=!0;const o=r(t);fetch(t.href,o)}})();window.updateDisplayAndColors=c;window.updateColorFromPicker=te;window.updateColorFromText=re;window.updateAllColors=ne;function c(){var h,u,b,g,y,v,F,x,f,E,w,B,k,C,I,$,L,A,S,O,q,D,T,P,z,M,N,j,H,V,Y,J,K,R,Z,G,Q,U,W;let e=(h=document.querySelector('input[name="author-name-display"]:checked'))==null?void 0:h.value,n=(u=document.querySelector('input[name="border-block"]:checked'))==null?void 0:u.value,r=(b=document.querySelector('input[name="icon-display"]:checked'))==null?void 0:b.value;document.querySelectorAll("yt-live-chat-author-chip.yt-live-chat-text-message-renderer").forEach(s=>{s.style.display=e}),document.querySelectorAll("yt-img-shadow#author-photo.yt-live-chat-text-message-renderer").forEach(s=>{s.style.display=r});let o=document.querySelectorAll("yt-live-chat-text-message-renderer"),m="",i="3px solid var(--listener-comment-border)",d="3px solid var(--member-comment-border)";o.forEach(s=>{let p=s.querySelector("#message");if(n==="0")p.style.border="none",m="none",i="none",d="none";else{m='""';let X=s.getAttribute("author-type");X===""?p.style.border="3px solid var(--listener-comment-border)":X==="member"&&(p.style.border="3px solid var(--member-comment-border)")}}),document.querySelectorAll(".message-before").forEach(s=>{s.style.display=n==="0"?"none":"block"});let _=`
     :root {
-      --listener-name: ${document.getElementById('listener-name')?.value};
-      --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
-      --member-name: ${document.getElementById('member-name')?.value};
-      --member-name-bg: ${document.getElementById('member-name-bg')?.value};
-      --listener-comment: ${document.getElementById('listener-comment')?.value};
-      --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
-      --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
-      --superchat-name: ${document.getElementById('superchat-name')?.value};
-      --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
-      --superchat-comment: ${document.getElementById('superchat-comment')?.value};
-      --superchat-comment-bg: ${document.getElementById('superchat-comment-bg')?.value};
-      --membership-name: ${document.getElementById('membership-name')?.value};
-      --membership-name-bg: ${document.getElementById('membership-name-bg')?.value};
-      --membership-comment: ${document.getElementById('membership-comment')?.value};
-      --membership-comment-bg: ${document.getElementById('membership-comment-bg')?.value};
+      --listener-name: ${(g=document.getElementById("listener-name"))==null?void 0:g.value};
+      --listener-name-bg: ${(y=document.getElementById("listener-name-bg"))==null?void 0:y.value};
+      --member-name: ${(v=document.getElementById("member-name"))==null?void 0:v.value};
+      --member-name-bg: ${(F=document.getElementById("member-name-bg"))==null?void 0:F.value};
+      --listener-comment: ${(x=document.getElementById("listener-comment"))==null?void 0:x.value};
+      --listener-comment-bg: ${(f=document.getElementById("listener-comment-bg"))==null?void 0:f.value};
+      --listener-comment-border: ${(E=document.getElementById("listener-comment-border"))==null?void 0:E.value};
+      --member-comment: ${(w=document.getElementById("member-comment"))==null?void 0:w.value};
+      --member-comment-bg: ${(B=document.getElementById("member-comment-bg"))==null?void 0:B.value};
+      --member-comment-border: ${(k=document.getElementById("member-comment-border"))==null?void 0:k.value};
+      --superchat-name: ${(C=document.getElementById("superchat-name"))==null?void 0:C.value};
+      --superchat-name-bg: ${(I=document.getElementById("superchat-name-bg"))==null?void 0:I.value};
+      --superchat-comment: ${($=document.getElementById("superchat-comment"))==null?void 0:$.value};
+      --superchat-comment-bg: ${(L=document.getElementById("superchat-comment-bg"))==null?void 0:L.value};
+      --membership-name: ${(A=document.getElementById("membership-name"))==null?void 0:A.value};
+      --membership-name-bg: ${(S=document.getElementById("membership-name-bg"))==null?void 0:S.value};
+      --membership-comment: ${(O=document.getElementById("membership-comment"))==null?void 0:O.value};
+      --membership-comment-bg: ${(q=document.getElementById("membership-comment-bg"))==null?void 0:q.value};
     }
-  `;
-
-  let styleContent = `@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
+  `,ee=`@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
   
     :root {
-      --listener-name: ${document.getElementById('listener-name')?.value};
-      --listener-name-bg: ${document.getElementById('listener-name-bg')?.value};
-      --member-name: ${document.getElementById('member-name')?.value};
-      --member-name-bg: ${document.getElementById('member-name-bg')?.value};
-      --listener-comment: ${document.getElementById('listener-comment')?.value};
-      --listener-comment-bg: ${document.getElementById('listener-comment-bg')?.value};
-      --listener-comment-border: ${document.getElementById('listener-comment-border')?.value};
-      --member-comment: ${document.getElementById('member-comment')?.value};
-      --member-comment-bg: ${document.getElementById('member-comment-bg')?.value};
-      --member-comment-border: ${document.getElementById('member-comment-border')?.value};
-      --superchat-name: ${document.getElementById('superchat-name')?.value};
-      --superchat-name-bg: ${document.getElementById('superchat-name-bg')?.value};
-      --superchat-comment: ${document.getElementById('superchat-comment')?.value};
-      --superchat-comment-bg: ${document.getElementById('superchat-comment-bg')?.value};
-      --membership-name: ${document.getElementById('membership-name')?.value};
-      --membership-name-bg: ${document.getElementById('membership-name-bg')?.value};
-      --membership-comment: ${document.getElementById('membership-comment')?.value};
-      --membership-comment-bg: ${document.getElementById('membership-comment-bg')?.value};
+      --listener-name: ${(D=document.getElementById("listener-name"))==null?void 0:D.value};
+      --listener-name-bg: ${(T=document.getElementById("listener-name-bg"))==null?void 0:T.value};
+      --member-name: ${(P=document.getElementById("member-name"))==null?void 0:P.value};
+      --member-name-bg: ${(z=document.getElementById("member-name-bg"))==null?void 0:z.value};
+      --listener-comment: ${(M=document.getElementById("listener-comment"))==null?void 0:M.value};
+      --listener-comment-bg: ${(N=document.getElementById("listener-comment-bg"))==null?void 0:N.value};
+      --listener-comment-border: ${(j=document.getElementById("listener-comment-border"))==null?void 0:j.value};
+      --member-comment: ${(H=document.getElementById("member-comment"))==null?void 0:H.value};
+      --member-comment-bg: ${(V=document.getElementById("member-comment-bg"))==null?void 0:V.value};
+      --member-comment-border: ${(Y=document.getElementById("member-comment-border"))==null?void 0:Y.value};
+      --superchat-name: ${(J=document.getElementById("superchat-name"))==null?void 0:J.value};
+      --superchat-name-bg: ${(K=document.getElementById("superchat-name-bg"))==null?void 0:K.value};
+      --superchat-comment: ${(R=document.getElementById("superchat-comment"))==null?void 0:R.value};
+      --superchat-comment-bg: ${(Z=document.getElementById("superchat-comment-bg"))==null?void 0:Z.value};
+      --membership-name: ${(G=document.getElementById("membership-name"))==null?void 0:G.value};
+      --membership-name-bg: ${(Q=document.getElementById("membership-name-bg"))==null?void 0:Q.value};
+      --membership-comment: ${(U=document.getElementById("membership-comment"))==null?void 0:U.value};
+      --membership-comment-bg: ${(W=document.getElementById("membership-comment-bg"))==null?void 0:W.value};
     }
 
     ytd-sponsorships-live-chat-header-renderer *,
@@ -143,7 +99,7 @@ function updateDisplayAndColors() {
     #content.yt-live-chat-text-message-renderer {
       position: relative;
       overflow: visible !important;
-      display: ${displayValue};
+      display: block;
     }
 
     /* ---------------------------------------------------- 
@@ -154,7 +110,7 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="moderator"] #author-name,
     yt-live-chat-text-message-renderer[author-type="member"] #author-name,
     yt-live-chat-text-message-renderer #author-name {
-      display: flex;
+      display: ${e};
       width: fit-content;
       padding: 4px 12px;
       border-radius: 18px !important;
@@ -166,6 +122,7 @@ function updateDisplayAndColors() {
 
     /* member */
     yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+      display: ${e};
       background-color: var(--member-name-bg) !important;
       color: var(--member-name) !important;
       font-size: 12px !important;
@@ -174,7 +131,11 @@ function updateDisplayAndColors() {
     /* icon */
     yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
       margin-right: 8px;
-      display: ${iconValue};
+      display: ${r};
+    }
+
+    #chat-badges.yt-live-chat-author-chip {
+      display: ${e};
     }
 
     /* ---------------------------------------------------- 
@@ -185,7 +146,7 @@ function updateDisplayAndColors() {
       background-color: var(--listener-comment-bg) !important;
       color: var(--listener-comment) !important;
       border-radius: 30px;
-      border: ${listenerBorderColor};
+      border: ${i};
       display: block !important;
       padding: 12px 20px;
       width: fit-content !important;
@@ -194,7 +155,7 @@ function updateDisplayAndColors() {
     }
 
     #message.yt-live-chat-text-message-renderer::before {
-      content: ${messageBeforeContent};
+      content: ${m};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -224,11 +185,11 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer {
       background-color: var(--member-comment-bg) !important;
       color: var(--member-comment) !important;
-      border: ${memberBorderColor};
+      border: ${d};
     }
 
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::before {
-      content: ${messageBeforeContent};
+      content: ${m};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -508,6 +469,27 @@ function updateDisplayAndColors() {
       display: none !important;
     }
 
+    yt-live-chat-ticker-renderer {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    yt-live-chat-renderer {
+      visibility: hidden !important;
+    }
+
+    yt-live-chat-renderer * {
+      visibility: initial !important;
+    }
+
+    yt-live-chat-item-list-renderer #items {
+      overflow: hidden !important;
+    }
+    
+    yt-live-chat-item-list-renderer #item-scroller {
+      overflow: hidden !important;
+    }
+
     yt-live-chat-text-message-renderer,
     yt-live-chat-text-message-renderer[is-highlighted],
     yt-live-chat-text-message-renderer[author-type="owner"],
@@ -590,283 +572,4 @@ function updateDisplayAndColors() {
       background-color: rgba(0, 0, 0, 0);
     }
 
-  `
-
-  document.getElementById('color-styles').innerHTML = colorStyle;
-  document.getElementById('custom-css').innerHTML = styleContent;
-}
-
-function updateColorFromPicker(colorInput) {
-  let textInput = document.getElementById(colorInput.id + '-code');
-  textInput.value = colorInput.value.substring(1);
-  updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
-}
-
-function updateColorFromText(textInput) {
-  let colorValue = textInput.value;
-  let colorInput = document.getElementById(textInput.id.replace('-code', ''));
-  if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
-    colorInput.value = '#' + colorValue;
-    updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
-  }
-}
-
-function updateAllColors(id, value) {
-  document.querySelectorAll('input[type="color"]').forEach(input => {
-    if (input.id !== id) {
-      input.value = value;
-      document.getElementById(`${input.id}-code`).value = value.substring(1);
-      updateDisplayAndColors(`--${input.id}`, value);
-    }
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  updateDisplayAndColors();
-
-  // 初期値の設定
-  const initialColors = {
-    'listener-name': '#FFFFFF',
-    'listener-name-bg': '#8CCCE3',
-    'member-name': '#FFFFFF',
-    'member-name-bg': '#8CCCE3',
-    'listener-comment': '#333333',
-    'listener-comment-bg': '#FFFFFF',
-    'listener-comment-border': '#8CCCE3',
-    'member-comment': '#333333',
-    'member-comment-bg': '#FFFFFF',
-    'member-comment-border': '#8CCCE3',
-    'superchat-name': '#FFFFFF',
-    'superchat-name-bg': '#9ED9EF',
-    'superchat-comment': '#FFFFFF',
-    'superchat-comment-bg': '#8CCCE3',
-    'membership-name': '#FFFFFF',
-    'membership-name-bg': '#8CCCE3',
-    'membership-comment': '#FFFFFF',
-    'membership-comment-bg': '#8CCCE3'
-  };
-
-  // 初期値設定
-  for (const [id, color] of Object.entries(initialColors)) {
-    const input = document.getElementById(id);
-    if (input) {
-      input.value = color;
-      const codeElement = document.getElementById(`${id}-code`);
-      if (codeElement) {
-        codeElement.value = color.substring(1); // '#' を取り除く
-      }
-    }
-  }
-
-  // 色設定ボタンのイベントリスナー
-  const colorSets = {
-    'colorSetPink': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#FB83AB',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#FB83AB',
-      'listener-comment': '#FB83AB',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#FB83AB',
-      'member-comment': '#FB83AB',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#FB83AB',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FB83AB',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFAAC6',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FB83AB',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFAAC6'
-    },
-    'colorSetBlue': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#8CCCE3',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#8CCCE3',
-      'listener-comment': '#8CCCE3',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#8CCCE3',
-      'member-comment': '#8CCCE3',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#8CCCE3',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#8CCCE3',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#9ED9EF',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#8CCCE3',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#9ED9EF'
-    },
-    'colorSetPurple': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#A378FF',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#A378FF',
-      'listener-comment': '#A378FF',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#A378FF',
-      'member-comment': '#A378FF',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#A378FF',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#A378FF',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#BFA1FF',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#A378FF',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#BFA1FF'
-    },
-    'colorSetOrange': {
-      'listener-name': '#FFFFFF',
-      'listener-name-bg': '#FDA25F',
-      'member-name': '#FFFFFF',
-      'member-name-bg': '#FDA25F',
-      'listener-comment': '#FDA25F',
-      'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#FDA25F',
-      'member-comment': '#FDA25F',
-      'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#FDA25F',
-      'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FDA25F',
-      'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFBB88',
-      'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FDA25F',
-      'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFBB88'
-    }
-  };
-
-  // 色設定ボタンにイベントリスナーを追加
-  for (const [colorSetId, colors] of Object.entries(colorSets)) {
-    document.getElementById(colorSetId).addEventListener('click', function() {
-      for (const [id, color] of Object.entries(colors)) {
-        const input = document.getElementById(id);
-        if (input) {
-          input.value = color;
-          const codeElement = document.getElementById(`${id}-code`);
-          if (codeElement) {
-            codeElement.value = color.substring(1); // '#' を取り除く
-          }
-        }
-      }
-      updateDisplayAndColors();
-    });
-  }
-
-  // 色選択のイベントリスナー
-  const colorInputs = document.querySelectorAll('input[type="color"]');
-  colorInputs.forEach(input => {
-    input.addEventListener('input', function() {
-      const codeElement = document.getElementById(`${input.id}-code`);
-      if (codeElement) {
-        codeElement.value = input.value.substring(1); // '#' を取り除く
-      }
-      updateDisplayAndColors();
-    });
-  });
-
-  // modal
-  const modal = document.querySelector('.modal');
-  const open = document.querySelector('.modal-open');
-  const close = document.querySelector('.modal-close');
-  let scrollTop;
-
-  function fixedOn() {
-    scrollTop = window.scrollY || document.documentElement.scrollTop;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollTop}px`;
-  }
-
-  function fixedOff() {
-    document.body.style.position = '';
-    document.body.style.top = '';
-    window.scrollTo(0, scrollTop);
-  }
-
-  function modalOpen() {
-    modal.classList.add('is-active');
-    fixedOn();
-  }
-  open.addEventListener('click', modalOpen);
-
-  function modalClose() {
-    modal.classList.remove('is-active');
-    fixedOff();
-  }
-  close.addEventListener('click', modalClose);
-
-  function modalOut(e) {
-    if (e.target == modal) {
-      modal.classList.remove('is-active');
-      fixedOff();
-    }
-  }
-  addEventListener('click', modalOut);
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-  const copyButton = document.getElementById('copyBtn');
-  const tooltip = document.querySelector('.copy-tooltip');
-
-  copyButton.addEventListener('click', () => {
-    const txt = document.getElementById('custom-css').value;
-    navigator.clipboard.writeText(txt).then(() => {
-      tooltip.classList.add('show');
-
-      setTimeout(() => {
-        tooltip.classList.remove('show');
-      }, 2500);
-    });
-  });
-});
-
-//アコーディオン
-document.addEventListener('DOMContentLoaded', function() {
-  var buttons = document.querySelectorAll('.custom-color-btn');
-
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-      var accordionContent = this.nextElementSibling;
-
-      if (accordionContent.style.maxHeight) {
-        accordionContent.style.maxHeight = null;
-        accordionContent.classList.remove('open');
-      } else {
-        accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
-        accordionContent.classList.add('open');
-      }
-    });
-  });
-});
-
-//バリデーション
-document.addEventListener('DOMContentLoaded', function() {
-  var textInputs = document.querySelectorAll('.custom-color-code');
-
-  textInputs.forEach(function(input) {
-    var originalValue = input.value;
-
-    input.addEventListener('input', function() {
-      var newValue = this.value.replace(/[^a-zA-Z0-9]/g, '');
-
-      if (newValue.length <= 6) {
-        this.value = newValue;
-      } else {
-        this.value = originalValue;
-      }
-    });
-
-    input.addEventListener('blur', function() {
-      if (this.value.length !== 6) {
-        this.value = originalValue;
-      }
-    });
-  });
-});
-
+  `;document.getElementById("color-styles").innerHTML=_,document.getElementById("custom-css").innerHTML=ee}function te(e){let n=document.getElementById(e.id+"-code");n.value=e.value.substring(1),c(`--${e.id}`,e.value)}function re(e){let n=e.value,r=document.getElementById(e.id.replace("-code",""));/^[0-9A-Fa-f]{6}$/.test(n)&&(r.value="#"+n,c(`--${r.id}`))}function ne(e,n){document.querySelectorAll('input[type="color"]').forEach(r=>{r.id!==e&&(r.value=n,document.getElementById(`${r.id}-code`).value=n.substring(1),c(`--${r.id}`))})}document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll(".custom-color-picker");e.forEach(t=>{t.addEventListener("click",function(){e.forEach(o=>o.classList.remove("active")),this.classList.add("active")})}),c();const n={"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#8CCCE3","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"};for(const[t,o]of Object.entries(n)){const m=document.getElementById(t);if(m){m.value=o;const i=document.getElementById(`${t}-code`);i&&(i.value=o.substring(1))}}const r={colorSetPink:{"listener-name":"#FFFFFF","listener-name-bg":"#FB83AB","member-name":"#FFFFFF","member-name-bg":"#FB83AB","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FB83AB","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FB83AB","superchat-name":"#FFFFFF","superchat-name-bg":"#FFAAC6","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FB83AB","membership-name":"#FFFFFF","membership-name-bg":"#FFAAC6","membership-comment":"#FFFFFF","membership-comment-bg":"#FB83AB"},colorSetBlue:{"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#9ED9EF","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"},colorSetPurple:{"listener-name":"#FFFFFF","listener-name-bg":"#A378FF","member-name":"#FFFFFF","member-name-bg":"#A378FF","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#A378FF","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#A378FF","superchat-name":"#FFFFFF","superchat-name-bg":"#BFA1FF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#A378FF","membership-name":"#FFFFFF","membership-name-bg":"#BFA1FF","membership-comment":"#FFFFFF","membership-comment-bg":"#A378FF"},colorSetOrange:{"listener-name":"#FFFFFF","listener-name-bg":"#FDA25F","member-name":"#FFFFFF","member-name-bg":"#FDA25F","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FDA25F","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FDA25F","superchat-name":"#FFFFFF","superchat-name-bg":"#FFBB88","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FDA25F","membership-name":"#FFFFFF","membership-name-bg":"#FFBB88","membership-comment":"#FFFFFF","membership-comment-bg":"#FDA25F"}};for(const[t,o]of Object.entries(r))document.getElementById(t).addEventListener("click",function(){for(const[m,i]of Object.entries(o)){const d=document.getElementById(m);if(d){d.value=i;const l=document.getElementById(`${m}-code`);l&&(l.value=i.substring(1))}}c()});document.querySelectorAll('input[type="color"]').forEach(t=>{t.addEventListener("input",function(){const o=document.getElementById(`${t.id}-code`);o&&(o.value=t.value.substring(1)),c()})})});document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".create-modal"),n=document.querySelector(".create-modal-open"),r=document.querySelector(".create-modal-close");let a;function t(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function o(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function m(){e.classList.add("is-active"),t()}n.addEventListener("click",m);function i(){e.classList.remove("is-active"),o()}r.addEventListener("click",i);function d(l){l.target==e&&(e.classList.remove("is-active"),o())}addEventListener("click",d)});document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".about-modal"),n=document.querySelector(".about-modal-open"),r=document.querySelector(".about-modal-close");let a;function t(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function o(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function m(){e.classList.add("is-active"),t()}n.addEventListener("click",m);function i(){e.classList.remove("is-active"),o()}r.addEventListener("click",i)});document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("copyBtn"),n=document.querySelector(".copy-tooltip");e.addEventListener("click",()=>{const r=document.getElementById("custom-css").value;navigator.clipboard.writeText(r).then(()=>{n.classList.add("show"),setTimeout(()=>{n.classList.remove("show")},2500)})})});document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".custom-color-btn");e.forEach(function(n){n.addEventListener("click",function(){var r=this.nextElementSibling;r.style.maxHeight?(r.style.maxHeight=null,r.classList.remove("open")):(r.style.maxHeight=r.scrollHeight+"px",r.classList.add("open"))})})});document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".custom-color-code");e.forEach(function(n){var r=n.value;n.addEventListener("input",function(){var a=this.value.replace(/[^a-zA-Z0-9]/g,"");a.length<=6?this.value=a:this.value=r}),n.addEventListener("blur",function(){this.value.length!==6&&(this.value=r)})})});

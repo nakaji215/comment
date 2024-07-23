@@ -1,3 +1,8 @@
+window.updateDisplayAndColors = updateDisplayAndColors;
+window.updateColorFromPicker = updateColorFromPicker;
+window.updateColorFromText = updateColorFromText;
+window.updateAllColors = updateAllColors;
+
 function updateDisplayAndColors() {
   let displayValue = document.querySelector('input[name="author-name-display"]:checked')?.value;
   let borderValue = document.querySelector('input[name="border-block"]:checked')?.value;
@@ -143,7 +148,7 @@ function updateDisplayAndColors() {
     #content.yt-live-chat-text-message-renderer {
       position: relative;
       overflow: visible !important;
-      display: ${displayValue};
+      display: block;
     }
 
     /* ---------------------------------------------------- 
@@ -154,7 +159,7 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="moderator"] #author-name,
     yt-live-chat-text-message-renderer[author-type="member"] #author-name,
     yt-live-chat-text-message-renderer #author-name {
-      display: flex;
+      display: ${displayValue};
       width: fit-content;
       padding: 4px 12px;
       border-radius: 18px !important;
@@ -166,6 +171,7 @@ function updateDisplayAndColors() {
 
     /* member */
     yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+      display: ${displayValue};
       background-color: var(--member-name-bg) !important;
       color: var(--member-name) !important;
       font-size: 12px !important;
@@ -175,6 +181,10 @@ function updateDisplayAndColors() {
     yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
       margin-right: 8px;
       display: ${iconValue};
+    }
+
+    #chat-badges.yt-live-chat-author-chip {
+      display: ${displayValue};
     }
 
     /* ---------------------------------------------------- 
@@ -508,6 +518,27 @@ function updateDisplayAndColors() {
       display: none !important;
     }
 
+    yt-live-chat-ticker-renderer {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    yt-live-chat-renderer {
+      visibility: hidden !important;
+    }
+
+    yt-live-chat-renderer * {
+      visibility: initial !important;
+    }
+
+    yt-live-chat-item-list-renderer #items {
+      overflow: hidden !important;
+    }
+    
+    yt-live-chat-item-list-renderer #item-scroller {
+      overflow: hidden !important;
+    }
+
     yt-live-chat-text-message-renderer,
     yt-live-chat-text-message-renderer[is-highlighted],
     yt-live-chat-text-message-renderer[author-type="owner"],
@@ -621,10 +652,19 @@ function updateAllColors(id, value) {
   });
 }
 
+//テンプレート
 document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.custom-color-picker');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
   updateDisplayAndColors();
 
-  // 初期値の設定
   const initialColors = {
     'listener-name': '#FFFFFF',
     'listener-name-bg': '#8CCCE3',
@@ -646,103 +686,100 @@ document.addEventListener('DOMContentLoaded', function() {
     'membership-comment-bg': '#8CCCE3'
   };
 
-  // 初期値設定
   for (const [id, color] of Object.entries(initialColors)) {
     const input = document.getElementById(id);
     if (input) {
       input.value = color;
       const codeElement = document.getElementById(`${id}-code`);
       if (codeElement) {
-        codeElement.value = color.substring(1); // '#' を取り除く
+        codeElement.value = color.substring(1);
       }
     }
   }
 
-  // 色設定ボタンのイベントリスナー
   const colorSets = {
     'colorSetPink': {
       'listener-name': '#FFFFFF',
       'listener-name-bg': '#FB83AB',
       'member-name': '#FFFFFF',
       'member-name-bg': '#FB83AB',
-      'listener-comment': '#FB83AB',
+      'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
       'listener-comment-border': '#FB83AB',
-      'member-comment': '#FB83AB',
+      'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
       'member-comment-border': '#FB83AB',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FB83AB',
+      'superchat-name-bg': '#FFAAC6',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFAAC6',
+      'superchat-comment-bg': '#FB83AB',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FB83AB',
+      'membership-name-bg': '#FFAAC6',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFAAC6'
+      'membership-comment-bg': '#FB83AB'
     },
     'colorSetBlue': {
       'listener-name': '#FFFFFF',
       'listener-name-bg': '#8CCCE3',
       'member-name': '#FFFFFF',
       'member-name-bg': '#8CCCE3',
-      'listener-comment': '#8CCCE3',
+      'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
       'listener-comment-border': '#8CCCE3',
-      'member-comment': '#8CCCE3',
+      'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
       'member-comment-border': '#8CCCE3',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#8CCCE3',
+      'superchat-name-bg': '#9ED9EF',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#9ED9EF',
+      'superchat-comment-bg': '#8CCCE3',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#8CCCE3',
+      'membership-name-bg': '#9ED9EF',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#9ED9EF'
+      'membership-comment-bg': '#8CCCE3'
     },
     'colorSetPurple': {
       'listener-name': '#FFFFFF',
       'listener-name-bg': '#A378FF',
       'member-name': '#FFFFFF',
       'member-name-bg': '#A378FF',
-      'listener-comment': '#A378FF',
+      'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
       'listener-comment-border': '#A378FF',
-      'member-comment': '#A378FF',
+      'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
       'member-comment-border': '#A378FF',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#A378FF',
+      'superchat-name-bg': '#BFA1FF',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#BFA1FF',
+      'superchat-comment-bg': '#A378FF',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#A378FF',
+      'membership-name-bg': '#BFA1FF',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#BFA1FF'
+      'membership-comment-bg': '#A378FF'
     },
     'colorSetOrange': {
       'listener-name': '#FFFFFF',
       'listener-name-bg': '#FDA25F',
       'member-name': '#FFFFFF',
       'member-name-bg': '#FDA25F',
-      'listener-comment': '#FDA25F',
+      'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
       'listener-comment-border': '#FDA25F',
-      'member-comment': '#FDA25F',
+      'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
       'member-comment-border': '#FDA25F',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#FDA25F',
+      'superchat-name-bg': '#FFBB88',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#FFBB88',
+      'superchat-comment-bg': '#FDA25F',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#FDA25F',
+      'membership-name-bg': '#FFBB88',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#FFBB88'
+      'membership-comment-bg': '#FDA25F'
     }
   };
 
-  // 色設定ボタンにイベントリスナーを追加
   for (const [colorSetId, colors] of Object.entries(colorSets)) {
     document.getElementById(colorSetId).addEventListener('click', function() {
       for (const [id, color] of Object.entries(colors)) {
@@ -751,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
           input.value = color;
           const codeElement = document.getElementById(`${id}-code`);
           if (codeElement) {
-            codeElement.value = color.substring(1); // '#' を取り除く
+            codeElement.value = color.substring(1);
           }
         }
       }
@@ -759,22 +796,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // 色選択のイベントリスナー
   const colorInputs = document.querySelectorAll('input[type="color"]');
   colorInputs.forEach(input => {
     input.addEventListener('input', function() {
       const codeElement = document.getElementById(`${input.id}-code`);
       if (codeElement) {
-        codeElement.value = input.value.substring(1); // '#' を取り除く
+        codeElement.value = input.value.substring(1);
       }
       updateDisplayAndColors();
     });
   });
+});
 
-  // modal
-  const modal = document.querySelector('.modal');
-  const open = document.querySelector('.modal-open');
-  const close = document.querySelector('.modal-close');
+//Createモーダル
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.create-modal');
+  const open = document.querySelector('.create-modal-open');
+  const close = document.querySelector('.create-modal-close');
   let scrollTop;
 
   function fixedOn() {
@@ -810,6 +848,39 @@ document.addEventListener('DOMContentLoaded', function() {
   addEventListener('click', modalOut);
 });
 
+//Aboutモーダル
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.about-modal');
+  const open = document.querySelector('.about-modal-open');
+  const close = document.querySelector('.about-modal-close');
+  let scrollTop;
+
+  function fixedOn() {
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollTop}px`;
+  }
+
+  function fixedOff() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, scrollTop);
+  }
+
+  function modalOpen() {
+    modal.classList.add('is-active');
+    fixedOn();
+  }
+  open.addEventListener('click', modalOpen);
+
+  function modalClose() {
+    modal.classList.remove('is-active');
+    fixedOff();
+  }
+  close.addEventListener('click', modalClose);
+});
+
+//コピー
 document.addEventListener('DOMContentLoaded', function() {
   const copyButton = document.getElementById('copyBtn');
   const tooltip = document.querySelector('.copy-tooltip');

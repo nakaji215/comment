@@ -1,45 +1,45 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const n of document.querySelectorAll('link[rel="modulepreload"]'))i(n);new MutationObserver(n=>{for(const m of n)if(m.type==="childList")for(const a of m.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function t(n){const m={};return n.integrity&&(m.integrity=n.integrity),n.referrerPolicy&&(m.referrerPolicy=n.referrerPolicy),n.crossOrigin==="use-credentials"?m.credentials="include":n.crossOrigin==="anonymous"?m.credentials="omit":m.credentials="same-origin",m}function i(n){if(n.ep)return;n.ep=!0;const m=t(n);fetch(n.href,m)}})();window.updateDisplayAndColors=p;window.updateColorFromPicker=te;window.updateColorFromText=re;window.updateAllColors=ne;function p(){var o,s,d,c,u,g,f,E,B,w,C,k,I,$,A,S,L,O,q,D,T,P,z,N,M,j,H,V,Y,J,K,R,Z,G,Q,U,W,X,_;let r=(o=document.querySelector('input[name="author-name-display"]:checked'))==null?void 0:o.value,e=(s=document.querySelector('input[name="border-block"]:checked'))==null?void 0:s.value,t=(d=document.querySelector('input[name="icon-display"]:checked'))==null?void 0:d.value;document.querySelectorAll("yt-live-chat-author-chip.yt-live-chat-text-message-renderer").forEach(l=>{l.style.display=r}),document.querySelectorAll("yt-img-shadow#author-photo.yt-live-chat-text-message-renderer").forEach(l=>{l.style.display=t});let m=document.querySelectorAll("yt-live-chat-text-message-renderer"),a="",b="3px solid var(--listener-comment-border)",h="3px solid var(--member-comment-border)";m.forEach(l=>{let v=l.querySelector("#message");if(e==="0")v.style.border="none",a="none",b="none",h="none";else{a='""';let ee=l.getAttribute("author-type");ee===""?v.style.border="3px solid var(--listener-comment-border)":ee==="member"&&(v.style.border="3px solid var(--member-comment-border)")}}),document.querySelectorAll(".message-before").forEach(l=>{l.style.display=e==="0"?"none":"block"});let y=`
+(function(){const n=document.createElement("link").relList;if(n&&n.supports&&n.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const m of o.addedNodes)m.tagName==="LINK"&&m.rel==="modulepreload"&&a(m)}).observe(document,{childList:!0,subtree:!0});function r(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(t){if(t.ep)return;t.ep=!0;const o=r(t);fetch(t.href,o)}})();window.updateDisplayAndColors=c;window.updateColorFromPicker=te;window.updateColorFromText=re;window.updateAllColors=ne;function c(){var h,u,b,g,y,v,F,x,f,E,w,B,k,C,I,$,L,A,S,O,q,D,T,P,z,M,N,j,H,V,Y,J,K,R,Z,G,Q,U,W;let e=(h=document.querySelector('input[name="author-name-display"]:checked'))==null?void 0:h.value,n=(u=document.querySelector('input[name="border-block"]:checked'))==null?void 0:u.value,r=(b=document.querySelector('input[name="icon-display"]:checked'))==null?void 0:b.value;document.querySelectorAll("yt-live-chat-author-chip.yt-live-chat-text-message-renderer").forEach(s=>{s.style.display=e}),document.querySelectorAll("yt-img-shadow#author-photo.yt-live-chat-text-message-renderer").forEach(s=>{s.style.display=r});let o=document.querySelectorAll("yt-live-chat-text-message-renderer"),m="",i="3px solid var(--listener-comment-border)",d="3px solid var(--member-comment-border)";o.forEach(s=>{let p=s.querySelector("#message");if(n==="0")p.style.border="none",m="none",i="none",d="none";else{m='""';let X=s.getAttribute("author-type");X===""?p.style.border="3px solid var(--listener-comment-border)":X==="member"&&(p.style.border="3px solid var(--member-comment-border)")}}),document.querySelectorAll(".message-before").forEach(s=>{s.style.display=n==="0"?"none":"block"});let _=`
     :root {
-      --listener-name: ${(c=document.getElementById("listener-name"))==null?void 0:c.value};
-      --listener-name-bg: ${(u=document.getElementById("listener-name-bg"))==null?void 0:u.value};
-      --member-name: ${(g=document.getElementById("member-name"))==null?void 0:g.value};
-      --member-name-bg: ${(f=document.getElementById("member-name-bg"))==null?void 0:f.value};
-      --listener-comment: ${(E=document.getElementById("listener-comment"))==null?void 0:E.value};
-      --listener-comment-bg: ${(B=document.getElementById("listener-comment-bg"))==null?void 0:B.value};
-      --listener-comment-border: ${(w=document.getElementById("listener-comment-border"))==null?void 0:w.value};
-      --member-comment: ${(C=document.getElementById("member-comment"))==null?void 0:C.value};
-      --member-comment-bg: ${(k=document.getElementById("member-comment-bg"))==null?void 0:k.value};
-      --member-comment-border: ${(I=document.getElementById("member-comment-border"))==null?void 0:I.value};
-      --superchat-name: ${($=document.getElementById("superchat-name"))==null?void 0:$.value};
-      --superchat-name-bg: ${(A=document.getElementById("superchat-name-bg"))==null?void 0:A.value};
-      --superchat-comment: ${(S=document.getElementById("superchat-comment"))==null?void 0:S.value};
+      --listener-name: ${(g=document.getElementById("listener-name"))==null?void 0:g.value};
+      --listener-name-bg: ${(y=document.getElementById("listener-name-bg"))==null?void 0:y.value};
+      --member-name: ${(v=document.getElementById("member-name"))==null?void 0:v.value};
+      --member-name-bg: ${(F=document.getElementById("member-name-bg"))==null?void 0:F.value};
+      --listener-comment: ${(x=document.getElementById("listener-comment"))==null?void 0:x.value};
+      --listener-comment-bg: ${(f=document.getElementById("listener-comment-bg"))==null?void 0:f.value};
+      --listener-comment-border: ${(E=document.getElementById("listener-comment-border"))==null?void 0:E.value};
+      --member-comment: ${(w=document.getElementById("member-comment"))==null?void 0:w.value};
+      --member-comment-bg: ${(B=document.getElementById("member-comment-bg"))==null?void 0:B.value};
+      --member-comment-border: ${(k=document.getElementById("member-comment-border"))==null?void 0:k.value};
+      --superchat-name: ${(C=document.getElementById("superchat-name"))==null?void 0:C.value};
+      --superchat-name-bg: ${(I=document.getElementById("superchat-name-bg"))==null?void 0:I.value};
+      --superchat-comment: ${($=document.getElementById("superchat-comment"))==null?void 0:$.value};
       --superchat-comment-bg: ${(L=document.getElementById("superchat-comment-bg"))==null?void 0:L.value};
-      --membership-name: ${(O=document.getElementById("membership-name"))==null?void 0:O.value};
-      --membership-name-bg: ${(q=document.getElementById("membership-name-bg"))==null?void 0:q.value};
-      --membership-comment: ${(D=document.getElementById("membership-comment"))==null?void 0:D.value};
-      --membership-comment-bg: ${(T=document.getElementById("membership-comment-bg"))==null?void 0:T.value};
+      --membership-name: ${(A=document.getElementById("membership-name"))==null?void 0:A.value};
+      --membership-name-bg: ${(S=document.getElementById("membership-name-bg"))==null?void 0:S.value};
+      --membership-comment: ${(O=document.getElementById("membership-comment"))==null?void 0:O.value};
+      --membership-comment-bg: ${(q=document.getElementById("membership-comment-bg"))==null?void 0:q.value};
     }
-  `,F=`@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
+  `,ee=`@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap");
   
     :root {
-      --listener-name: ${(P=document.getElementById("listener-name"))==null?void 0:P.value};
-      --listener-name-bg: ${(z=document.getElementById("listener-name-bg"))==null?void 0:z.value};
-      --member-name: ${(N=document.getElementById("member-name"))==null?void 0:N.value};
-      --member-name-bg: ${(M=document.getElementById("member-name-bg"))==null?void 0:M.value};
-      --listener-comment: ${(j=document.getElementById("listener-comment"))==null?void 0:j.value};
-      --listener-comment-bg: ${(H=document.getElementById("listener-comment-bg"))==null?void 0:H.value};
-      --listener-comment-border: ${(V=document.getElementById("listener-comment-border"))==null?void 0:V.value};
-      --member-comment: ${(Y=document.getElementById("member-comment"))==null?void 0:Y.value};
-      --member-comment-bg: ${(J=document.getElementById("member-comment-bg"))==null?void 0:J.value};
-      --member-comment-border: ${(K=document.getElementById("member-comment-border"))==null?void 0:K.value};
-      --superchat-name: ${(R=document.getElementById("superchat-name"))==null?void 0:R.value};
-      --superchat-name-bg: ${(Z=document.getElementById("superchat-name-bg"))==null?void 0:Z.value};
-      --superchat-comment: ${(G=document.getElementById("superchat-comment"))==null?void 0:G.value};
-      --superchat-comment-bg: ${(Q=document.getElementById("superchat-comment-bg"))==null?void 0:Q.value};
-      --membership-name: ${(U=document.getElementById("membership-name"))==null?void 0:U.value};
-      --membership-name-bg: ${(W=document.getElementById("membership-name-bg"))==null?void 0:W.value};
-      --membership-comment: ${(X=document.getElementById("membership-comment"))==null?void 0:X.value};
-      --membership-comment-bg: ${(_=document.getElementById("membership-comment-bg"))==null?void 0:_.value};
+      --listener-name: ${(D=document.getElementById("listener-name"))==null?void 0:D.value};
+      --listener-name-bg: ${(T=document.getElementById("listener-name-bg"))==null?void 0:T.value};
+      --member-name: ${(P=document.getElementById("member-name"))==null?void 0:P.value};
+      --member-name-bg: ${(z=document.getElementById("member-name-bg"))==null?void 0:z.value};
+      --listener-comment: ${(M=document.getElementById("listener-comment"))==null?void 0:M.value};
+      --listener-comment-bg: ${(N=document.getElementById("listener-comment-bg"))==null?void 0:N.value};
+      --listener-comment-border: ${(j=document.getElementById("listener-comment-border"))==null?void 0:j.value};
+      --member-comment: ${(H=document.getElementById("member-comment"))==null?void 0:H.value};
+      --member-comment-bg: ${(V=document.getElementById("member-comment-bg"))==null?void 0:V.value};
+      --member-comment-border: ${(Y=document.getElementById("member-comment-border"))==null?void 0:Y.value};
+      --superchat-name: ${(J=document.getElementById("superchat-name"))==null?void 0:J.value};
+      --superchat-name-bg: ${(K=document.getElementById("superchat-name-bg"))==null?void 0:K.value};
+      --superchat-comment: ${(R=document.getElementById("superchat-comment"))==null?void 0:R.value};
+      --superchat-comment-bg: ${(Z=document.getElementById("superchat-comment-bg"))==null?void 0:Z.value};
+      --membership-name: ${(G=document.getElementById("membership-name"))==null?void 0:G.value};
+      --membership-name-bg: ${(Q=document.getElementById("membership-name-bg"))==null?void 0:Q.value};
+      --membership-comment: ${(U=document.getElementById("membership-comment"))==null?void 0:U.value};
+      --membership-comment-bg: ${(W=document.getElementById("membership-comment-bg"))==null?void 0:W.value};
     }
 
     ytd-sponsorships-live-chat-header-renderer *,
@@ -99,7 +99,7 @@
     #content.yt-live-chat-text-message-renderer {
       position: relative;
       overflow: visible !important;
-      display: ${r};
+      display: block;
     }
 
     /* ---------------------------------------------------- 
@@ -110,7 +110,7 @@
     yt-live-chat-text-message-renderer[author-type="moderator"] #author-name,
     yt-live-chat-text-message-renderer[author-type="member"] #author-name,
     yt-live-chat-text-message-renderer #author-name {
-      display: flex;
+      display: ${e};
       width: fit-content;
       padding: 4px 12px;
       border-radius: 18px !important;
@@ -122,6 +122,7 @@
 
     /* member */
     yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+      display: ${e};
       background-color: var(--member-name-bg) !important;
       color: var(--member-name) !important;
       font-size: 12px !important;
@@ -130,7 +131,11 @@
     /* icon */
     yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
       margin-right: 8px;
-      display: ${t};
+      display: ${r};
+    }
+
+    #chat-badges.yt-live-chat-author-chip {
+      display: ${e};
     }
 
     /* ---------------------------------------------------- 
@@ -141,7 +146,7 @@
       background-color: var(--listener-comment-bg) !important;
       color: var(--listener-comment) !important;
       border-radius: 30px;
-      border: ${b};
+      border: ${i};
       display: block !important;
       padding: 12px 20px;
       width: fit-content !important;
@@ -150,7 +155,7 @@
     }
 
     #message.yt-live-chat-text-message-renderer::before {
-      content: ${a};
+      content: ${m};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -180,11 +185,11 @@
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer {
       background-color: var(--member-comment-bg) !important;
       color: var(--member-comment) !important;
-      border: ${h};
+      border: ${d};
     }
 
     yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::before {
-      content: ${a};
+      content: ${m};
       position: absolute;
       top: 4px;
       left: -3px;
@@ -464,6 +469,27 @@
       display: none !important;
     }
 
+    yt-live-chat-ticker-renderer {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    yt-live-chat-renderer {
+      visibility: hidden !important;
+    }
+
+    yt-live-chat-renderer * {
+      visibility: initial !important;
+    }
+
+    yt-live-chat-item-list-renderer #items {
+      overflow: hidden !important;
+    }
+    
+    yt-live-chat-item-list-renderer #item-scroller {
+      overflow: hidden !important;
+    }
+
     yt-live-chat-text-message-renderer,
     yt-live-chat-text-message-renderer[is-highlighted],
     yt-live-chat-text-message-renderer[author-type="owner"],
@@ -546,4 +572,4 @@
       background-color: rgba(0, 0, 0, 0);
     }
 
-  `;document.getElementById("color-styles").innerHTML=y,document.getElementById("custom-css").innerHTML=F}function te(r){let e=document.getElementById(r.id+"-code");e.value=r.value.substring(1),p(`--${r.id}`,r.value)}function re(r){let e=r.value,t=document.getElementById(r.id.replace("-code",""));/^[0-9A-Fa-f]{6}$/.test(e)&&(t.value="#"+e,p(`--${t.id}`))}function ne(r,e){document.querySelectorAll('input[type="color"]').forEach(t=>{t.id!==r&&(t.value=e,document.getElementById(`${t.id}-code`).value=e.substring(1),p(`--${t.id}`))})}document.addEventListener("DOMContentLoaded",function(){p();const r={"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#8CCCE3","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"};for(const[o,s]of Object.entries(r)){const d=document.getElementById(o);if(d){d.value=s;const c=document.getElementById(`${o}-code`);c&&(c.value=s.substring(1))}}const e={colorSetPink:{"listener-name":"#FFFFFF","listener-name-bg":"#FB83AB","member-name":"#FFFFFF","member-name-bg":"#FB83AB","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FB83AB","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FB83AB","superchat-name":"#FFFFFF","superchat-name-bg":"#FFAAC6","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FB83AB","membership-name":"#FFFFFF","membership-name-bg":"#FFAAC6","membership-comment":"#FFFFFF","membership-comment-bg":"#FB83AB"},colorSetBlue:{"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#9ED9EF","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"},colorSetPurple:{"listener-name":"#FFFFFF","listener-name-bg":"#A378FF","member-name":"#FFFFFF","member-name-bg":"#A378FF","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#A378FF","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#A378FF","superchat-name":"#FFFFFF","superchat-name-bg":"#BFA1FF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#A378FF","membership-name":"#FFFFFF","membership-name-bg":"#BFA1FF","membership-comment":"#FFFFFF","membership-comment-bg":"#A378FF"},colorSetOrange:{"listener-name":"#FFFFFF","listener-name-bg":"#FDA25F","member-name":"#FFFFFF","member-name-bg":"#FDA25F","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FDA25F","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FDA25F","superchat-name":"#FFFFFF","superchat-name-bg":"#FFBB88","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FDA25F","membership-name":"#FFFFFF","membership-name-bg":"#FFBB88","membership-comment":"#FFFFFF","membership-comment-bg":"#FDA25F"}};for(const[o,s]of Object.entries(e))document.getElementById(o).addEventListener("click",function(){for(const[d,c]of Object.entries(s)){const u=document.getElementById(d);if(u){u.value=c;const g=document.getElementById(`${d}-code`);g&&(g.value=c.substring(1))}}p()});document.querySelectorAll('input[type="color"]').forEach(o=>{o.addEventListener("input",function(){const s=document.getElementById(`${o.id}-code`);s&&(s.value=o.value.substring(1)),p()})});const i=document.querySelector(".modal"),n=document.querySelector(".modal-open"),m=document.querySelector(".modal-close");let a;function b(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function h(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function x(){i.classList.add("is-active"),b()}n.addEventListener("click",x);function y(){i.classList.remove("is-active"),h()}m.addEventListener("click",y);function F(o){o.target==i&&(i.classList.remove("is-active"),h())}addEventListener("click",F)});document.addEventListener("DOMContentLoaded",function(){const r=document.getElementById("copyBtn"),e=document.querySelector(".copy-tooltip");r.addEventListener("click",()=>{const t=document.getElementById("custom-css").value;navigator.clipboard.writeText(t).then(()=>{e.classList.add("show"),setTimeout(()=>{e.classList.remove("show")},2500)})})});document.addEventListener("DOMContentLoaded",function(){var r=document.querySelectorAll(".custom-color-btn");r.forEach(function(e){e.addEventListener("click",function(){var t=this.nextElementSibling;t.style.maxHeight?(t.style.maxHeight=null,t.classList.remove("open")):(t.style.maxHeight=t.scrollHeight+"px",t.classList.add("open"))})})});document.addEventListener("DOMContentLoaded",function(){var r=document.querySelectorAll(".custom-color-code");r.forEach(function(e){var t=e.value;e.addEventListener("input",function(){var i=this.value.replace(/[^a-zA-Z0-9]/g,"");i.length<=6?this.value=i:this.value=t}),e.addEventListener("blur",function(){this.value.length!==6&&(this.value=t)})})});
+  `;document.getElementById("color-styles").innerHTML=_,document.getElementById("custom-css").innerHTML=ee}function te(e){let n=document.getElementById(e.id+"-code");n.value=e.value.substring(1),c(`--${e.id}`,e.value)}function re(e){let n=e.value,r=document.getElementById(e.id.replace("-code",""));/^[0-9A-Fa-f]{6}$/.test(n)&&(r.value="#"+n,c(`--${r.id}`))}function ne(e,n){document.querySelectorAll('input[type="color"]').forEach(r=>{r.id!==e&&(r.value=n,document.getElementById(`${r.id}-code`).value=n.substring(1),c(`--${r.id}`))})}document.addEventListener("DOMContentLoaded",function(){const e=document.querySelectorAll(".custom-color-picker");e.forEach(t=>{t.addEventListener("click",function(){e.forEach(o=>o.classList.remove("active")),this.classList.add("active")})}),c();const n={"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#8CCCE3","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"};for(const[t,o]of Object.entries(n)){const m=document.getElementById(t);if(m){m.value=o;const i=document.getElementById(`${t}-code`);i&&(i.value=o.substring(1))}}const r={colorSetPink:{"listener-name":"#FFFFFF","listener-name-bg":"#FB83AB","member-name":"#FFFFFF","member-name-bg":"#FB83AB","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FB83AB","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FB83AB","superchat-name":"#FFFFFF","superchat-name-bg":"#FFAAC6","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FB83AB","membership-name":"#FFFFFF","membership-name-bg":"#FFAAC6","membership-comment":"#FFFFFF","membership-comment-bg":"#FB83AB"},colorSetBlue:{"listener-name":"#FFFFFF","listener-name-bg":"#8CCCE3","member-name":"#FFFFFF","member-name-bg":"#8CCCE3","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#8CCCE3","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#8CCCE3","superchat-name":"#FFFFFF","superchat-name-bg":"#9ED9EF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#8CCCE3","membership-name":"#FFFFFF","membership-name-bg":"#9ED9EF","membership-comment":"#FFFFFF","membership-comment-bg":"#8CCCE3"},colorSetPurple:{"listener-name":"#FFFFFF","listener-name-bg":"#A378FF","member-name":"#FFFFFF","member-name-bg":"#A378FF","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#A378FF","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#A378FF","superchat-name":"#FFFFFF","superchat-name-bg":"#BFA1FF","superchat-comment":"#FFFFFF","superchat-comment-bg":"#A378FF","membership-name":"#FFFFFF","membership-name-bg":"#BFA1FF","membership-comment":"#FFFFFF","membership-comment-bg":"#A378FF"},colorSetOrange:{"listener-name":"#FFFFFF","listener-name-bg":"#FDA25F","member-name":"#FFFFFF","member-name-bg":"#FDA25F","listener-comment":"#333333","listener-comment-bg":"#FFFFFF","listener-comment-border":"#FDA25F","member-comment":"#333333","member-comment-bg":"#FFFFFF","member-comment-border":"#FDA25F","superchat-name":"#FFFFFF","superchat-name-bg":"#FFBB88","superchat-comment":"#FFFFFF","superchat-comment-bg":"#FDA25F","membership-name":"#FFFFFF","membership-name-bg":"#FFBB88","membership-comment":"#FFFFFF","membership-comment-bg":"#FDA25F"}};for(const[t,o]of Object.entries(r))document.getElementById(t).addEventListener("click",function(){for(const[m,i]of Object.entries(o)){const d=document.getElementById(m);if(d){d.value=i;const l=document.getElementById(`${m}-code`);l&&(l.value=i.substring(1))}}c()});document.querySelectorAll('input[type="color"]').forEach(t=>{t.addEventListener("input",function(){const o=document.getElementById(`${t.id}-code`);o&&(o.value=t.value.substring(1)),c()})})});document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".create-modal"),n=document.querySelector(".create-modal-open"),r=document.querySelector(".create-modal-close");let a;function t(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function o(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function m(){e.classList.add("is-active"),t()}n.addEventListener("click",m);function i(){e.classList.remove("is-active"),o()}r.addEventListener("click",i);function d(l){l.target==e&&(e.classList.remove("is-active"),o())}addEventListener("click",d)});document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".about-modal"),n=document.querySelector(".about-modal-open"),r=document.querySelector(".about-modal-close");let a;function t(){a=window.scrollY||document.documentElement.scrollTop,document.body.style.position="fixed",document.body.style.top=`-${a}px`}function o(){document.body.style.position="",document.body.style.top="",window.scrollTo(0,a)}function m(){e.classList.add("is-active"),t()}n.addEventListener("click",m);function i(){e.classList.remove("is-active"),o()}r.addEventListener("click",i)});document.addEventListener("DOMContentLoaded",function(){const e=document.getElementById("copyBtn"),n=document.querySelector(".copy-tooltip");e.addEventListener("click",()=>{const r=document.getElementById("custom-css").value;navigator.clipboard.writeText(r).then(()=>{n.classList.add("show"),setTimeout(()=>{n.classList.remove("show")},2500)})})});document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".custom-color-btn");e.forEach(function(n){n.addEventListener("click",function(){var r=this.nextElementSibling;r.style.maxHeight?(r.style.maxHeight=null,r.classList.remove("open")):(r.style.maxHeight=r.scrollHeight+"px",r.classList.add("open"))})})});document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll(".custom-color-code");e.forEach(function(n){var r=n.value;n.addEventListener("input",function(){var a=this.value.replace(/[^a-zA-Z0-9]/g,"");a.length<=6?this.value=a:this.value=r}),n.addEventListener("blur",function(){this.value.length!==6&&(this.value=r)})})});

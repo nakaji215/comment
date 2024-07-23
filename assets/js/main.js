@@ -148,7 +148,7 @@ function updateDisplayAndColors() {
     #content.yt-live-chat-text-message-renderer {
       position: relative;
       overflow: visible !important;
-      display: ${displayValue};
+      display: block;
     }
 
     /* ---------------------------------------------------- 
@@ -159,7 +159,7 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer[author-type="moderator"] #author-name,
     yt-live-chat-text-message-renderer[author-type="member"] #author-name,
     yt-live-chat-text-message-renderer #author-name {
-      display: flex;
+      display: ${displayValue};
       width: fit-content;
       padding: 4px 12px;
       border-radius: 18px !important;
@@ -171,6 +171,7 @@ function updateDisplayAndColors() {
 
     /* member */
     yt-live-chat-text-message-renderer[author-type="member"] #author-name {
+      display: ${displayValue};
       background-color: var(--member-name-bg) !important;
       color: var(--member-name) !important;
       font-size: 12px !important;
@@ -180,6 +181,10 @@ function updateDisplayAndColors() {
     yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
       margin-right: 8px;
       display: ${iconValue};
+    }
+
+    #chat-badges.yt-live-chat-author-chip {
+      display: ${displayValue};
     }
 
     /* ---------------------------------------------------- 
@@ -513,6 +518,27 @@ function updateDisplayAndColors() {
       display: none !important;
     }
 
+    yt-live-chat-ticker-renderer {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    yt-live-chat-renderer {
+      visibility: hidden !important;
+    }
+
+    yt-live-chat-renderer * {
+      visibility: initial !important;
+    }
+
+    yt-live-chat-item-list-renderer #items {
+      overflow: hidden !important;
+    }
+    
+    yt-live-chat-item-list-renderer #item-scroller {
+      overflow: hidden !important;
+    }
+
     yt-live-chat-text-message-renderer,
     yt-live-chat-text-message-renderer[is-highlighted],
     yt-live-chat-text-message-renderer[author-type="owner"],
@@ -628,6 +654,15 @@ function updateAllColors(id, value) {
 
 //テンプレート
 document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.custom-color-picker');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
   updateDisplayAndColors();
 
   const initialColors = {
@@ -771,11 +806,13 @@ document.addEventListener('DOMContentLoaded', function() {
       updateDisplayAndColors();
     });
   });
+});
 
-  // modal
-  const modal = document.querySelector('.modal');
-  const open = document.querySelector('.modal-open');
-  const close = document.querySelector('.modal-close');
+//Createモーダル
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.create-modal');
+  const open = document.querySelector('.create-modal-open');
+  const close = document.querySelector('.create-modal-close');
   let scrollTop;
 
   function fixedOn() {
@@ -809,6 +846,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   addEventListener('click', modalOut);
+});
+
+//Aboutモーダル
+document.addEventListener('DOMContentLoaded', function() {
+  const modal = document.querySelector('.about-modal');
+  const open = document.querySelector('.about-modal-open');
+  const close = document.querySelector('.about-modal-close');
+  let scrollTop;
+
+  function fixedOn() {
+    scrollTop = window.scrollY || document.documentElement.scrollTop;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollTop}px`;
+  }
+
+  function fixedOff() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, scrollTop);
+  }
+
+  function modalOpen() {
+    modal.classList.add('is-active');
+    fixedOn();
+  }
+  open.addEventListener('click', modalOpen);
+
+  function modalClose() {
+    modal.classList.remove('is-active');
+    fixedOff();
+  }
+  close.addEventListener('click', modalClose);
 });
 
 //コピー

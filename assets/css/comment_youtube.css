@@ -109,8 +109,6 @@ yt-live-chat-text-message-renderer[author-type="member"] #author-name {
 /* icon */
 yt-img-shadow#author-photo.yt-live-chat-text-message-renderer {
   margin-right: 8px;
-  /* display: none; */
-  /* iconShadows */
 }
 
 /* ---------------------------------------------------- 
@@ -424,6 +422,14 @@ yt-live-chat-text-message-renderer #timestamp {
   display: none !important;
 }
 
+yt-live-chat-renderer {
+  visibility: hidden !important;
+}
+
+yt-live-chat-renderer * {
+  visibility: initial !important;
+}
+
 yt-live-chat-text-message-renderer,
 yt-live-chat-text-message-renderer[is-highlighted],
 yt-live-chat-text-message-renderer[author-type="owner"],
@@ -503,5 +509,5 @@ yt-live-chat-header-renderer {
 
 body {
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0) !important;
 }

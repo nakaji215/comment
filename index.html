@@ -3,22 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name=”description” content=”「fukidashi」はYouTubeでライブ配信をする方向けのカスタムコメントCSSを自分の好きな色やデザインを簡単に選択して作成できるWebサービスです。” />
+    <title>fukidashi β</title>
+    <meta name="description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。" />
     <meta name="google-site-verification" content="CYfqJ9MQG3IdrbQT2dmrOsF9zmvZBXbRssgGTzBBX90" />
+    <meta name="keywords" content="通行止め,通行止め!!,Youtube,Twitch,CSS,カスタムCSS,コメントCSS,配信,ライブ配信,Yotube配信,Youtubeライブ,コメント,チャット,吹き出し、ふきだし、フキダシ、fukidashi">
+    <meta property="og:title" content="fukidashi Youtube用コメントCSS生成ジェネレーター">
+    <meta property="og:url" content="https://fukidashi-css.com/">
+    <meta property="og:description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
+    <meta name="google-adsense-account" content="ca-pub-1430815436113102">
     <link href="./assets/css/reset.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
     <link href="./assets/css/comment.css" rel="stylesheet" />
-
-    <title>fukidashi β</title>
   </head>
   <body>
     <header>
       <div class="header-wrap"> 
         <div class="header-inner">
           <div class="header-nav">
-            <h1 class="header-title">fukidashi β</h1>
-            <p class="header-heading is-pc">Youtube用コメントCSS生成ジェネレーター</p>
-          </div>
+            <div class="header-title-block">
+              <h1 class="header-title">fukidashi β</h1>
+              <p class="header-sub-title is-pc">Youtube用コメントCSS生成ジェネレーター</p>
+            </div>
+            <div class="header-heading-block">
+              <button class="header-heading about-modal-open">About</button>
+              <div class="header-sns">
+                <a href="https://x.com/tsuko111d0me" target="_blank">
+                  <img src="./assets/image/profile.png" alt="通行止め!!" width="24px" height="24px">
+                </a>
+              </div>
+            </div>
+          </div?>
         </div>
       </div>
     </header>
@@ -31,43 +45,33 @@
                 <!-- Listener -->
                 <yt-live-chat-text-message-renderer class="style-scope yt-live-chat-item-list-renderer" author-type="">
                   <yt-img-shadow id="author-photo" class="no-transition style-scope yt-live-chat-text-message-renderer" height="24" width="24" style="background-color: transparent">
-                    <img id="img" class="style-scope yt-img-shadow" height="24" width="24" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj"/>
+                    <img id="img" class="style-scope yt-img-shadow" height="24" width="24" src="./assets/image/icon.svg" alt=""/>
                   </yt-img-shadow>
                   <div id="content" class="style-scope yt-live-chat-text-message-renderer">
-                    <span id="timestamp" class="style-scope yt-live-chat-text-message-renderer">11:29 PM</span>
                     <yt-live-chat-author-chip class="style-scope yt-live-chat-text-message-renderer" is-highlighted="">
-                      <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                       <span id="author-name" dir="auto" class="style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                         リスナー
-                        <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                       </span>
-                      <span id="chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                     </yt-live-chat-author-chip>
                     <span id="message" class="style-scope yt-live-chat-text-message-renderer">
                       <span class="message-before"></span>ここにコメントが入ります。<span class="message-after"></span>
                     </span>
-                    <span id="deleted-state" class="style-scope yt-live-chat-text-message-renderer"></span>
-                    <a id="show-original" href="#" class="style-scope yt-live-chat-text-message-renderer"></a>
                   </div>
                 </yt-live-chat-text-message-renderer>
                 <!-- Member -->
                 <yt-live-chat-text-message-renderer class="style-scope yt-live-chat-item-list-renderer" author-type="member">
                   <yt-img-shadow id="author-photo" class="no-transition style-scope yt-live-chat-text-message-renderer" height="24" width="24" loaded="" style="background-color: transparent;">
-                    <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                    <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="24" width="24" src="./assets/image/icon.svg" alt="">
                   </yt-img-shadow>
                   <div id="content" class="style-scope yt-live-chat-text-message-renderer">
-                    <span id="timestamp" class="style-scope yt-live-chat-text-message-renderer">34:30</span>
                     <yt-live-chat-author-chip class="style-scope yt-live-chat-text-message-renderer">
                       <div class="author-name-block">
-                        <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                         <span id="author-name" dir="auto" class="member style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                           メンバー
-                          <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                         </span>
-                        <span id="chat-badges" class="style-scope yt-live-chat-author-chip"></span>
-                        <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（6 か月）" type="member" shared-tooltip-text="メンバー（6 か月）">
+                        <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" type="member">
                           <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                            <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（6 か月）">
+                            <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー">
                           </div>
                         </yt-live-chat-author-badge-renderer>
                       </div>
@@ -82,65 +86,35 @@
                   <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
                     <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
                       <yt-img-shadow id="author-photo" class="style-scope yt-live-chat-paid-message-renderer no-transition" loaded="" style="background-color: transparent;">
-                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="https://yt4.ggpht.com/ytc/AIdro_mMWHdp6FEujVEHa9upcOtvfp2I-Sq-E2mVg4XAwz6L3Q=s32-c-k-c0x00ffffff-no-rj">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="./assets/image/icon.svg" alt="">
                       </yt-img-shadow>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
                       <div id="header-content" class="style-scope yt-live-chat-paid-message-renderer">
                         <div id="header-content-primary-column" class="style-scope yt-live-chat-paid-message-renderer">
                           <div id="single-line" class="style-scope yt-live-chat-paid-message-renderer">
                             <div id="author-name-chip" class="style-scope yt-live-chat-paid-message-renderer">
                               <yt-live-chat-author-chip disable-highlighting="" single-line="" class="style-scope yt-live-chat-paid-message-renderer">
-                                <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 <span id="author-name" dir="auto" class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                                   リスナー
-                                  <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 </span>
                                 <span id="chat-badges" class="style-scope yt-live-chat-author-chip">
-                                  <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（3 年）" type="member" shared-tooltip-text="メンバー（3 年）">
+                                  <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" type="member">
                                     <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                                      <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（3 年）">
+                                      <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="member">
                                     </div>
                                   </yt-live-chat-author-badge-renderer>
                                 </span>
                               </yt-live-chat-author-chip>
                             </div>
                             <div id="purchase-amount-column" class="style-scope yt-live-chat-paid-message-renderer">
-                              <yt-img-shadow id="currency-img" height="16" width="16" class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden=""><img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="16" width="16"></yt-img-shadow>
+                              <yt-img-shadow id="currency-img" height="16" width="16" class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden="">
+                                <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="16" width="16">
+                              </yt-img-shadow>
                               <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer">
                                 <yt-formatted-string class="style-scope yt-live-chat-paid-message-renderer">￥10,000</yt-formatted-string>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <span id="timestamp" class="style-scope yt-live-chat-paid-message-renderer">14:29</span>
-                        <div id="gradient-container" class="style-scope yt-live-chat-paid-message-renderer">
-                          <div id="gradient" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                        </div>
-                        <div id="menu" class="style-scope yt-live-chat-paid-message-renderer">
-                          <yt-icon-button id="menu-button" class="style-scope yt-live-chat-paid-message-renderer" role="button"><button id="button" class="style-scope yt-icon-button" aria-label="チャットの操作">
-                            <yt-icon icon="more_vert" class="style-scope yt-live-chat-paid-message-renderer"><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>
-                          </button><yt-interaction id="interaction" class="circular style-scope yt-icon-button"><div class="stroke style-scope yt-interaction"></div><div class="fill style-scope yt-interaction"></div></yt-interaction></yt-icon-button>
-                        </div>
-                        <div id="creator-heart-button" class="style-scope yt-live-chat-paid-message-renderer"><yt-live-chat-creator-heart-view-model class="style-scope yt-live-chat-paid-message-renderer"><yt-icon-button id="creator-heart-button" class="style-scope yt-live-chat-creator-heart-view-model" role="button" hidden=""><button id="button" class="style-scope yt-icon-button" aria-label="ハート">
-                    <dom-if class="style-scope yt-live-chat-creator-heart-view-model"><template is="dom-if"></template></dom-if>
-                    <dom-if class="style-scope yt-live-chat-creator-heart-view-model"><template is="dom-if"></template></dom-if>
-                  </button><yt-interaction id="interaction" class="circular style-scope yt-icon-button"><div class="stroke style-scope yt-interaction"></div><div class="fill style-scope yt-interaction"></div></yt-interaction></yt-icon-button>
-                  </yt-live-chat-creator-heart-view-model></div>
-                      </div>
-                    </div>
-                    <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
-                      <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                      <div id="input-container" class="style-scope yt-live-chat-paid-message-renderer">
-                        <dom-if class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      </div>
-                      <yt-formatted-string id="deleted-state" class="style-scope yt-live-chat-paid-message-renderer" is-empty="function(){var e=Ta.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();Ww(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ma(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}"><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
-                      <div id="footer" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                      <div id="action-buttons" class="style-scope yt-live-chat-paid-message-renderer">
-                        <div id="like-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
-                        <div id="reply-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
-                        <div id="buy-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
                       </div>
                     </div>
                   </div>
@@ -150,72 +124,30 @@
                   <div id="card" class="style-scope yt-live-chat-paid-message-renderer">
                     <div id="header" class="style-scope yt-live-chat-paid-message-renderer">
                       <yt-img-shadow id="author-photo" class="style-scope yt-live-chat-paid-message-renderer no-transition" loaded="" style="background-color: transparent;">
-                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="./assets/image/icon.svg">
                       </yt-img-shadow>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
                       <div id="header-content" class="style-scope yt-live-chat-paid-message-renderer">
                         <div id="header-content-primary-column" class="style-scope yt-live-chat-paid-message-renderer">
                           <div id="single-line" class="style-scope yt-live-chat-paid-message-renderer">
                             <div id="author-name-chip" class="style-scope yt-live-chat-paid-message-renderer">
                               <yt-live-chat-author-chip disable-highlighting="" single-line="" class="style-scope yt-live-chat-paid-message-renderer">
-                                <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 <span id="author-name" dir="auto" class="single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                                   リスナー
-                                  <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 </span>
-                                <span id="chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                               </yt-live-chat-author-chip>
                             </div>
                             <div id="purchase-amount-column" class="style-scope yt-live-chat-paid-message-renderer">
-                              <yt-img-shadow id="currency-img" height="16" width="16" class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden="">
-                                <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="16" width="16">
-                              </yt-img-shadow>
                               <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer">
                                 <yt-formatted-string class="style-scope yt-live-chat-paid-message-renderer">￥5,000</yt-formatted-string>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <span id="timestamp" class="style-scope yt-live-chat-paid-message-renderer">8:43</span>
-                        <div id="gradient-container" class="style-scope yt-live-chat-paid-message-renderer">
-                          <div id="gradient" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                        </div>
-                        <div id="creator-heart-button" class="style-scope yt-live-chat-paid-message-renderer">
-                          <yt-live-chat-creator-heart-view-model class="style-scope yt-live-chat-paid-message-renderer">
-                            <yt-icon-button id="creator-heart-button" class="style-scope yt-live-chat-creator-heart-view-model" role="button" hidden="">
-                              <button id="button" class="style-scope yt-icon-button" aria-label="ハート">
-                                <dom-if class="style-scope yt-live-chat-creator-heart-view-model"><template is="dom-if"></template></dom-if>
-                                <dom-if class="style-scope yt-live-chat-creator-heart-view-model"><template is="dom-if"></template></dom-if>
-                              </button>
-                              <yt-interaction id="interaction" class="circular style-scope yt-icon-button">
-                                <div class="stroke style-scope yt-interaction"></div>
-                                <div class="fill style-scope yt-interaction"></div>
-                              </yt-interaction>
-                            </yt-icon-button>
-                          </yt-live-chat-creator-heart-view-model>
-                        </div>
                       </div>
                     </div>
                     <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
                       <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer">ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。</div>
-                      <div id="input-container" class="style-scope yt-live-chat-paid-message-renderer">
-                        <dom-if class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if>
-                      </div>
-                      <yt-formatted-string id="deleted-state" class="style-scope yt-live-chat-paid-message-renderer" is-empty="function(){var e=Ta.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();Ww(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ma(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}"><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
-                      <div id="footer" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                      <div id="action-buttons" class="style-scope yt-live-chat-paid-message-renderer">
-                        <div id="like-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
-                        <div id="reply-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
-                        <div id="buy-button" class="action-button style-scope yt-live-chat-paid-message-renderer"></div>
-                      </div>
                     </div>
-                  </div>
-                  <div id="lower-bumper" class="style-scope yt-live-chat-paid-message-renderer"></div>
-                  <div id="lower-buy-button" class="style-scope yt-live-chat-paid-message-renderer" hidden=""></div>
-                  <div id="inline-action-button-container" class="style-scope yt-live-chat-paid-message-renderer" aria-hidden="true">
-                    <div id="inline-action-buttons" class="style-scope yt-live-chat-paid-message-renderer"></div>
                   </div>
                 </yt-live-chat-paid-message-renderer>
                 <!-- SuperChat Sticker -->
@@ -223,51 +155,28 @@
                   <div id="card" class="style-scope yt-live-chat-paid-sticker-renderer">
                     <div id="author-info" tabindex="0" class="style-scope yt-live-chat-paid-sticker-renderer">
                       <yt-img-shadow id="author-photo" class="no-transition style-scope yt-live-chat-paid-sticker-renderer" loaded="" style="background-color: transparent;">
-                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="32" height="32" src="./assets/image/icon.svg">
                       </yt-img-shadow>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-sticker-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if class="style-scope yt-live-chat-paid-sticker-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if restamp="" class="style-scope yt-live-chat-paid-sticker-renderer"><template is="dom-if"></template></dom-if>
                       <div id="content" class="style-scope yt-live-chat-paid-sticker-renderer">
-                        <span id="timestamp" class="style-scope yt-live-chat-paid-sticker-renderer">58:47</span>
                         <div id="content-primary-column" class="style-scope yt-live-chat-paid-sticker-renderer">
                           <div id="author-name-chip" class="style-scope yt-live-chat-paid-sticker-renderer">
                             <yt-live-chat-author-chip disable-highlighting="" single-line="" class="style-scope yt-live-chat-paid-sticker-renderer">
-                              <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                               <span id="author-name" dir="auto" class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                                 リスナー
-                                <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
-                              </span>
-                              <span id="chat-badges" class="style-scope yt-live-chat-author-chip">
-                                <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（2 年）" type="member" shared-tooltip-text="メンバー（2 年）">
-                                  <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                                    <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（2 年）">
-                                  </div>
-                                </yt-live-chat-author-badge-renderer>
                               </span>
                             </yt-live-chat-author-chip>
                           </div>
                           <span id="price-column" class="style-scope yt-live-chat-paid-sticker-renderer">
                             <yt-formatted-string id="purchase-amount-chip" class="style-scope yt-live-chat-paid-sticker-renderer">￥500</yt-formatted-string>
-                            <yt-formatted-string id="deleted-state" class="style-scope yt-live-chat-paid-sticker-renderer" is-empty="function(){var e=Ta.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();Ww(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ma(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}">
-                              <yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string>
-                            </yt-formatted-string>
                           </span>
                         </div>
                       </div>
                     </div>
                     <div id="sticker-container" class="style-scope yt-live-chat-paid-sticker-renderer sticker-loaded">
-                      <yt-img-shadow id="sticker" notify-on-loaded="" tabindex="0" class="style-scope yt-live-chat-paid-sticker-renderer no-transition" style="background-color: transparent;" loaded="">
-                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="88" height="88" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                      <yt-img-shadow id="sticker" notify-on-loaded="" tabindex="0" class="style-scope yt-live-chat-paid-sticker-renderer no-transition" style="background-color: transparent;">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" width="88" height="88" src="./assets/image/badge.svg">
                       </yt-img-shadow>
                     </div>
-                    <yt-formatted-string id="dashboard-deleted-state" class="style-scope yt-live-chat-paid-sticker-renderer" is-empty="function(){var e=Ta.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();Ww(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ma(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}">
-                      <yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string>
-                    </yt-formatted-string>
-                    <div id="gradient-container" class="style-scope yt-live-chat-paid-sticker-renderer">
-                      <div id="gradient" class="style-scope yt-live-chat-paid-sticker-renderer"></div>
-                    </div>
-                    <div id="creator-heart-button" class="style-scope yt-live-chat-paid-sticker-renderer"></div>
                   </div>
                 </yt-live-chat-paid-sticker-renderer> -->
                 <!-- Membership Welcome -->
@@ -275,33 +184,28 @@
                   <div id="card" class="style-scope yt-live-chat-membership-item-renderer">
                     <div id="header" class="style-scope yt-live-chat-membership-item-renderer">
                       <yt-img-shadow id="author-photo" height="40" width="40" class="style-scope yt-live-chat-membership-item-renderer no-transition" loaded="" style="background-color: transparent;">
-                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="./assets/image/icon.svg">
                       </yt-img-shadow>
-                      <dom-if restamp="" class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
                       <div id="header-content" class="style-scope yt-live-chat-membership-item-renderer">
                         <div id="header-content-primary-column" class="style-scope yt-live-chat-membership-item-renderer">
                           <div id="header-content-inner-column" class="style-scope yt-live-chat-membership-item-renderer">
                             <yt-live-chat-author-chip class="style-scope yt-live-chat-membership-item-renderer">
                               <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
-                                <span id="author-name" dir="auto" class="member style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
-                                  リスナー
-                                <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
+                              <span id="author-name" dir="auto" class="member style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
+                                リスナー
                               </span>
                               <span id="chat-badges" class="style-scope yt-live-chat-author-chip">
-                                <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（1 か月）" type="member" shared-tooltip-text="メンバー（1 か月）">
+                                <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="member" type="member" shared-tooltip-text="メンバー（1 か月）">
                                   <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                                    <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（1 か月）">
+                                    <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="member">
                                   </div>
                                 </yt-live-chat-author-badge-renderer>
                               </span>
                             </yt-live-chat-author-chip>
-                            <dom-if restamp="" class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
                             <div id="header-primary-text" class="style-scope yt-live-chat-membership-item-renderer"></div>
                           </div>
                           <div id="header-subtext" class="style-scope yt-live-chat-membership-item-renderer">メンバーシップ へようこそ！</div>
                         </div>
-                        <div id="timestamp" class="style-scope yt-live-chat-membership-item-renderer">30:31</div>
                       </div>
                     </div>
                   </div>
@@ -310,9 +214,9 @@
                 <yt-live-chat-membership-item-renderer class="style-scope yt-live-chat-item-list-renderer" modern="" id="" has-primary-header-text="">
                   <div id="card" class="style-scope yt-live-chat-membership-item-renderer">
                     <div id="header" class="style-scope yt-live-chat-membership-item-renderer">
-                      <yt-img-shadow id="author-photo" height="40" width="40" class="style-scope yt-live-chat-membership-item-renderer no-transition" loaded="" style="background-color: transparent;"><img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="https://yt4.ggpht.com/4sJUPQCk-rUk6xntH4xpNcPUz57H69J_QD77RD1VI7m3Gy5lzpg7pnivZz77KYXd0w_-PxxL=s32-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
-                      <dom-if restamp="" class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
-                      <dom-if class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
+                      <yt-img-shadow id="author-photo" height="40" width="40" class="style-scope yt-live-chat-membership-item-renderer no-transition" loaded="" style="background-color: transparent;">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="./assets/image/icon.svg">
+                      </yt-img-shadow>
                       <div id="header-content" class="style-scope yt-live-chat-membership-item-renderer">
                         <div id="header-content-primary-column" class="style-scope yt-live-chat-membership-item-renderer">
                           <div id="header-content-inner-column" class="style-scope yt-live-chat-membership-item-renderer">
@@ -320,35 +224,24 @@
                               <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                               <span id="author-name" dir="auto" class="member style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                                 リスナー
-                                <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                               </span>
                               <span id="chat-badges" class="style-scope yt-live-chat-author-chip">
                                 <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（1 年）" type="member" shared-tooltip-text="メンバー（1 年）">
                                   <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                                    <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（1 年）">
+                                    <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（1 年）">
                                   </div>
                                 </yt-live-chat-author-badge-renderer>
                               </span>
                             </yt-live-chat-author-chip>
-                            <dom-if restamp="" class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
                             <div id="header-primary-text" class="style-scope yt-live-chat-membership-item-renderer">メンバー歴 12 か月</div>
                           </div>
                           <div id="header-subtext" class="style-scope yt-live-chat-membership-item-renderer">メンバーシップ</div>
                         </div>
-                        <div id="timestamp" class="style-scope yt-live-chat-membership-item-renderer">3:05</div>
                       </div>
                     </div>
                     <div id="content" class="style-scope yt-live-chat-membership-item-renderer">
                       <div id="message" dir="auto" class="style-scope yt-live-chat-membership-item-renderer">ここにコメントが入ります。</div>
-                      <div id="input-container" class="style-scope yt-live-chat-membership-item-renderer">
-                        <dom-if class="style-scope yt-live-chat-membership-item-renderer"><template is="dom-if"></template></dom-if>
-                      </div>
-                      <yt-formatted-string id="deleted-state" class="style-scope yt-live-chat-membership-item-renderer" is-empty="function(){var e=Ta.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();Ww(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ma(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}"><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
                     </div>
-                  </div>
-                  <div id="footer-button" class="style-scope yt-live-chat-membership-item-renderer" hidden=""></div>
-                  <div id="inline-action-button-container" class="style-scope yt-live-chat-membership-item-renderer" aria-hidden="true">
-                    <div id="inline-action-buttons" class="style-scope yt-live-chat-membership-item-renderer"></div>
                   </div>
                 </yt-live-chat-membership-item-renderer>
                 <!-- Membership Gift -->
@@ -357,7 +250,7 @@
                     <div id="header" class="style-scope ytd-sponsorships-live-chat-header-renderer">
                       <div id="content" class="style-scope ytd-sponsorships-live-chat-header-renderer">
                         <yt-img-shadow id="author-photo" height="40" width="40" class="style-scope ytd-sponsorships-live-chat-header-renderer no-transition" style="background-color: transparent;" loaded="">
-                          <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj">
+                          <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="40" width="40" src="./assets/image/icon.svg">
                         </yt-img-shadow>
                         <dom-if restamp="" class="style-scope ytd-sponsorships-live-chat-header-renderer"><template is="dom-if"></template></dom-if>
                         <dom-if class="style-scope ytd-sponsorships-live-chat-header-renderer"><template is="dom-if"></template></dom-if>
@@ -365,15 +258,13 @@
                           <div id="header-content-primary-column" class="style-scope ytd-sponsorships-live-chat-header-renderer">
                             <div id="header-content-inner-column" class="style-scope ytd-sponsorships-live-chat-header-renderer">
                               <yt-live-chat-author-chip single-line="" class="style-scope ytd-sponsorships-live-chat-header-renderer">
-                                <span id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 <span id="author-name" dir="auto" class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">
                                   リスナー
-                                  <span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span>
                                 </span>
                                 <span id="chat-badges" class="style-scope yt-live-chat-author-chip">
                                   <yt-live-chat-author-badge-renderer class="style-scope yt-live-chat-author-chip" aria-label="メンバー（3 年）" type="member" shared-tooltip-text="メンバー（3 年）">
                                     <div id="image" class="style-scope yt-live-chat-author-badge-renderer">
-                                      <img src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（3 年）">
+                                      <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバー（3 年）">
                                     </div>
                                   </yt-live-chat-author-badge-renderer>
                                 </span>
@@ -388,7 +279,9 @@
                           </div>
                         </div>
                       </div>
-                      <yt-img-shadow class="rhs-image style-scope ytd-sponsorships-live-chat-header-renderer no-transition" height="104" width="104" loaded="" style="background-color: transparent;"><img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="104" width="104" src="https://yt4.ggpht.com/Vxm9s4OaPVX6J3uwLIR18AOVxoQuZqspTqwsG1K5ZK5mZKiGNbOvU4W8Ek_Ydl80J4b6qfXFpQ=s32-c-k-c0x00ffffff-no-rj"></yt-img-shadow>
+                      <yt-img-shadow class="rhs-image style-scope ytd-sponsorships-live-chat-header-renderer no-transition" height="104" width="104" loaded="" style="background-color: transparent;">
+                        <img id="img" draggable="false" class="style-scope yt-img-shadow" alt="" height="104" width="104" src="./assets/image/icon.svg">
+                      </yt-img-shadow>
                     </div>
                   </ytd-sponsorships-live-chat-header-renderer>
                 </ytd-sponsorships-live-chat-gift-purchase-announcement-renderer> -->
@@ -422,11 +315,11 @@
                     <p class="custom-label-name">ProfileImage</p>
                     <div class="custom-label-block">
                       <div class="custom-label-item">
-                        <input type="radio" id="icon-block" name="icon-display" value="block" oninput="updateDisplayAndColors()">
+                        <input type="radio" id="icon-block" name="icon-display" value="block" oninput="updateDisplayAndColors()" checked>
                         <label for="icon-block" class="custom-label-radio">プロフィール画像あり</label>
                       </div>
                       <div class="custom-label-item">
-                        <input type="radio" id="icon-none" name="icon-display" value="none" oninput="updateDisplayAndColors()" checked>
+                        <input type="radio" id="icon-none" name="icon-display" value="none" oninput="updateDisplayAndColors()">
                         <label for="icon-none" class="custom-label-radio">プロフィール画像なし</label>
                       </div>
                     </div>
@@ -466,27 +359,27 @@
                     <p class="custom-color-heading">Template</p>
                     <div class="custom-color-column">
                       <button class="custom-color-picker" id="colorSetPink">
-                        <div class="custom-color-picker-column">
+                        <div class="custom-color-template-column">
                           <span class="custom-color-template pink"></span>
-                          <p class="custom-color-code">Pink</p>
+                          <p class="custom-color-template-text">Pink</p>
                         </div>
                       </button>
                       <button class="custom-color-picker" id="colorSetBlue">
-                        <div class="custom-color-picker-column">
+                        <div class="custom-color-template-column">
                           <span class="custom-color-template blue"></span>
-                          <p class="custom-color-code">Blue</p>
+                          <p class="custom-color-template-text">Blue</p>
                         </div>
                       </button>
                       <button class="custom-color-picker" id="colorSetPurple">
-                        <div class="custom-color-picker-column">
+                        <div class="custom-color-template-column">
                           <span class="custom-color-template purple"></span>
-                          <p class="custom-color-code">Purple</p>
+                          <p class="custom-color-template-text">Purple</p>
                         </div>
                       </button>
                       <button class="custom-color-picker" id="colorSetOrange">
-                        <div class="custom-color-picker-column">
+                        <div class="custom-color-template-column">
                           <span class="custom-color-template orange"></span>
-                          <p class="custom-color-code">Orange</p>
+                          <p class="custom-color-template-text">Orange</p>
                         </div>
                       </button>
                     </div>
@@ -668,21 +561,22 @@
                 </div>
               </div>
               <div class="custom-create-block">
-                <button class="custom-create-btn modal-open" type="submit">Create</button>
+                <button class="custom-create-btn create-modal-open" type="submit">Create</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="modal-contents modal">
-          <div class="modal-wrap">
-            <div class="modal-inner">
-              <div class="modal-close-btn modal-close">
-                <img src="./assets/image/close.svg" alt="×">
+        <div class="create-modal-contents create-modal">
+          <div class="create-modal-wrap">
+            <div class="create-modal-inner">
+              <div class="create-close-btn create-modal-close">
+                <img src="./assets/image/create_close.svg" alt="×">
               </div>
-              <div class="modal-content">
+              <div class="modal-container">
                 <p class="modal-heading">CSS</p>
                 <div class="modal-css-content">
                   <textarea id="custom-css" class="modal-css"></textarea>
+                  <p class="create-text">対応環境：OBS幅300px以上</p>
                   <button id="copyBtn" class="copy-btn">
                     <img src="./assets/image/copy.svg" alt="copy">
                   </button>
@@ -690,6 +584,57 @@
                     <p class="copy-tooltip-text">コピーしました！</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-modal-contents about-modal">
+          <div class="about-wrap">
+            <div class="about-inner">
+              <div class="about-block">
+                <div class="about-title-block">
+                  <h2 class="about-title">fukidashi</h2>
+                  <div class="about-lead">
+                    <p>fukidashiは、Youtube用のコメントCSSを生成できるツールです。</p>
+                    <p>お好みの色を使用してふきだし型のコメントデザインを作ることができます。</p>
+                    <p>Youtubeでの配信活動等にお使いください。</p>
+                  </div>
+                </div>
+                <div class="about-creater">
+                  <h3 class="about-heading">Creater</h3>
+                  <div class="about-creater-block">
+                    <div class="about-creater-img">
+                      <img src="./assets/image/profile.png" width="104px" height="104px">
+                    </div>
+                    <div class="about-creater-profile">
+                      <p class="about-creater-name">通行止め.ᐟ.ᐟ</p>
+                      <div class="about-creater-sns">
+                        <p class="about-creater-link">
+                          <a href="https://x.com/tsuko111d0me" target="_blank">
+                            Twitter(X)
+                          </a>
+                        </p>
+                        <p class="about-creater-link">
+                          <a href="https://tsukodome.booth.pm/" target="_blank">
+                            BOOTH
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-contact">
+                  <h3 class="about-heading">Contact</h3>
+                  <p class="about-contact-lead">
+                    <span class="line-feed">お問い合わせはメール、</span>
+                    <span class="line-feed">
+                      または<span class="about-contact-link"><a href="https://x.com/tsuko111d0me" target="_blank">Twitter(X)</a></span>まで</p>
+                    </span>
+                    <p class="about-contact-mail">tuukou.dome111@gmail.com</p>
+                </div>
+              </div>
+              <div class="about-close-btn about-modal-close">
+                <img src="./assets/image/about_close.svg" alt="×">
               </div>
             </div>
           </div>

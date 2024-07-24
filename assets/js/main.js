@@ -8,39 +8,40 @@ function updateDisplayAndColors() {
   let borderValue = document.querySelector('input[name="border-block"]:checked')?.value;
   let iconValue = document.querySelector('input[name="icon-display"]:checked')?.value;
 
-  let authorChips = document.querySelectorAll('yt-live-chat-author-chip.yt-live-chat-text-message-renderer');
+  let authorChips = document.querySelectorAll('.comment-channel');
       authorChips.forEach(authorChip => {
         authorChip.style.display = displayValue;
       });
 
-  let iconShadows = document.querySelectorAll('yt-img-shadow#author-photo.yt-live-chat-text-message-renderer');
+  let iconShadows = document.querySelectorAll('.comment-icon');
       iconShadows.forEach(iconShadow => {
         iconShadow.style.display = iconValue;
       });
 
-  let messageElements = document.querySelectorAll('yt-live-chat-text-message-renderer');
+  let messageElements = document.querySelectorAll('.comment-message');
   let messageBeforeContent = "";
   let listenerBorderColor = "3px solid var(--listener-comment-border)";
   let memberBorderColor = "3px solid var(--member-comment-border)";
-      messageElements.forEach(messageElement => {
-        let message = messageElement.querySelector('#message');
-        if (borderValue === '0') {
-          message.style.border = 'none';
-          messageBeforeContent = 'none';
-          listenerBorderColor = "none";
-          memberBorderColor = "none";
-        } else {
-          messageBeforeContent = '""';
-          let authorType = messageElement.getAttribute('author-type');
-          if (authorType === '') {
-            message.style.border = `3px solid var(--listener-comment-border)`;
-          } else if (authorType === 'member') {
-            message.style.border = `3px solid var(--member-comment-border)`;
-          }
-        }
-      });
+      
+  messageElements.forEach(messageElement => {
+    if (borderValue === '0') {
+      messageElement.style.border = 'none';
+      messageBeforeContent = 'none';
+      listenerBorderColor = "none";
+      memberBorderColor = "none";
+    } else {
+      messageBeforeContent = '""';
+      let authorType = messageElement.parentElement.parentElement.getAttribute('author-type');
+          
+      if (authorType === '') {
+        messageElement.style.border = listenerBorderColor;
+      } else if (authorType === 'member') {
+        messageElement.style.border = memberBorderColor;
+      }
+    }
+  });
 
-  let messageElementBefores = document.querySelectorAll('.message-before');
+  let messageElementBefores = document.querySelectorAll('.comment-before');
       messageElementBefores.forEach(element => {
         element.style.display = (borderValue === '0') ? 'none' : 'block';
       });
@@ -655,27 +656,32 @@ function updateDisplayAndColors() {
   document.getElementById('custom-css').innerHTML = styleContent;
 }
 
+//カラー
 function updateColorFromPicker(colorInput) {
   let textInput = document.getElementById(colorInput.id + '-code');
-  textInput.value = colorInput.value.substring(1);
+  let colorValue = colorInput.value.substring(1).toUpperCase();
+  textInput.value = colorValue;
   updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
 }
 
 function updateColorFromText(textInput) {
-  let colorValue = textInput.value;
+  let colorValue = textInput.value.toUpperCase();
   let colorInput = document.getElementById(textInput.id.replace('-code', ''));
+  
   if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
     colorInput.value = '#' + colorValue;
     updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
   }
+  textInput.value = colorValue;
 }
 
 function updateAllColors(id, value) {
+  let upperValue = value.toUpperCase();
   document.querySelectorAll('input[type="color"]').forEach(input => {
     if (input.id !== id) {
-      input.value = value;
-      document.getElementById(`${input.id}-code`).value = value.substring(1);
-      updateDisplayAndColors(`--${input.id}`, value);
+      input.value = upperValue;
+      document.getElementById(`${input.id}-code`).value = upperValue.substring(1);
+      updateDisplayAndColors(`--${input.id}`, '#' + upperValue.substring(1));
     }
   });
 }
@@ -709,7 +715,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'superchat-comment': '#FFFFFF',
     'superchat-comment-bg': '#8CCCE3',
     'membership-name': '#FFFFFF',
-    'membership-name-bg': '#8CCCE3',
+    'membership-name-bg': '#9ED9EF',
     'membership-comment': '#FFFFFF',
     'membership-comment-bg': '#8CCCE3'
   };

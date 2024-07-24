@@ -327,6 +327,29 @@ function updateDisplayAndColors() {
       padding: 12px 20px;
     }
 
+    /* like */
+    #creator-heart-button.yt-live-chat-paid-message-renderer {
+      display: none !important;
+    }
+    
+    #gradient-container.yt-live-chat-paid-message-renderer {
+      display: none !important;
+    }
+
+    yt-live-chat-paid-message-renderer[has-heart-button] #menu.yt-live-chat-paid-message-renderer {
+      display: none !important;
+    }
+
+    #action-buttons.yt-live-chat-paid-message-renderer {
+      display: none !important;
+    }
+
+    /* super sticker */
+    #before-content-buttons.yt-live-chat-text-message-renderer {
+      display: none !important;
+    }
+    
+
     /* ---------------------------------------------------- 
       sticker 
     ----------------------------------------------------*/
@@ -340,7 +363,8 @@ function updateDisplayAndColors() {
     /* sticker */
     yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer {
       display: block;
-      border-radius: 6px;
+      padding: 0px;
+      border-radius: 10px;
       box-shadow: none;
       overflow: visible;
       position: relative;
@@ -353,6 +377,10 @@ function updateDisplayAndColors() {
       border-radius: 10px 10px 0px 0px;
       display: block;
       padding: 12px 20px !important;
+    }
+
+    #author-photo.yt-live-chat-paid-sticker-renderer {
+      display: none !important;
     }
 
     /* channel price*/

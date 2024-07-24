@@ -51,17 +51,16 @@ yt-live-chat-author-badge-renderer.style-scope.yt-live-chat-author-chip {
   margin-left: 8px;
 }
 .author-name-block {
-  display: flex !important;
+  display: flex;
   align-items: center;
 }
-
 
 /* listener */
 yt-live-chat-text-message-renderer[author-type="owner"] #author-name,
 yt-live-chat-text-message-renderer[author-type="moderator"] #author-name,
 yt-live-chat-text-message-renderer[author-type="member"] #author-name,
 yt-live-chat-text-message-renderer #author-name {
-  display: flex;
+  display: flex !important;
   width: fit-content;
   padding: 4px 12px;
   border-radius: 18px !important;
@@ -196,6 +195,11 @@ yt-live-chat-paid-message-renderer #content.yt-live-chat-paid-message-renderer {
   color: var(--superchat-comment);
   border-radius: 0px 0px 10px 10px;
   padding: 12px 20px;
+}
+
+/* like */
+#creator-heart-button.yt-live-chat-paid-message-renderer {
+  display: none !important;
 }
 
 /* ---------------------------------------------------- 

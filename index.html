@@ -14,6 +14,7 @@
     <link href="./assets/css/reset.css" rel="stylesheet" />
     <link href="./assets/css/style.css" rel="stylesheet" />
     <link href="./assets/css/comment.css" rel="stylesheet" />
+    <script  type="module" src="./assets/js/main.js"></script>
   </head>
   <body>
     <header>
@@ -315,11 +316,11 @@
                     <p class="custom-label-name">ProfileImage</p>
                     <div class="custom-label-block">
                       <div class="custom-label-item">
-                        <input type="radio" id="icon-block" name="icon-display" value="block" oninput="updateDisplayAndColors()" checked>
+                        <input type="radio" id="icon-block" name="icon-display" value="block" oninput="updateDisplayAndColors()">
                         <label for="icon-block" class="custom-label-radio">プロフィール画像あり</label>
                       </div>
                       <div class="custom-label-item">
-                        <input type="radio" id="icon-none" name="icon-display" value="none" oninput="updateDisplayAndColors()">
+                        <input type="radio" id="icon-none" name="icon-display" value="none" oninput="updateDisplayAndColors()" checked>
                         <label for="icon-none" class="custom-label-radio">プロフィール画像なし</label>
                       </div>
                     </div>
@@ -364,7 +365,7 @@
                           <p class="custom-color-template-text">Pink</p>
                         </div>
                       </button>
-                      <button class="custom-color-picker" id="colorSetBlue">
+                      <button class="custom-color-picker active" id="colorSetBlue">
                         <div class="custom-color-template-column">
                           <span class="custom-color-template blue"></span>
                           <p class="custom-color-template-text">Blue</p>
@@ -646,7 +647,6 @@
         <p class="footer-copyright">&copy;2024 tsukodome</p>
       </div>
     </footer>
-    <script  type="module" src="./assets/js/main.js"></script>
     <style id="color-styles"></style>
     <style id="custom-css"></style>
   </body>

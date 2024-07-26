@@ -662,6 +662,10 @@ function updateColorFromPicker(colorInput) {
   let colorValue = colorInput.value.substring(1).toUpperCase();
   textInput.value = colorValue;
   updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
+
+  document.querySelectorAll('.custom-color-template.active').forEach(button => {
+    button.classList.remove('active');
+  });
 }
 
 function updateColorFromText(textInput) {
@@ -671,6 +675,10 @@ function updateColorFromText(textInput) {
   if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
     colorInput.value = '#' + colorValue;
     updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
+
+    document.querySelectorAll('.custom-color-template.active').forEach(button => {
+      button.classList.remove('active');
+    });
   }
   textInput.value = colorValue;
 }
@@ -688,7 +696,7 @@ function updateAllColors(id, value) {
 
 //テンプレート
 document.addEventListener('DOMContentLoaded', function() {
-  const buttons = document.querySelectorAll('.custom-color-picker');
+  const buttons = document.querySelectorAll('.custom-color-template');
 
   buttons.forEach(button => {
     button.addEventListener('click', function () {
@@ -774,23 +782,23 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     'colorSetPurple': {
       'listener-name': '#FFFFFF',
-      'listener-name-bg': '#A378FF',
+      'listener-name-bg': '#C891F8',
       'member-name': '#FFFFFF',
-      'member-name-bg': '#A378FF',
+      'member-name-bg': '#C891F8',
       'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#A378FF',
+      'listener-comment-border': '#C891F8',
       'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#A378FF',
+      'member-comment-border': '#C891F8',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#BFA1FF',
+      'superchat-name-bg': '#B77CEB',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#A378FF',
+      'superchat-comment-bg': '#C891F8',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#BFA1FF',
+      'membership-name-bg': '#B77CEB',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#A378FF'
+      'membership-comment-bg': '#C891F8'
     },
     'colorSetOrange': {
       'listener-name': '#FFFFFF',
@@ -811,6 +819,46 @@ document.addEventListener('DOMContentLoaded', function() {
       'membership-name-bg': '#FFBB88',
       'membership-comment': '#FFFFFF',
       'membership-comment-bg': '#FDA25F'
+    },
+    'colorSetGreen': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#7AC970',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#7AC970',
+      'listener-comment': '#333333',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#7AC970',
+      'member-comment': '#333333',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#7AC970',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#90D387',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#7AC970',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#90D387',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#7AC970'
+    },
+    'colorSetBlack': {
+      'listener-name': '#FFFFFF',
+      'listener-name-bg': '#8D8D8D',
+      'member-name': '#FFFFFF',
+      'member-name-bg': '#8D8D8D',
+      'listener-comment': '#333333',
+      'listener-comment-bg': '#FFFFFF',
+      'listener-comment-border': '#8D8D8D',
+      'member-comment': '#333333',
+      'member-comment-bg': '#FFFFFF',
+      'member-comment-border': '#8D8D8D',
+      'superchat-name': '#FFFFFF',
+      'superchat-name-bg': '#8D8D8D',
+      'superchat-comment': '#FFFFFF',
+      'superchat-comment-bg': '#717171',
+      'membership-name': '#FFFFFF',
+      'membership-name-bg': '#8D8D8D',
+      'membership-comment': '#FFFFFF',
+      'membership-comment-bg': '#717171'
     }
   };
 
@@ -838,9 +886,15 @@ document.addEventListener('DOMContentLoaded', function() {
         codeElement.value = input.value.substring(1);
       }
       updateDisplayAndColors();
+
+      // Remove active class from template buttons when color is manually picked
+      document.querySelectorAll('.custom-color-template.active').forEach(button => {
+        button.classList.remove('active');
+      });
     });
   });
 });
+
 
 //Createモーダル
 document.addEventListener('DOMContentLoaded', function() {

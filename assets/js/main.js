@@ -162,7 +162,7 @@ function updateDisplayAndColors() {
     yt-live-chat-text-message-renderer #author-name {
       display: ${displayValue};
       width: fit-content;
-      padding: 4px 12px;
+      padding: 4px 12px !important;
       border-radius: 18px !important;
       background-color: var(--listener-name-bg) !important;
       color: var(--listener-name) !important;
@@ -656,12 +656,11 @@ function updateDisplayAndColors() {
   document.getElementById('custom-css').innerHTML = styleContent;
 }
 
-//カラー
 function updateColorFromPicker(colorInput) {
   let textInput = document.getElementById(colorInput.id + '-code');
   let colorValue = colorInput.value.substring(1).toUpperCase();
   textInput.value = colorValue;
-  updateDisplayAndColors(`--${colorInput.id}`, colorInput.value);
+  updateDisplayAndColors();
 
   document.querySelectorAll('.custom-color-template.active').forEach(button => {
     button.classList.remove('active');
@@ -671,16 +670,30 @@ function updateColorFromPicker(colorInput) {
 function updateColorFromText(textInput) {
   let colorValue = textInput.value.toUpperCase();
   let colorInput = document.getElementById(textInput.id.replace('-code', ''));
-  
+
   if (/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
     colorInput.value = '#' + colorValue;
-    updateDisplayAndColors(`--${colorInput.id}`, '#' + colorValue);
-
-    document.querySelectorAll('.custom-color-template.active').forEach(button => {
-      button.classList.remove('active');
-    });
+    updateDisplayAndColors();
+  } else {
+    textInput.value = colorValue;
+    colorInput.value = '#' + colorValue;
+    updateDisplayAndColors();
   }
-  textInput.value = colorValue;
+
+  document.querySelectorAll('.custom-color-template.active').forEach(button => {
+    button.classList.remove('active');
+  });
+}
+
+function handleTextBlur(textInput) {
+  let colorInput = document.getElementById(textInput.id.replace('-code', ''));
+  let colorValue = textInput.value.toUpperCase();
+
+  if (!/^[0-9A-Fa-f]{6}$/.test(colorValue)) {
+    let computedColorValue = colorInput.value;
+    textInput.value = computedColorValue ? computedColorValue.substring(1).toUpperCase() : '';
+  }
+  updateDisplayAndColors();
 }
 
 function updateAllColors(id, value) {
@@ -689,10 +702,21 @@ function updateAllColors(id, value) {
     if (input.id !== id) {
       input.value = upperValue;
       document.getElementById(`${input.id}-code`).value = upperValue.substring(1);
-      updateDisplayAndColors(`--${input.id}`, '#' + upperValue.substring(1));
+      updateDisplayAndColors();
     }
   });
 }
+
+document.querySelectorAll('input[type="color"]').forEach(input => {
+  input.addEventListener('change', () => updateColorFromPicker(input));
+});
+
+document.querySelectorAll('input[type="text"].custom-color-code').forEach(input => {
+  input.addEventListener('input', () => updateColorFromText(input));
+  input.addEventListener('blur', () => handleTextBlur(input));
+});
+
+
 
 //テンプレート
 document.addEventListener('DOMContentLoaded', function() {
@@ -886,15 +910,9 @@ document.addEventListener('DOMContentLoaded', function() {
         codeElement.value = input.value.substring(1);
       }
       updateDisplayAndColors();
-
-      // Remove active class from template buttons when color is manually picked
-      document.querySelectorAll('.custom-color-template.active').forEach(button => {
-        button.classList.remove('active');
-      });
     });
   });
 });
-
 
 //Createモーダル
 document.addEventListener('DOMContentLoaded', function() {

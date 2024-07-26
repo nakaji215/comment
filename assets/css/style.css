@@ -515,10 +515,12 @@ input[type="text"] {
 }
 
 .create-modal-wrap {
-  position: relative;
-  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   max-width: 800px;
-  width: 90%;
+  width: calc(100% - 40px);
   background-color: #FFFFFF;
   border-radius: 30px;
 }

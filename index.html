@@ -72,8 +72,10 @@
                   </div>
                   <div class="comment-container">
                     <div class="comment-channel">
-                      <div class="comment-name">
-                        リスナー
+                      <div class="comment-channel-block">
+                        <div class="comment-name">
+                          リスナー
+                        </div>
                       </div>
                     </div>
                     <div class="comment-message">
@@ -172,6 +174,19 @@
                   </div>
                 </div> -->
                 <div class="custom-label">
+                  <div class="custom-label-group">
+                    <p class="custom-label-name">Direction</p>
+                    <div class="custom-label-block">
+                      <div class="custom-label-item">
+                        <input type="radio" id="comment-left" name="comment-direction" value="flex-start" oninput="updateDisplayAndColors()" checked>
+                        <label for="comment-left" class="custom-label-radio">左寄せ</label>
+                      </div>
+                      <div class="custom-label-item">
+                        <input type="radio" id="comment-right" name="comment-direction" value="flex-end" oninput="updateDisplayAndColors()">
+                        <label for="comment-right" class="custom-label-radio">右寄せ</label>
+                      </div>
+                    </div>
+                  </div>
                   <div class="custom-label-group">
                     <p class="custom-label-name">ProfileImage</p>
                     <div class="custom-label-block">

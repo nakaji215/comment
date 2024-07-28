@@ -171,13 +171,24 @@ function updateDisplayAndColors() {
   yt-live-chat-membership-item-renderer,
   yt-live-chat-paid-message-renderer,
   yt-live-chat-text-message-renderer {
-    animation: popIn 0.3s ease-out forwards;
+    animation: ${directionValue === 'flex-start' ? 'popInLeft' : 'popInRight'} 0.3s ease-out forwards;
   }
 
-  @keyframes popIn {
+  @keyframes popInLeft {
     0% {
       opacity: 0;
       transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+  }
+
+  @keyframes popInRight {
+    0% {
+      opacity: 0;
+      transform: translate(50%, -50%) scale(0);
     }
     100% {
       opacity: 1;
@@ -214,6 +225,7 @@ function updateDisplayAndColors() {
   yt-live-chat-author-chip.yt-live-chat-text-message-renderer {
     justify-content: ${directionValue === 'flex-start' ? startDirection : endDirection} !important;
     width: 100%;
+    margin: auto;
   }
 
   /* listener */
@@ -263,6 +275,7 @@ function updateDisplayAndColors() {
     width: fit-content !important;
     position: relative;
     overflow: visible;
+    ${directionValue === 'flex-start' ? 'margin-right' : 'margin-left'} : auto;
   }
 
   #message.yt-live-chat-text-message-renderer::before {
@@ -297,6 +310,7 @@ function updateDisplayAndColors() {
     background-color: var(--member-comment-bg) !important;
     color: var(--member-comment) !important;
     border: ${memberBorderColor};
+    ${directionValue === 'flex-start' ? 'margin-right' : 'margin-left'} : auto;
   }
 
   yt-live-chat-text-message-renderer[author-type="member"] #message.yt-live-chat-text-message-renderer::before {

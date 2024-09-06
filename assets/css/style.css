@@ -22,17 +22,21 @@ body {
   display: none;
 }
 
+.is-twitch {
+  display: none !important;
+}
+
 .line-feed {
   display: inline-block;
 }
 
-ytd-sponsorships-live-chat-header-renderer,
+/* ytd-sponsorships-live-chat-header-renderer,
 yt-live-chat-paid-sticker-renderer,
 yt-live-chat-membership-item-renderer,
 yt-live-chat-paid-message-renderer,
 yt-live-chat-text-message-renderer {
   animation: popIn 0.5s ease-out forwards;
-}
+} */
 
 @keyframes popIn {
   0% {
@@ -43,6 +47,11 @@ yt-live-chat-text-message-renderer {
     opacity: 1;
     transform: translate(0, 0) scale(1);
   }
+}
+
+.rotate {
+  transition: transform 0.3s ease;
+  transform: rotate(180deg);
 }
 
 /* radio */

@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fukidashi</title>
     <link rel="icon" href="/assets/other/favicon-B0PhBCe9.ico">
-    <meta name="description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
+    <meta name="description" content="fukidashiは、Youtube / Twitch用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
     <meta name="keywords" content="通行止め,通行止め.ᐟ.ᐟ,通行止め!!,Youtube,Twitch,CSS,カスタムCSS,コメントCSS,配信,ライブ配信,Yotube配信,Youtubeライブ,コメント,チャット,吹き出し、ふきだし、フキダシ、fukidashi">
-    <meta property="og:title" content="fukidashi Youtube用コメントCSS生成ジェネレーター">
+    <meta property="og:title" content="fukidashi Youtube / Twitch用コメントCSS生成ジェネレーター">
     <meta property="og:url" content="https://fukidashi-css.com">
     <meta property="og:image" content="https://fukidashi-css.com/image/ogp.png">
     <meta property="og:site_name" content="website">
     <meta property="og:type" content="fukidashi">
-    <meta property="og:description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
+    <meta property="og:description" content="fukidashiは、Youtube、のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
     <meta property="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tsuko111d0me">
     <meta name="twitter:title" content="fukidashi">
-    <meta name="twitter:description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。">
+    <meta name="twitter:description" content="fukidashiは、Youtube・のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。">
     <meta name="twitter:image:src" content="https://fukidashi-css.com/image/ogp.png">
     <!-- <meta name="google-adsense-account" content="ca-pub-1430815436113102">
     <meta name="google-site-verification" content="CYfqJ9MQG3IdrbQT2dmrOsF9zmvZBXbRssgGTzBBX90"> -->
     <style id="color-styles"></style>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1430815436113102" crossorigin="anonymous"></script>
-    <script type="module" crossorigin src="/assets/js/main-Dh5r2aVh.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/css/main-95rvIXzc.css">
+    <script type="module" crossorigin src="/assets/js/main-Bc2sf1v9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/main-DpZ2Cdt2.css">
   </head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFXDFB6GL1"></script>
@@ -41,7 +41,7 @@
           <div class="header-nav">
             <div class="header-title-block">
               <h1 class="header-title">fukidashi</h1>
-              <p class="header-sub-title is-pc">Youtube用コメントCSS生成ジェネレーター</p>
+              <p class="header-sub-title is-pc">Youtube / Twitch用コメントCSS生成ジェネレーター</p>
             </div>
             <div class="header-heading-block">
               <button class="header-heading about-modal-open">About</button>
@@ -79,6 +79,29 @@
                     <div class="comment-message">
                       <span class="comment-before"></span>
                       ここにコメントが入ります。
+                      <span class="comment-after"></span>
+                    </div>
+                  </div>
+                </yt-live-chat-text-message-renderer>
+                <!-- Listener Twitch -->
+                <yt-live-chat-text-message-renderer class="listener-contents twitch-member is-twitch">
+                  <div class="comment-icon">
+                    <img class="style-scope yt-img-shadow" height="24" width="24" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='526.92'%20height='526.92'%20viewBox='0%200%20526.92%20526.92'%3e%3cg%20id='グループ_24'%20data-name='グループ%2024'%20transform='translate(-5128%20-1069)'%3e%3cpath%20id='パス_8'%20data-name='パス%208'%20d='M526.92,263.46C526.92,117.96,408.97,0,263.46,0S0,117.96,0,263.46A263.028,263.028,0,0,0,103.88,473.09c23.72-67.65,86.21-115.97,159.58-115.97s135.86,48.32,159.58,115.97A263.028,263.028,0,0,0,526.92,263.46Z'%20transform='translate(5128%201069)'%20fill='%23c0d2d8'/%3e%3cpath%20id='パス_9'%20data-name='パス%209'%20d='M263.46,357.12c-73.37,0-135.86,48.32-159.58,115.97a263.454,263.454,0,0,0,319.16,0c-23.72-67.65-86.21-115.97-159.58-115.97Z'%20transform='translate(5128%201069)'%20fill='%23fff'/%3e%3cellipse%20id='楕円形_14'%20data-name='楕円形%2014'%20cx='134.63'%20cy='119.37'%20rx='134.63'%20ry='119.37'%20transform='translate(5256.83%201166.56)'%20fill='%23fff'/%3e%3crect%20id='長方形_89'%20data-name='長方形%2089'%20width='28.23'%20height='70.57'%20rx='14.11'%20transform='translate(5315.34%201285.93)'%20fill='%23c0d2d8'/%3e%3crect%20id='長方形_90'%20data-name='長方形%2090'%20width='28.23'%20height='70.57'%20rx='14.11'%20transform='translate(5439.35%201285.93)'%20fill='%23c0d2d8'/%3e%3c/g%3e%3c/svg%3e" alt="アイコン">
+                  </div>
+                  <div class="comment-container">
+                    <div class="comment-channel">
+                      <div class="comment-channel-block">
+                        <div class="comment-name">
+                          リスナー
+                        </div>
+                        <div class="member-bagde">
+                          <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='170.969'%20height='163.827'%20viewBox='0%200%20170.969%20163.827'%3e%3cg%20id='レイヤー_1'%20data-name='レイヤー%201'%20transform='translate(0.003%20-0.002)'%3e%3cpath%20id='パス_10'%20data-name='パス%2010'%20d='M95.64,5.29l22.49,32.16a12.423,12.423,0,0,0,6.53,4.75l37.53,11.45a12.388,12.388,0,0,1,6.27,19.31l-23.63,31.33a12.36,12.36,0,0,0-2.5,7.68l.71,39.24a12.383,12.383,0,0,1-16.42,11.93l-37.1-12.8a12.428,12.428,0,0,0-8.08,0l-37.1,12.8a12.385,12.385,0,0,1-16.42-11.93l.71-39.24a12.36,12.36,0,0,0-2.5-7.68L2.5,72.95A12.394,12.394,0,0,1,8.77,53.64L46.3,42.19a12.347,12.347,0,0,0,6.53-4.75L75.34,5.29A12.386,12.386,0,0,1,95.64,5.29Z'%20fill='%23c0d2d8'/%3e%3c/g%3e%3c/svg%3e" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバーバッジ">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-message">
+                      <span class="comment-before"></span>
+                      ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。
                       <span class="comment-after"></span>
                     </div>
                   </div>
@@ -172,6 +195,19 @@
                   </div>
                 </div> -->
                 <div class="custom-label">
+                  <div class="custom-label-group">
+                    <p class="custom-label-name">Platform</p>
+                    <div class="custom-label-block">
+                      <div class="custom-label-item">
+                        <input type="radio" id="platform-youtube" name="comment-platform" value="youtube" oninput="updateDisplayAndColors()" checked>
+                        <label for="platform-youtube" class="custom-label-radio">Youtube</label>
+                      </div>
+                      <div class="custom-label-item">
+                        <input type="radio" id="platform-twitch" name="comment-platform" value="twitch" oninput="updateDisplayAndColors()">
+                        <label for="platform-twitch" class="custom-label-radio">Twitch</label>
+                      </div>
+                    </div>
+                  </div>
                   <div class="custom-label-group">
                     <p class="custom-label-name">Direction</p>
                     <div class="custom-label-block">
@@ -451,7 +487,7 @@
                 <div class="about-title-block">
                   <h2 class="about-title">fukidashi</h2>
                   <div class="about-lead">
-                    <p>fukidashiは、Youtube用のコメントCSSを生成できるツールです。</p>
+                    <p>fukidashiは、Youtube / Twitch用のコメントCSSを生成できるツールです。</p>
                     <p>お好みの色を使用してふきだし型のコメントデザインを作ることができます。</p>
                     <p>Youtubeでの配信活動等にお使いください。</p>
                   </div>

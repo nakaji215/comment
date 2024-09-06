@@ -1,0 +1,202 @@
+/* ---------------------------------------------------- 
+  ©︎通行止め.ᐟ.ᐟ
+---------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans:wght@400;700&display=swap");
+
+:root {
+  --listener-name: #FFFFFF;
+  --listener-name-bg: #8CCCE3;
+  --listener-comment: #333333;
+  --listener-comment-bg: #FFFFFF;
+  --listener-comment-border: #8CCCE3;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+body,
+.chat-room,
+.chat-line__moderation,
+.chat-line__status,
+.chat-line__message,
+.chat-author__display-name {
+  margin: 0 auto;
+  background-color: transparent !important;
+  font-family: "Noto Sans JP";
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.chat-line__message {
+  position: relative;
+  padding: 8px 16px;
+  animation: popIn 0.5s ease-out forwards;
+}
+
+.chat-line__no-background {
+  display: grid !important;
+  grid-gap: 6px;
+}
+
+/* ユーザー名 */
+.chat-line__username-container {
+  display: flex !important;
+  flex-direction: row-reverse;
+  grid-gap: 8px;
+  width: fit-content;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chat-line__username {
+  background-color: var(--listener-name-bg) !important;
+  padding: 4px 12px;
+  border-radius: 18px;
+}
+
+.chat-author__display-name {
+  display: block;
+  width: fit-content;
+  text-wrap: wrap;
+  color: var(--listener-name) !important;
+  font-weight: bold;
+}
+
+.chat-badge {
+  margin-bottom: 0 !important;
+  vertical-align: bottom !important;
+}
+
+/* テキストボックス */
+span[data-a-target="chat-line-message-body"] {
+  background-color: var(--listener-comment-bg) !important;
+  color: var(--listener-comment) !important;
+  border-radius: 30px;
+  border: 3px solid var(--listener-comment-border);
+  display: block !important;
+  padding: 12px 20px;
+  width: fit-content !important;
+  position: relative;
+  overflow: visible;
+  font-weight: 500 !important;
+}
+
+span[data-a-target="chat-line-message-body"]::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -3px;
+	width: 21px;
+	height: 21px;
+	transform: rotate(-20deg) skew(20deg, 20deg);
+  background-color: var(--listener-comment-border);
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 6px;
+  z-index: -1;
+}
+
+span[data-a-target="chat-line-message-body"]::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 1px;
+	width: 18px;
+	height: 18px;
+	transform: rotate(-20deg) skew(20deg, 20deg);
+  background-color: var(--listener-comment-bg);
+  border-top-left-radius: 4px;
+  border-bottom-right-radius: 20px;
+  z-index: 0;
+}
+
+/* emote */
+.chat-line__message--emote{
+  margin: 0 !important;
+}
+
+/* スクロールバー削除 */
+.simplebar-scrollbar {
+  display: none !important;
+}
+
+/* ログイン名非表示 */
+.chat-author__intl-login {
+  display: none !important;
+}
+
+span[aria-hidden="true"] {
+  display: none !important;
+}
+
+.chat-line__timestamp {
+  display: none !important;
+}
+
+.stream-chat-header,
+.channel-leaderboard-container,
+.tw-interactable,
+.tw-z-default,
+.chat-input,
+.chat-line__status {
+  visibility: hidden !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: none !important;
+}
+
+.InjectLayout-sc-1i43xsx-0,
+.user-notice-line {
+  display: none;
+}
+
+.community-highlight-stack__scroll-area--disable {
+  display: none !important;
+}
+
+.community-highlight-stack__backlog-card,
+.community-highlight-stack__nav-target {
+  display: none !important;
+}
+
+.paid-pinned-chat-message-list {
+  display: none;
+}
+
+.paid-pinned-chat-message-content-wrapper {
+  display: none !important;
+}
+
+.fiHaCw {
+  border: none !important;
+}
+
+.stream-chat-header {
+  display: none !important;
+}
+
+.pMQwv,
+.scrollable-trigger__trigger-area {
+  display: none !important;
+}
+
+/* 返信 */
+.jIBntd {
+  display: none !important;
+}
+
+/* 新着 */
+.xxjeD {
+  display: none !important;
+}

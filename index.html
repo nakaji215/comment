@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fukidashi</title>
     <link rel="icon" href="./public/image/favicon.ico">
-    <meta name="description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
+    <meta name="description" content="fukidashiは、Youtube / Twitch用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
     <meta name="keywords" content="通行止め,通行止め.ᐟ.ᐟ,通行止め!!,Youtube,Twitch,CSS,カスタムCSS,コメントCSS,配信,ライブ配信,Yotube配信,Youtubeライブ,コメント,チャット,吹き出し、ふきだし、フキダシ、fukidashi">
-    <meta property="og:title" content="fukidashi Youtube用コメントCSS生成ジェネレーター">
+    <meta property="og:title" content="fukidashi Youtube / Twitch用コメントCSS生成ジェネレーター">
     <meta property="og:url" content="https://fukidashi-css.com">
     <meta property="og:image" content="https://fukidashi-css.com/image/ogp.png">
     <meta property="og:site_name" content="website">
     <meta property="og:type" content="fukidashi">
-    <meta property="og:description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
+    <meta property="og:description" content="fukidashiは、Youtube、のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。Youtubeでの配信活動等にお使いください。">
     <meta property="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@tsuko111d0me">
     <meta name="twitter:title" content="fukidashi">
-    <meta name="twitter:description" content="fukidashiは、Youtube用のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。">
+    <meta name="twitter:description" content="fukidashiは、Youtube・のコメントCSSを生成できるツールです。お好みの色を使用してふきだし型のコメントデザインを作ることができます。">
     <meta name="twitter:image:src" content="https://fukidashi-css.com/image/ogp.png">
     <!-- <meta name="google-adsense-account" content="ca-pub-1430815436113102">
     <meta name="google-site-verification" content="CYfqJ9MQG3IdrbQT2dmrOsF9zmvZBXbRssgGTzBBX90"> -->
@@ -43,7 +43,7 @@
           <div class="header-nav">
             <div class="header-title-block">
               <h1 class="header-title">fukidashi</h1>
-              <p class="header-sub-title is-pc">Youtube用コメントCSS生成ジェネレーター</p>
+              <p class="header-sub-title is-pc">Youtube / Twitch用コメントCSS生成ジェネレーター</p>
             </div>
             <div class="header-heading-block">
               <button class="header-heading about-modal-open">About</button>
@@ -81,6 +81,29 @@
                     <div class="comment-message">
                       <span class="comment-before"></span>
                       ここにコメントが入ります。
+                      <span class="comment-after"></span>
+                    </div>
+                  </div>
+                </yt-live-chat-text-message-renderer>
+                <!-- Listener Twitch -->
+                <yt-live-chat-text-message-renderer class="listener-contents twitch-member is-twitch">
+                  <div class="comment-icon">
+                    <img class="style-scope yt-img-shadow" height="24" width="24" src="./assets/image/icon.svg" alt="アイコン">
+                  </div>
+                  <div class="comment-container">
+                    <div class="comment-channel">
+                      <div class="comment-channel-block">
+                        <div class="comment-name">
+                          リスナー
+                        </div>
+                        <div class="member-bagde">
+                          <img src="./assets/image/badge.svg" class="style-scope yt-live-chat-author-badge-renderer" alt="メンバーバッジ">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="comment-message">
+                      <span class="comment-before"></span>
+                      ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。ここにコメントが入ります。
                       <span class="comment-after"></span>
                     </div>
                   </div>
@@ -174,6 +197,19 @@
                   </div>
                 </div> -->
                 <div class="custom-label">
+                  <div class="custom-label-group">
+                    <p class="custom-label-name">Platform</p>
+                    <div class="custom-label-block">
+                      <div class="custom-label-item">
+                        <input type="radio" id="platform-youtube" name="comment-platform" value="youtube" oninput="updateDisplayAndColors()" checked>
+                        <label for="platform-youtube" class="custom-label-radio">Youtube</label>
+                      </div>
+                      <div class="custom-label-item">
+                        <input type="radio" id="platform-twitch" name="comment-platform" value="twitch" oninput="updateDisplayAndColors()">
+                        <label for="platform-twitch" class="custom-label-radio">Twitch</label>
+                      </div>
+                    </div>
+                  </div>
                   <div class="custom-label-group">
                     <p class="custom-label-name">Direction</p>
                     <div class="custom-label-block">
@@ -453,7 +489,7 @@
                 <div class="about-title-block">
                   <h2 class="about-title">fukidashi</h2>
                   <div class="about-lead">
-                    <p>fukidashiは、Youtube用のコメントCSSを生成できるツールです。</p>
+                    <p>fukidashiは、Youtube / Twitch用のコメントCSSを生成できるツールです。</p>
                     <p>お好みの色を使用してふきだし型のコメントデザインを作ることができます。</p>
                     <p>Youtubeでの配信活動等にお使いください。</p>
                   </div>

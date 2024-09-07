@@ -979,6 +979,9 @@ function updateDisplayAndColors() {
     colorBlocks.forEach(function(colorBlock) {
       colorBlock.classList.remove('is-twitch');
     });
+    iconShadows.forEach(iconShadow => {
+      iconShadow.classList.remove('is-twitch');
+    });
   
     document.getElementById('custom-css').innerHTML = youtubeStyle;
   } else if(platformValue == 'twitch') {
@@ -987,12 +990,16 @@ function updateDisplayAndColors() {
     membership.classList.add('is-twitch');
     membershipComment.classList.add('is-twitch');
     twitchMember.classList.remove('is-twitch');
+    
   
     profileImages.forEach(function(profileImage) {
       profileImage.classList.add('is-twitch');
     });
     colorBlocks.forEach(function(colorBlock) {
       colorBlock.classList.add('is-twitch');
+    });
+    iconShadows.forEach(iconShadow => {
+      iconShadow.classList.add('is-twitch');
     });
   
     document.getElementById('custom-css').innerHTML = twichStyle;

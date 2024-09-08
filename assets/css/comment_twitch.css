@@ -54,6 +54,7 @@ body,
   display: flex !important;
   flex-direction: row-reverse;
   grid-gap: 8px;
+  margin-bottom: 6px;
   width: fit-content;
   white-space: nowrap;
   text-overflow: ellipsis;

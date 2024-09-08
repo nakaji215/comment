@@ -805,6 +805,7 @@ function updateDisplayAndColors() {
       width: fit-content;
       white-space: nowrap;
       text-overflow: ellipsis;
+      margin-bottom: 6px;
       ${directionValue === 'flex-start' ? 'margin-right' : 'margin-left'} : auto;
     }
 
@@ -1155,23 +1156,23 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     'colorSetPurple': {
       'listener-name': '#FFFFFF',
-      'listener-name-bg': '#C891F8',
+      'listener-name-bg': '#B77CEB',
       'member-name': '#FFFFFF',
-      'member-name-bg': '#C891F8',
+      'member-name-bg': '#B77CEB',
       'listener-comment': '#333333',
       'listener-comment-bg': '#FFFFFF',
-      'listener-comment-border': '#C891F8',
+      'listener-comment-border': '#B77CEB',
       'member-comment': '#333333',
       'member-comment-bg': '#FFFFFF',
-      'member-comment-border': '#C891F8',
+      'member-comment-border': '#B77CEB',
       'superchat-name': '#FFFFFF',
-      'superchat-name-bg': '#B77CEB',
+      'superchat-name-bg': '#C891F8',
       'superchat-comment': '#FFFFFF',
-      'superchat-comment-bg': '#C891F8',
+      'superchat-comment-bg': '#B77CEB',
       'membership-name': '#FFFFFF',
-      'membership-name-bg': '#B77CEB',
+      'membership-name-bg': '#C891F8',
       'membership-comment': '#FFFFFF',
-      'membership-comment-bg': '#C891F8'
+      'membership-comment-bg': '#B77CEB'
     },
     'colorSetOrange': {
       'listener-name': '#FFFFFF',
@@ -1400,6 +1401,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.querySelector('.custom-color-btn').addEventListener('click', function() {
   let arrowImage = document.querySelector('.custom-detail-arrow img');
   arrowImage.classList.toggle('rotate');
-});
+})
 
 

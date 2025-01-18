@@ -326,7 +326,7 @@ function updateDisplayAndColors() {
       width: 21px;
       height: 21px;
       transform: ${directionValue === 'flex-start' ? 'rotate(-20deg) skew(20deg, 20deg)' : 'rotate(-70deg) skew(20deg, 20deg)'};
-      background-color: var(--listener-comment-border);
+      background-color: var(--member-comment-border);
       border-top-left-radius: 7px;
       border-bottom-right-radius: 6px;
       z-index: -1;

@@ -192,6 +192,11 @@ span[aria-hidden="true"] {
   display: none !important;
 }
 
+.announcement-line {
+  background-color: transparent !important;
+  border: none !important;
+}
+
 /* 返信 */
 .jIBntd {
   display: none !important;
@@ -199,5 +204,10 @@ span[aria-hidden="true"] {
 
 /* 新着 */
 .xxjeD {
+  display: none !important;
+}
+d
+
+.cBRHGH {
   display: none !important;
 }

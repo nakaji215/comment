@@ -955,6 +955,15 @@ function updateDisplayAndColors() {
     .xxjeD {
       display: none !important;
     }
+
+    .announcement-line {
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    .cBRHGH {
+      display: none !important;
+    }
   `
 
   document.getElementById('color-styles').innerHTML = colorStyle;
